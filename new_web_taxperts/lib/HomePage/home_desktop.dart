@@ -11,6 +11,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -203,155 +204,202 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 children: <Widget>[
                   Positioned.fill(
                     child: Image.asset(
-                      'images/back.png', // Replace with your background image
-                      fit: BoxFit.fitWidth,
+                      'images/bach600.png', // Replace with your background image
+                      fit: BoxFit.cover,
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: Text(
-                            'STAY CONNECT WITH TAXPERTS',
-                            style: TextStyle(
-                              fontSize: 40,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: Text(
-                            'DO YOUR TAXES RIGHT',
-                            style: TextStyle(
-                              fontSize: 76,
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 10),
-                          child: Text(
-                            'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: Text(
-                            'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 10),
-                          child: TextButton(
-                            onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 25.0),
                             child: Text(
-                              'Discover More >>',
-                              style:
-                                  TextStyle(color: Colors.green, fontSize: 25),
+                              'STAY CONNECT WITH TAXPERTS',
+                              style: TextStyle(
+                                fontSize: 40,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 10),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              ElevatedButton(
-                                onPressed: () {
-                                  // Add your onPressed code here
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Meet Tax Expert ',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    Icon(
-                                      Icons.double_arrow_rounded,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  fixedSize:
-                                      Size(240, 60), // Set the width and height
-                                  primary: Colors
-                                      .green, // Set the background color to green
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        10), // Set the border radius
-                                  ),
-                                ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 25.0),
+                            child: Text(
+                              'DO YOUR TAXES RIGHT',
+                              style: TextStyle(
+                                fontSize: 76,
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
                               ),
-                              const SizedBox(width: 16),
-                              OutlinedButton(
-                                onPressed: () {
-                                  // Add your onPressed code here
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Meet Tax Expert ',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.green, // Text color green
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 25.0, vertical: 10),
+                            child: Text(
+                              'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 25.0),
+                            child: Text(
+                              'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 25.0, vertical: 10),
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Discover More >>',
+                                style: TextStyle(
+                                    color: Colors.green, fontSize: 25),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 25.0, vertical: 10),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ElevatedButton(
+                                  onPressed: () {
+                                    // Add your onPressed code here
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Meet Tax Expert ',
+                                        style: TextStyle(fontSize: 20),
                                       ),
+                                      Icon(
+                                        Icons.double_arrow_rounded,
+                                        color: Colors.white,
+                                      )
+                                    ],
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    fixedSize: Size(
+                                        240, 60), // Set the width and height
+                                    primary: Colors
+                                        .green, // Set the background color to green
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Set the border radius
                                     ),
-                                    Icon(
-                                      Icons.double_arrow_rounded,
-                                      color: Colors.green, // Icon color green
-                                    ),
-                                  ],
-                                ),
-                                style: OutlinedButton.styleFrom(
-                                  fixedSize:
-                                      Size(240, 60), // Set the width and height
-                                  backgroundColor: Colors
-                                      .white, // Set the background color to white
-                                  primary: Colors
-                                      .green, // Primary color used for the text and icon
-                                  side: BorderSide(
-                                      color:
-                                          Colors.green), // Border color green
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        10), // Set the border radius
                                   ),
                                 ),
-                              )
-                            ],
+                                const SizedBox(width: 16),
+                                OutlinedButton(
+                                  onPressed: () {
+                                    // Add your onPressed code here
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Meet Tax Expert ',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color:
+                                              Colors.green, // Text color green
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.double_arrow_rounded,
+                                        color: Colors.green, // Icon color green
+                                      ),
+                                    ],
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    fixedSize: Size(
+                                        240, 60), // Set the width and height
+                                    backgroundColor: Colors
+                                        .white, // Set the background color to white
+                                    primary: Colors
+                                        .green, // Primary color used for the text and icon
+                                    side: BorderSide(
+                                        color:
+                                            Colors.green), // Border color green
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          10), // Set the border radius
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-
-
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 30.0),
+              child: Text(
+                'Taxpert always behind you to meet your compliance obligations',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 340,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/indTax.png'),
+                ),
+                Container(
+                  width: 340,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/bTax.png'),
+                ),
+                Container(
+                  width: 340,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/otherTax.png'),
+                ),
+              ],
+            ),
           ],
         ),
       ),
