@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Componants.dart';
+
 class HomeDesktop extends StatefulWidget {
   const HomeDesktop({super.key});
 
@@ -400,6 +402,77 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 ),
               ],
             ),
+            Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                Positioned.fill(
+                  child: Image.asset(
+                    'images/back02.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20.0),
+                        child: Text(
+                          'Award Winning Taxation-as-a-Service Company in Sri Lanka',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+
+                      Row(
+                        children: [
+                          Expanded(flex: 2, child: Container()),
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+
+                                SizedBox(
+                                    height:
+                                        20), // Add space between the title and the list
+                                AwardDescription(
+                                  title: 'Digital Social Impact Award',
+                                  description:
+                                      'The Information Communication Agency in Sri Lanka (ICTA) was awarded the digital social impact award in 2019 for digitalizing the tax compliance system first time in Sri Lanka.',
+                                ),
+                                AwardDescription(
+                                  title: 'NBQS Award',
+                                  description:
+                                      'Chartered Institute for ICT, Colombo Chapter awarded the National Best Quality Software Award in 2019 for introducing the Taxation System for citizens and businesses to comply easily with their tax compliance obligations.',
+                                ),
+                                AwardDescription(
+                                  title: 'National Ingenuity Award',
+                                  description:
+                                      'The Sri Lanka Association of Software and Services Companies (SLASSCOM) awarded the National Ingenuity Award for the best innovation in business process management at the award ceremony held on 30th March 2021 in Shangri-La, Colombo.',
+                                ),
+                                // ... Add more AwardDescription widgets if needed ...
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(
+                        height: 40,
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+
+
+
           ],
         ),
       ),
