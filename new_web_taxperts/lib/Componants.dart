@@ -46,3 +46,57 @@ class _AwardDescriptionState extends State<AwardDescription> {
     );
   }
 }
+
+
+class ServiceCard extends StatelessWidget {
+  final String title;
+  final String description;
+  final IconData iconData;
+
+  const ServiceCard({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.iconData,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4.0,
+      child: Container(
+        width: 250,
+        height: 300,// Define your width for the card
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(iconData, size: 48.0),
+            SizedBox(height: 10),
+            Text(
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              description,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Handle Learn More tap
+              },
+              child: Text('Learn More'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
