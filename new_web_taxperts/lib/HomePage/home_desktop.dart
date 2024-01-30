@@ -174,7 +174,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: ElevatedButton(
                       onPressed: () {
                         // Action when button is pressed
@@ -184,7 +184,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                         style: TextStyle(fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(140, 40), // Set the width and height
+                        fixedSize: Size(130, 40), // Set the width and height
                         primary:
                             Colors.green, // Set the background color to green
                         shape: RoundedRectangleBorder(
@@ -351,7 +351,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
               ),
             ),
 
-            
+
           ],
         ),
       ),
@@ -361,7 +361,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
   Widget _buildMenuItem(String text, bool isSelected) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: 15.0), // Adjust spacing as needed
+          EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
         onPressed: () {
           // Menu item action
