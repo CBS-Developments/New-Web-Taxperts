@@ -46,18 +46,16 @@ class _AwardDescriptionState extends State<AwardDescription> {
     );
   }
 }
-
-
 class ServiceCard extends StatelessWidget {
   final String title;
   final String description;
-  final IconData iconData;
+  final String assetImagePath; // Use this for local asset image path
 
   const ServiceCard({
     Key? key,
     required this.title,
     required this.description,
-    required this.iconData,
+    required this.assetImagePath, // Pass the asset image path here
   }) : super(key: key);
 
   @override
@@ -66,18 +64,24 @@ class ServiceCard extends StatelessWidget {
       elevation: 4.0,
       child: Container(
         width: 250,
-        height: 300,// Define your width for the card
+        height: 300,
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(iconData, size: 48.0),
+            Image.asset(
+              assetImagePath,
+              width: 70.0, // Set your desired image width
+              height: 70.0, // and height
+              fit: BoxFit.cover, // This is to maintain the aspect ratio of the image
+            ),
             SizedBox(height: 10),
             Text(
               title,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
+                color: Colors.green
               ),
             ),
             SizedBox(height: 10),
@@ -87,13 +91,19 @@ class ServiceCard extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Handle Learn More tap
-              },
-              child: Text('Learn More'),
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    // Handle Learn More tap
+                  },
+                  child: Text('Learn More >>',style: TextStyle(color: Colors.green),),
+                ),
+              ],
             ),
+
           ],
         ),
       ),

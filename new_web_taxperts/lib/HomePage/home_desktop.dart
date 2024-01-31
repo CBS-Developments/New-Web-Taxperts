@@ -460,55 +460,99 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       SizedBox(
                         height: 40,
                       ),
-                      Stack(
-                        children: <Widget>[
-                          // Background content here...
-                          // For example, a background image or color
-                          Container(
-                            decoration: BoxDecoration(
-                                // Add your background decoration here
-                                ),
-                          ),
-                          // Cards scrollable horizontally
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: <Widget>[
-                                // Example of a card, repeat as needed
-                                ServiceCard(
-                                  title: 'Tax Advisory Services',
-                                  description:
-                                      'Taxation is a critical factor for every citizen and business. We provide advise in planning your personal tax and business tax to maximize the benefits.',
-                                  iconData: Icons.account_balance,
-                                ),
-                                ServiceCard(
-                                  title: 'Tax Return Service',
-                                  description:
-                                      'We offer efficient and effective services in calculating and filing tax returns of citizens and businesses in Sri Lanka and overseas.',
-                                  iconData: Icons.pie_chart,
-                                ),
-                                ServiceCard(
-                                  title: 'Expat Tax Services',
-                                  description: 'As an expat employee, you need to pay taxes for the income you received from Sri Lanka and file the return of income.',
-                                  iconData: Icons.flight_land, // Choose an appropriate icon
-                                ),
-                                ServiceCard(
-                                  title: 'Transfer Pricing',
-                                  description: 'Transfer pricing regulation in Sri Lanka is increasing and businesses with associated entities are required to file transfer pricing returns.',
-                                  iconData: Icons.swap_horiz, // Choose an appropriate icon
-                                ),
 
-                                // Add more cards...
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
               ],
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0,top: 20),
+              child: Row(
+                children: [
+                  Text(
+                    'Serve you with Digital Tax Solutions',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0,top: 5,bottom: 20),
+              child: Row(
+                children: [
+                  // Icon(Icons.line_axis),
+                  Text(
+                    'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
+                    style: TextStyle(
+                        fontSize: 20,
+
+                        color: Colors.black
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 400,
+              child: Stack(
+                children: <Widget>[
+                  Positioned.fill(
+                    child: Image.asset(
+                      'images/back03.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  // Cards scrollable horizontally
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          // Example of a card, repeat as needed
+                          ServiceCard(
+                            title: 'Tax Advisory Services',
+                            description:
+                            'Taxation is a critical factor for every citizen and business. We provide advise in planning your personal tax and business tax to maximize the benefits.',
+                            assetImagePath: 'images/mPersonIcon.png',
+
+                          ),
+                          ServiceCard(
+                            title: 'Tax Return Service',
+                            description:
+                            'We offer efficient and effective services in calculating and filing tax returns of citizens and businesses in Sri Lanka and overseas.',
+                            assetImagePath: 'images/trsIcon.png',
+
+                          ),
+                          ServiceCard(
+                            title: 'Expat Tax Services',
+                            description: 'As an expat employee, you need to pay taxes for the income you received from Sri Lanka and file the return of income.',
+                             assetImagePath: 'images/etsIcon.png', // Choose an appropriate icon
+                          ),
+                          ServiceCard(
+                            title: 'Transfer Pricing',
+                            description: 'Transfer pricing regulation in Sri Lanka is increasing and businesses with associated entities are required to file transfer pricing returns.',
+                             assetImagePath: 'images/tpIcon.png', // Choose an appropriate icon
+                          ),
+
+                          // Add more cards...
+                        ],
+                      ),
+                    ],
+                  ),
+
+                ],
+              ),
+            ),
+            SizedBox(height: 30),
           ],
         ),
       ),
