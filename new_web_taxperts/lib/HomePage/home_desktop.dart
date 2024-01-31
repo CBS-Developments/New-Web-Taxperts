@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_web_taxperts/colors.dart';
 
 import '../Componants.dart';
 
@@ -189,7 +190,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(130, 40), // Set the width and height
                         primary:
-                            Colors.green, // Set the background color to green
+                            AppColor.buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(5), // Set the border radius
@@ -237,7 +238,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'DO YOUR TAXES RIGHT',
                               style: TextStyle(
                                 fontSize: 76,
-                                color: Colors.green,
+                                color: AppColor.headingDarkGreen,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -274,7 +275,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               child: Text(
                                 'Discover More >>',
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 25),
+                                    color: AppColor.buttonGreen, fontSize: 25),
                               ),
                             ),
                           ),
@@ -304,8 +305,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                   style: ElevatedButton.styleFrom(
                                     fixedSize: Size(
                                         240, 60), // Set the width and height
-                                    primary: Colors
-                                        .green, // Set the background color to green
+                                    primary: AppColor.buttonGreen,// Set the background color to green
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
                                           10), // Set the border radius
@@ -321,11 +321,11 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Meet Tax Expert ',
+                                        'Estimate Your Tax ',
                                         style: TextStyle(
                                           fontSize: 20,
                                           color:
-                                              Colors.green, // Text color green
+                                          AppColor.buttonGreen, // Text color green
                                         ),
                                       ),
                                       Icon(
@@ -476,7 +476,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green
+                      color: AppColor.headingDarkGreen
                     ),
                   ),
                 ],
@@ -553,6 +553,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
               ),
             ),
             SizedBox(height: 30),
+
           ],
         ),
       ),
@@ -569,7 +570,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
         },
         style: TextButton.styleFrom(
           primary: isSelected
-              ? Colors.green
+              ? AppColor.headingDarkGreen
               : Colors.black, // Text color based on selection
         ),
         child: Text(

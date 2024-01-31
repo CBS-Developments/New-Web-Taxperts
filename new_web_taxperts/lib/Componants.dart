@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_web_taxperts/colors.dart';
 class AwardDescription extends StatefulWidget {
   final String title;
   final String description;
@@ -25,7 +26,7 @@ class _AwardDescriptionState extends State<AwardDescription> {
         style: TextStyle(
           fontSize: 26,
           fontWeight: FontWeight.bold,
-          color: isExpanded ? Colors.green : Colors.black, // Title color changes to green when expanded
+          color: isExpanded ? AppColor.headingDarkGreen : Colors.black, // Title color changes to green when expanded
         ),
       ),
       children: <Widget>[
@@ -36,7 +37,7 @@ class _AwardDescriptionState extends State<AwardDescription> {
       ],
       leading: Icon(
         isExpanded ? Icons.remove : Icons.add,
-        color: isExpanded ? Colors.green : Colors.black,// Changes icon based on whether the tile is expanded or not
+        color: isExpanded ? AppColor.headingDarkGreen : Colors.black,// Changes icon based on whether the tile is expanded or not
       ),
       onExpansionChanged: (bool expanded) {
         setState(() {
@@ -99,7 +100,7 @@ class ServiceCard extends StatelessWidget {
                   onPressed: () {
                     // Handle Learn More tap
                   },
-                  child: Text('Learn More >>',style: TextStyle(color: Colors.green),),
+                  child: Text('Learn More >>',style: TextStyle(color: AppColor.darkTextGreen),),
                 ),
               ],
             ),
