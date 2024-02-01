@@ -47,6 +47,9 @@ class _AwardDescriptionState extends State<AwardDescription> {
     );
   }
 }
+
+
+
 class ServiceCard extends StatelessWidget {
   final String title;
   final String description;
@@ -111,3 +114,226 @@ class ServiceCard extends StatelessWidget {
     );
   }
 }
+
+
+class WFooter extends StatelessWidget {
+  const WFooter({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      color: Colors.black,
+      padding: EdgeInsets.all(20), // Padding around the footer content
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Address Column
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      'images/LogoWh.png', // Replace with your asset path
+                      height: 80, // Adjust the size as necessary
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('No. 101, Olcott Mawatha Colombo', style: TextStyle(color: Colors.white,fontSize: 16)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.email_rounded,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 16)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.phone_in_talk_rounded,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 16)),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(9),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/fbIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/twIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/inIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/ytIcon.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Add social media icons here
+                  ],
+                ),
+              ),
+              // Company Column
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Company', style: TextStyle(color: Colors.white,fontSize: 24, fontWeight: FontWeight.bold)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                    child: Text('Home', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                    child: Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                        child: Text('Services', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                        child: Text('Resources', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                        child: Text('Blog', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: () {  },
+                        child: Text('Contact', style: TextStyle(color: Colors.white,fontSize: 18))),
+                  ),
+
+
+                  // ... add the rest of the company links
+                ],
+              ),
+              // Opening Hours Column
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Opening Hours', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 24)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Mon - Tue: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Wed – Thur: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Fri – Sat: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Saturday: 9.00 - 01.00', style: TextStyle(color: Colors.white,fontSize: 18)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Sunday: Closed', style: TextStyle(color: Colors.white,fontSize: 18)),
+                    ),
+
+                    // ... add the rest of the opening hours
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 60),
+
+
+          Divider(color: Colors.green),
+          SizedBox(height: 10),// The green line
+          Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
+
+        ],
+      ),
+    );
+
+  }
+}
+

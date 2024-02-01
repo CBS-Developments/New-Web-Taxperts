@@ -174,7 +174,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       _buildMenuItem('Services', false),
                       _buildMenuItem('Resources', false),
                       _buildMenuItem('Blog', false),
-                      _buildMenuItem('About', false),
+                      _buildMenuItem('Contact', false),
                     ],
                   ),
                   Padding(
@@ -189,8 +189,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       ),
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(130, 40), // Set the width and height
-                        primary:
-                            AppColor.buttonGreen, // Set the background color to green
+                        primary: AppColor
+                            .buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(5), // Set the border radius
@@ -305,7 +305,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                   style: ElevatedButton.styleFrom(
                                     fixedSize: Size(
                                         240, 60), // Set the width and height
-                                    primary: AppColor.buttonGreen,// Set the background color to green
+                                    primary: AppColor
+                                        .buttonGreen, // Set the background color to green
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
                                           10), // Set the border radius
@@ -324,8 +325,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                         'Estimate Your Tax ',
                                         style: TextStyle(
                                           fontSize: 20,
-                                          color:
-                                          AppColor.buttonGreen, // Text color green
+                                          color: AppColor
+                                              .buttonGreen, // Text color green
                                         ),
                                       ),
                                       Icon(
@@ -427,7 +428,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       ),
                       Row(
                         children: [
-                          Expanded(flex: 2, child: Container()),
+                          Expanded(flex: 2, child:  Image.asset(
+                            'images/swarnawahini.png', // Replace with your asset path
+                            height: 300, ),),
                           Expanded(
                             flex: 3,
                             child: Column(
@@ -460,46 +463,37 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       SizedBox(
                         height: 40,
                       ),
-
                     ],
                   ),
                 ),
               ],
             ),
-
             Padding(
-              padding: const EdgeInsets.only(left: 25.0,top: 20),
+              padding: const EdgeInsets.only(left: 25.0, top: 20),
               child: Row(
                 children: [
                   Text(
                     'Serve you with Digital Tax Solutions',
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: AppColor.headingDarkGreen
-                    ),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.headingDarkGreen),
                   ),
                 ],
               ),
             ),
-
             Padding(
-              padding: const EdgeInsets.only(left: 25.0,top: 5,bottom: 20),
+              padding: const EdgeInsets.only(left: 25.0, top: 5, bottom: 20),
               child: Row(
                 children: [
                   // Icon(Icons.line_axis),
                   Text(
                     'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
-                    style: TextStyle(
-                        fontSize: 20,
-
-                        color: Colors.black
-                    ),
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ],
               ),
             ),
-
             Container(
               height: 400,
               child: Stack(
@@ -521,26 +515,28 @@ class _HomeDesktopState extends State<HomeDesktop> {
                           ServiceCard(
                             title: 'Tax Advisory Services',
                             description:
-                            'Taxation is a critical factor for every citizen and business. We provide advise in planning your personal tax and business tax to maximize the benefits.',
+                                'Taxation is a critical factor for every citizen and business. We provide advise in planning your personal tax and business tax to maximize the benefits.',
                             assetImagePath: 'images/mPersonIcon.png',
-
                           ),
                           ServiceCard(
                             title: 'Tax Return Service',
                             description:
-                            'We offer efficient and effective services in calculating and filing tax returns of citizens and businesses in Sri Lanka and overseas.',
+                                'We offer efficient and effective services in calculating and filing tax returns of citizens and businesses in Sri Lanka and overseas.',
                             assetImagePath: 'images/trsIcon.png',
-
                           ),
                           ServiceCard(
                             title: 'Expat Tax Services',
-                            description: 'As an expat employee, you need to pay taxes for the income you received from Sri Lanka and file the return of income.',
-                             assetImagePath: 'images/etsIcon.png', // Choose an appropriate icon
+                            description:
+                                'As an expat employee, you need to pay taxes for the income you received from Sri Lanka and file the return of income.',
+                            assetImagePath:
+                                'images/etsIcon.png', // Choose an appropriate icon
                           ),
                           ServiceCard(
                             title: 'Transfer Pricing',
-                            description: 'Transfer pricing regulation in Sri Lanka is increasing and businesses with associated entities are required to file transfer pricing returns.',
-                             assetImagePath: 'images/tpIcon.png', // Choose an appropriate icon
+                            description:
+                                'Transfer pricing regulation in Sri Lanka is increasing and businesses with associated entities are required to file transfer pricing returns.',
+                            assetImagePath:
+                                'images/tpIcon.png', // Choose an appropriate icon
                           ),
 
                           // Add more cards...
@@ -548,11 +544,21 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
-            SizedBox(height: 30),
+
+            Container(
+              width: double.infinity,
+              child: Image.asset(
+                'images/why02.png',
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+
+        WFooter(),
+
+
 
           ],
         ),
