@@ -242,7 +242,7 @@ class _HomeTabState extends State<HomeTab> {
 
 
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
+              padding: const EdgeInsets.symmetric(vertical: 30.0,horizontal: 20),
               child: Text(
                 'Taxpert always behind you to meet your compliance obligations',
                 style: TextStyle(
@@ -437,7 +437,15 @@ class _HomeTabState extends State<HomeTab> {
               ),
             ),
 
-            WFooter(),
+            Container(
+              width: double.infinity,
+              child: Image.asset(
+                'images/whtTab.png',
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+
+            WFooterTab(),
 
 
 
