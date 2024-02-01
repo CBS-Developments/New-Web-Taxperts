@@ -24,7 +24,7 @@ class _AwardDescriptionState extends State<AwardDescription> {
       title: Text(
         widget.title,
         style: TextStyle(
-          fontSize: 26,
+          fontSize: 22,
           fontWeight: FontWeight.bold,
           color: isExpanded ? AppColor.headingDarkGreen : Colors.black, // Title color changes to green when expanded
         ),

@@ -23,7 +23,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
           _scrollController.animateTo(
             0.0,
             curve: Curves.easeOut,
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 400),
           );
         },
         child: Icon(Icons.keyboard_arrow_up_rounded,size: 45,),
