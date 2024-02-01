@@ -11,11 +11,26 @@ class HomeDesktop extends StatefulWidget {
 }
 
 class _HomeDesktopState extends State<HomeDesktop> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColor.buttonGreen,
+
+        onPressed: () {
+          _scrollController.animateTo(
+            0.0,
+            curve: Curves.easeOut,
+            duration: const Duration(milliseconds: 300),
+          );
+        },
+        child: Icon(Icons.keyboard_arrow_up_rounded,size: 45,),
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             Container(
