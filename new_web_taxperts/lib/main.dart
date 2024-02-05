@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:new_web_taxperts/ContactPage/contact.dart';
 import 'package:new_web_taxperts/HomePage/home.dart';
 
 void main() {
@@ -16,6 +17,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         scrollBehavior: MyCustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
+        routes: {
+          '/contact': (context) => ContactPage(),
+          // '/Task': (context) => TaskPage(),
+          // '/Log': (context) => TaskLogPage(),
+          // '/createMainTask': (context) => CreateMainTask(),
+          // '/Users': (context) => UsersPage(),
+          // '/createUser': (context) => CreateUserPage(),
+          // '/Beneficiaries': (context) => BeneficiariesPage(),
+          // '/createBeneficiaries': (context) => CreateBeneficiariesPage(),
+          // '/Chat': (context) => ChatScreen(),
+          // '/Users': (context) => UsersScreen(),
+          // '/Meet': (context) => MeetScreen(),
+          // '/Apps': (context) => AppsScreen(),
+        },
       home: HomePage()
     );
   }

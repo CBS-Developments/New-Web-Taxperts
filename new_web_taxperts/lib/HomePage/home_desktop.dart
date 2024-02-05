@@ -182,15 +182,33 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   Row(
                     mainAxisSize: MainAxisSize.min, // To wrap the row width around its children
                     children: <Widget>[
-                      _buildMenuItem('Home',
-                          true), // The 'true' parameter highlights 'Home'
-                      _buildMenuItem('Tax Calculator', false),
-                      _buildMenuItem('Services', false),
-                      _buildMenuItem('Resources', false),
-                      _buildMenuItem('Blog', false),
-                      _buildMenuItem('Contact', false),
+                      _buildMenuItem('Home', true, () {
+                        // Action for Home menu item
+                        Navigator.of(context).pushNamed('/home');
+                      }),
+                      _buildMenuItem('Tax Calculator', false, () {
+                        // Action for Tax Calculator menu item
+                        Navigator.of(context).pushNamed('/tax-calculator');
+                      }),
+                      _buildMenuItem('Services', false, () {
+                        // Action for Services menu item
+                        Navigator.of(context).pushNamed('/services');
+                      }),
+                      _buildMenuItem('Resources', false, () {
+                        // Action for Resources menu item
+                        Navigator.of(context).pushNamed('/resources');
+                      }),
+                      _buildMenuItem('Blog', false, () {
+                        // Action for Blog menu item
+                        Navigator.of(context).pushNamed('/blog');
+                      }),
+                      _buildMenuItem('Contact', false, () {
+                        // Action for Contact menu item
+                        Navigator.of(context).pushNamed('/contact');
+                      }),
                     ],
                   ),
+
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: ElevatedButton(
@@ -589,26 +607,21 @@ class _HomeDesktopState extends State<HomeDesktop> {
     );
   }
 
-  Widget _buildMenuItem(String text, bool isSelected) {
+  Widget _buildMenuItem(String text, bool isSelected, VoidCallback onPressedAction) {
     return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
+      padding: EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
-        onPressed: () {
-          // Menu item action
-        },
+        onPressed: onPressedAction,
         style: TextButton.styleFrom(
-          primary: isSelected
-              ? AppColor.headingDarkGreen
-              : Colors.black, // Text color based on selection
+          primary: isSelected ? AppColor.headingDarkGreen : Colors.black, // Text color based on selection
+          textStyle: TextStyle(
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            fontSize: 18,
+          ),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              fontSize: 18),
-        ),
+        child: Text(text),
       ),
     );
   }
+
 }
