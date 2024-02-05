@@ -9,3 +9,4 @@ class AppColor {
   static Color circleGreen = const Color(0xFFC2E3C1);
 
 }
+

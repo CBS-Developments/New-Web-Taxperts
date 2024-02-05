@@ -180,8 +180,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     height: 60, // Adjust the size as necessary
                   ),
                   Row(
-                    mainAxisSize: MainAxisSize
-                        .min, // To wrap the row width around its children
+                    mainAxisSize: MainAxisSize.min, // To wrap the row width around its children
                     children: <Widget>[
                       _buildMenuItem('Home',
                           true), // The 'true' parameter highlights 'Home'
@@ -217,7 +216,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
               ),
             ),
             Container(
-              height: 600,
+              height: 700,
               child: Stack(
                 children: <Widget>[
                   Positioned.fill(
@@ -236,25 +235,27 @@ class _HomeDesktopState extends State<HomeDesktop> {
                         children: <Widget>[
                           Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 25.0),
+                                const EdgeInsets.symmetric(horizontal: 25.0,),
                             child: Text(
                               'STAY CONNECT WITH TAXPERTS',
                               style: TextStyle(
+                                fontFamily: 'Inter',
                                 fontSize: 40,
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w400
                               ),
                             ),
                           ),
                           Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 25.0),
+                                const EdgeInsets.symmetric(horizontal: 25.0,vertical: 15),
                             child: Text(
                               'DO YOUR TAXES RIGHT',
                               style: TextStyle(
                                 fontSize: 76,
                                 color: AppColor.headingDarkGreen,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w800,
+                                fontFamily: 'Inter',
                               ),
                             ),
                           ),
@@ -267,6 +268,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               style: TextStyle(
                                 fontSize: 25,
                                 color: Colors.black,
+
                               ),
                             ),
                           ),
@@ -290,13 +292,15 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               child: Text(
                                 'Discover More >>',
                                 style: TextStyle(
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w500,
                                     color: AppColor.buttonGreen, fontSize: 25),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 25.0, vertical: 10),
+                                horizontal: 25.0, vertical: 20),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
@@ -309,7 +313,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                     children: [
                                       Text(
                                         'Meet Tax Expert ',
-                                        style: TextStyle(fontSize: 20),
+                                        style: TextStyle(fontSize: 20,fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,),
                                       ),
                                       Icon(
                                         Icons.double_arrow_rounded,
@@ -340,6 +345,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                         'Estimate Your Tax ',
                                         style: TextStyle(
                                           fontSize: 20,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
                                           color: AppColor
                                               .buttonGreen, // Text color green
                                         ),
@@ -382,7 +389,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 'Taxpert always behind you to meet your compliance obligations',
                 style: TextStyle(
                     fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w600,
                     color: Colors.black),
               ),
             ),
