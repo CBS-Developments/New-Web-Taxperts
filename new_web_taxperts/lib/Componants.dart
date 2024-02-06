@@ -557,3 +557,51 @@ class WFooterTab extends StatelessWidget {
 }
 
 
+
+class ContactInfoDesk extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String content;
+
+  const ContactInfoDesk({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.content,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 50, // Adjust the size accordingly
+          backgroundColor: Colors.green, // Your brand color
+          child: Icon(
+            icon,
+            size: 50, // Adjust the size accordingly
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: 25),
+        Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+            color: Colors.black,
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          content,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            color: Colors.black,
+          ),
+        ),
+      ],
+    );
+  }
+}

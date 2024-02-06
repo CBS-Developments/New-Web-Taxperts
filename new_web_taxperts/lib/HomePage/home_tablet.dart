@@ -33,12 +33,40 @@ class _HomeTabState extends State<HomeTab> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       PopupMenuButton<String>(
-                        onSelected: (String result) {
-                          // Handle menu item selection
+                        onSelected: (String value) {
+                          switch (value) {
+                            case 'Home':
+                            // Action for Home
+                              Navigator.of(context).pushNamed('/home');
+                              break;
+                            case 'Tax Calculator':
+                            // Action for Tax Calculator
+                              Navigator.of(context).pushNamed('/tax-calculator');
+                              break;
+                            case 'Services':
+                            // Action for Services
+                              Navigator.of(context).pushNamed('/services');
+                              break;
+                            case 'Resources':
+                            // Action for Resources
+                              Navigator.of(context).pushNamed('/resources');
+                              break;
+                            case 'Blog':
+                            // Action for Blog
+                              Navigator.of(context).pushNamed('/blog');
+                              break;
+                            case 'Contact':
+                            // Action for Contact
+                              Navigator.of(context).pushNamed('/contact');
+                              break;
+                          // Add more cases for other menu items as needed
+                            default:
+                            // Handle unknown case
+                              break;
+                          }
                         },
-                        itemBuilder: (BuildContext context) =>
-                            <PopupMenuEntry<String>>[
-                          _buildPopupMenuItem('Home', true),
+                        itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                          _buildPopupMenuItem('Home', true), // Assuming no item is selected by default
                           _buildPopupMenuItem('Tax Calculator', false),
                           _buildPopupMenuItem('Services', false),
                           _buildPopupMenuItem('Resources', false),

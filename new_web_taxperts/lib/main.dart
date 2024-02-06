@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
         routes: {
           '/contact': (context) => ContactPage(),
-          // '/Task': (context) => TaskPage(),
+          '/home': (context) => HomePage(),
           // '/Log': (context) => TaskLogPage(),
           // '/createMainTask': (context) => CreateMainTask(),
           // '/Users': (context) => UsersPage(),
