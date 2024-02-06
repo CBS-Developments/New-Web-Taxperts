@@ -605,3 +605,33 @@ class ContactInfoDesk extends StatelessWidget {
     );
   }
 }
+
+
+class CustomFormField extends StatelessWidget {
+  final String label;
+  final Widget child;
+
+  const CustomFormField({
+    Key? key,
+    required this.label,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+          ),
+          SizedBox(height: 8),
+          child,
+        ],
+      ),
+    );
+  }
+}
