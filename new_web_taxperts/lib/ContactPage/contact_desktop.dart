@@ -343,6 +343,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 15.0,
+                      horizontal: 10
                     ),
                     child: Text(
                       'Contact Info',
@@ -361,21 +362,36 @@ class _ContactDesktopState extends State<ContactDesktop> {
                         MainAxisAlignment.spaceEvenly, // Space items out evenly
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ContactInfoDesk(
-                        icon: Icons.phone,
-                        title: 'Call Us',
-                        content: '077 714 8839\n011 242 4922',
+                      Row(
+                        children: [
+                          SizedBox(width: 40,),
+                          ContactInfoDesk(
+                            icon: Icons.phone,
+                            title: 'Call Us',
+                            content: '077 714 8839\n011 242 4922',
+                          ),
+                        ],
                       ),
-                      ContactInfoDesk(
-                        icon: Icons.email,
-                        title: 'Mail Us',
-                        content: 'connect@taxperts.lk',
+                      Row(
+                        children: [
+                          SizedBox(width: 80,),
+                          ContactInfoDesk(
+                            icon: Icons.email,
+                            title: 'Mail Us',
+                            content: 'connect@taxperts.lk',
+                          ),
+                        ],
                       ),
-                      ContactInfoDesk(
-                        icon: Icons.location_on,
-                        title: 'Address',
-                        content:
-                            'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo',
+                      Row(
+                        children: [
+                          SizedBox(width: 40,),
+                          ContactInfoDesk(
+                            icon: Icons.location_on,
+                            title: 'Address',
+                            content:
+                                'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo',
+                          ),
+                        ],
                       ),
                     ],
                   ),

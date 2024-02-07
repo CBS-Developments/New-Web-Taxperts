@@ -607,6 +607,56 @@ class ContactInfoDesk extends StatelessWidget {
 }
 
 
+class ContactInfoTab extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String content;
+
+  const ContactInfoTab({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.content,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 40, // Adjust the size accordingly
+          backgroundColor: Colors.green, // Your brand color
+          child: Icon(
+            icon,
+            size: 40, // Adjust the size accordingly
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: 20),
+        Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.black,
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          content,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
 class CustomFormField extends StatelessWidget {
   final String label;
   final Widget child;
