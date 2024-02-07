@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:new_web_taxperts/BlogPage/blog.dart';
 import 'package:new_web_taxperts/ContactPage/contact.dart';
 import 'package:new_web_taxperts/HomePage/home.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/contact': (context) => ContactPage(),
           '/home': (context) => HomePage(),
-          // '/Log': (context) => TaskLogPage(),
+          '/blog': (context) => BlogPage(),
           // '/createMainTask': (context) => CreateMainTask(),
           // '/Users': (context) => UsersPage(),
           // '/createUser': (context) => CreateUserPage(),
