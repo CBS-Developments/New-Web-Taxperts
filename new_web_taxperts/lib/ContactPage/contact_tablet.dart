@@ -90,6 +90,7 @@ class _ContactTabletState extends State<ContactTablet> {
                         padding: const EdgeInsets.symmetric(horizontal: 15.0),
                         child: ElevatedButton(
                           onPressed: () {
+                            Navigator.of(context).pushNamed('/start');
                             // Action when button is pressed
                           },
                           child: Text(

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:new_web_taxperts/BlogPage/blog.dart';
 import 'package:new_web_taxperts/ContactPage/contact.dart';
+import 'package:new_web_taxperts/FormPage/form.dart';
 import 'package:new_web_taxperts/HomePage/home.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           '/contact': (context) => ContactPage(),
           '/home': (context) => HomePage(),
           '/blog': (context) => BlogPage(),
-          // '/createMainTask': (context) => CreateMainTask(),
+          '/start': (context) => FormPage(),
           // '/Users': (context) => UsersPage(),
           // '/createUser': (context) => CreateUserPage(),
           // '/Beneficiaries': (context) => BeneficiariesPage(),

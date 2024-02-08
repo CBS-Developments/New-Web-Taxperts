@@ -213,6 +213,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: ElevatedButton(
                       onPressed: () {
+                        Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
                       child: Text(
