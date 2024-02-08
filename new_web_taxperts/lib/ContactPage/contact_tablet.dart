@@ -581,7 +581,13 @@ class _ContactTabletState extends State<ContactTablet> {
 
             Container(
               height: 300,
-              color: Colors.white,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'images/map300.png'), // Replace with your image path
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
 
             WFooterTab(),

@@ -578,7 +578,13 @@ class _ContactDesktopState extends State<ContactDesktop> {
           ),
           Container(
             height: 400,
-            color: Colors.white,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'images/mapDesk.png'), // Replace with your image path
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
 
           WFooter(),
