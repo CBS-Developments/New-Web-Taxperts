@@ -20,7 +20,7 @@ class _BlogTabletState extends State<BlogTablet> {
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+                    children: [
                 Image.asset(
                   'images/Logo.png',
                   height: 50,

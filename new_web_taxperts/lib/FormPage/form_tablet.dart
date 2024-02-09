@@ -11,6 +11,24 @@ class _FormTabletState extends State<FormTablet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Mobile',));
+      body: Column(children: [
+        Container(
+          width: double.infinity,
+          height: 80,
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(
+              horizontal: 20.0), // Adjust padding as needed
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'images/Logo.png', // Replace with your asset path
+                height: 50, // Adjust the size as necessary
+              ),
+            ],
+          ),
+        ),
+      ],
+      ),);
   }
 }
