@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/blog': (context) => BlogPage(),
           '/start': (context) => FormPage(),
-          '/service': (context) => ServicePage(),
+          '/services': (context) => ServicePage(),
           // '/createUser': (context) => CreateUserPage(),
           // '/Beneficiaries': (context) => BeneficiariesPage(),
           // '/createBeneficiaries': (context) => CreateBeneficiariesPage(),

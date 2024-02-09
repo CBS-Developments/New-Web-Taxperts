@@ -685,3 +685,160 @@ class CustomFormField extends StatelessWidget {
     );
   }
 }
+
+
+class ServicePageCard extends StatelessWidget {
+  final String title;
+  final String description;
+  final String assetImagePath; // Use this for local asset image path
+
+  const ServicePageCard({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.assetImagePath, // Pass the asset image path here
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5.0,
+      child: Container(
+        width: 420,
+        height: 480,
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: CircleAvatar(
+                radius: 60,
+                backgroundColor: AppColor.circleGreen,
+                child: Image.asset(
+                  assetImagePath,
+                  width: 70.0, // Set your desired image width
+                  height: 70.0, // and height
+                  fit: BoxFit.cover, // This is to maintain the aspect ratio of the image
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              title,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                  color: Colors.green
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            // SizedBox(height: 30),
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     TextButton(
+            //       onPressed: () {
+            //         // Handle Learn More tap
+            //       },
+            //       child: Text('Learn More >>',style: TextStyle(color: AppColor.darkTextGreen),),
+            //     ),
+            //   ],
+            // ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class ServicePageCardTab extends StatelessWidget {
+  final String title;
+  final String description;
+  final String assetImagePath; // Use this for local asset image path
+
+  const ServicePageCardTab({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.assetImagePath, // Pass the asset image path here
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5.0,
+      child: Container(
+        width: 350,
+        height: 400,
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: AppColor.circleGreen,
+                child: Image.asset(
+                  assetImagePath,
+                  width: 60.0, // Set your desired image width
+                  height: 60.0, // and height
+                  fit: BoxFit.cover, // This is to maintain the aspect ratio of the image
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              title,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Colors.green
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            // SizedBox(height: 30),
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     TextButton(
+            //       onPressed: () {
+            //         // Handle Learn More tap
+            //       },
+            //       child: Text('Learn More >>',style: TextStyle(color: AppColor.darkTextGreen),),
+            //     ),
+            //   ],
+            // ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
