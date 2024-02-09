@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_web_taxperts/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../Componants.dart';
 
@@ -119,15 +120,17 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(9),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white,
+                        GestureDetector(
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(9),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/fbIcon.png'),
                           ),
-                          child: Image.asset('images/fbIcon.png'),
                         ),
                         Container(
                           width: 35,
@@ -149,15 +152,26 @@ class _HomeDesktopState extends State<HomeDesktop> {
                           ),
                           child: Image.asset('images/inIcon.png'),
                         ),
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: ()async {
+                            const url = 'https://www.youtube.com/@taxperts';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              // You can show an error message or handle the failure in your preferred way
+                              print('Could not launch $url');
+                            }
+                          },
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/ytIcon.png'),
                           ),
-                          child: Image.asset('images/ytIcon.png'),
                         ),
                       ],
                     ),
