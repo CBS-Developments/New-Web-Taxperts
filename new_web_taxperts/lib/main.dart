@@ -6,6 +6,7 @@ import 'package:new_web_taxperts/ContactPage/contact.dart';
 import 'package:new_web_taxperts/FormPage/form.dart';
 import 'package:new_web_taxperts/HomePage/home.dart';
 import 'package:new_web_taxperts/ServicePage/Service.dart';
+import 'package:new_web_taxperts/TaxCalculator/calculator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           '/blog': (context) => BlogPage(),
           '/start': (context) => FormPage(),
           '/services': (context) => ServicePage(),
-          // '/createUser': (context) => CreateUserPage(),
+          '/tax-calculator': (context) => CalculatorPage(),
           // '/Beneficiaries': (context) => BeneficiariesPage(),
           // '/createBeneficiaries': (context) => CreateBeneficiariesPage(),
           // '/Chat': (context) => ChatScreen(),
