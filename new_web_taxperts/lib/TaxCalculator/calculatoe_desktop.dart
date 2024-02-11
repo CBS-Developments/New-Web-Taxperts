@@ -211,68 +211,9 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
       //   title: Text('Desktop View'),
       // ),
       body:
-
       // Left Menu Start
       Row(
         children: [
-          Container(
-            width: GContainerWidth(context),
-            color: Colors.green.shade400,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Image.asset(
-                //   // 'assets/images/cal.png',
-                //   width: ImageWidth(context),
-                //   height: ImageHeight(context),
-                // ),
-                Text(
-                  "Estimate Individual Tax Payable",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: getFontLarge(context),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: SmSizeBoxHeight(context),
-                ),
-                Text(
-                  "Calculate your quarterly income tax payable at free with Taxperts. ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: getFontNormal(context),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: SmSizeBoxHeight(context),
-                ),
-                Text(
-                  "The tax year is starts on 01st April and ends at 31st March.",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: getFontNormal(context),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                // MyButton(
-                //     onTap: () {
-                //       Navigator.push(context,
-                //           MaterialPageRoute(builder: (context) {
-                //             return new Login();
-                //           }));
-                //     },
-                //     childText: 'Login'),
-              ],
-            ),
-          ),
-
-          // Left Menu End
-
           Container(
             color: Colors.white,
             width: TextContWidth(context),
@@ -989,6 +930,8 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
           ),
         ],
       ),
+
+
     );
   }
 
