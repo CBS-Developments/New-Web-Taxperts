@@ -991,6 +991,85 @@ class ServicePageCardTab extends StatelessWidget {
 }
 
 
+class ServicePageCardMobile extends StatelessWidget {
+  final String title;
+  final String description;
+  final String assetImagePath; // Use this for local asset image path
+
+  const ServicePageCardMobile({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.assetImagePath, // Pass the asset image path here
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5.0,
+      child: Container(
+        width: 280,
+        height: 320,
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundColor: AppColor.circleGreen,
+                child: Image.asset(
+                  assetImagePath,
+                  width: 50.0, // Set your desired image width
+                  height: 50.0, // and height
+                  fit: BoxFit.cover, // This is to maintain the aspect ratio of the image
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              title,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.green
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+            ),
+            // SizedBox(height: 30),
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     TextButton(
+            //       onPressed: () {
+            //         // Handle Learn More tap
+            //       },
+            //       child: Text('Learn More >>',style: TextStyle(color: AppColor.darkTextGreen),),
+            //     ),
+            //   ],
+            // ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
 class BlogCard extends StatelessWidget {
   final String title;
   final String text;
