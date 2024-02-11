@@ -558,6 +558,153 @@ class WFooterTab extends StatelessWidget {
 }
 
 
+class WFooterMobile extends StatelessWidget {
+  const WFooterMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black,
+      padding: EdgeInsets.all(20), // Padding around the footer content
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Address Column
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      'images/LogoWh.png', // Replace with your asset path
+                      height: 70, // Adjust the size as necessary
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('No. 101, Olcott Mawatha Colombo', style: TextStyle(color: Colors.white,fontSize: 12)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.email_rounded,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.phone_in_talk_rounded,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(9),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/fbIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/twIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/inIcon.png'),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/ytIcon.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Add social media icons here
+                  ],
+                ),
+              ),
+              // Company Column
+
+
+            ],
+          ),
+          SizedBox(height: 40),
+
+
+          Divider(color: Colors.green),
+          SizedBox(height: 10),// The green line
+          Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
+
+        ],
+      ),
+    );
+  }
+}
+
+
 
 class ContactInfoDesk extends StatelessWidget {
   final IconData icon;
