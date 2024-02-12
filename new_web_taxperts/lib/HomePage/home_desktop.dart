@@ -300,7 +300,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 22,
                                 color: Colors.black,
 
                               ),
@@ -313,7 +313,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 22,
                                 color: Colors.black,
                               ),
                             ),
@@ -328,7 +328,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                 style: TextStyle(
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.w500,
-                                    color: AppColor.buttonGreen, fontSize: 25),
+                                    color: AppColor.buttonGreen, fontSize: 20),
                               ),
                             ),
                           ),
@@ -429,10 +429,10 @@ class _HomeDesktopState extends State<HomeDesktop> {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center, // Adjust to center if you want them closer but not touching
               children: [
                 Container(
-                  width: 340,
+                  width: 320,
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -440,8 +440,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   ),
                   child: Image.asset('images/indTax.png'),
                 ),
+                SizedBox(width: 20), // Control the space between the first and second container
                 Container(
-                  width: 340,
+                  width: 320,
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -449,8 +450,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   ),
                   child: Image.asset('images/bTax.png'),
                 ),
+                SizedBox(width: 20), // Control the space between the second and third container
                 Container(
-                  width: 340,
+                  width: 320,
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -460,6 +462,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 ),
               ],
             ),
+
             Stack(
               alignment: Alignment.center,
               children: <Widget>[
