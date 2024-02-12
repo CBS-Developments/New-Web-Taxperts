@@ -965,8 +965,8 @@ class ServicePageCard extends StatelessWidget {
     return Card(
       elevation: 5.0,
       child: Container(
-        width: 420,
-        height: 480,
+        width: 380,
+        height: 450,
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

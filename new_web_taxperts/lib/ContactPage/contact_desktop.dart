@@ -460,9 +460,23 @@ class _ContactDesktopState extends State<ContactDesktop> {
                                             ),
                                             value: _selectedTaxType,
                                             items: [
-                                              'Tax Type 1',
-                                              'Tax Type 2',
-                                              'Tax Type 3'
+                                              'Individual Income Tax (IIT)',
+                                              'Corporate Income Tax (CIT)',
+                                              'Partnership Income Tax (PIT) ',
+                                              'Value Added Tax (VAT)',
+                                              'Advance Personal Income Tax (APIT)',
+                                              'Advance Income Tax (AIT)',
+                                              'Capital Gain Tax (CGT)',
+                                              'Simplified Value Added Tax (SVAT)',
+                                              'Stamp Duty (SD)',
+                                              'Other Taxes ',
+                                              'Transfer Pricing',
+                                              'International Double Taxation',
+                                              'Expat Taxation',
+                                              'Tax Advisory Services',
+                                              'Return Compliance',
+                                              'Social Security Contribution Levy (SSCL)',
+                                              'With Holding Tax (WHT)'
                                             ].map((String value) {
                                               return DropdownMenuItem<String>(
                                                 value: value,
