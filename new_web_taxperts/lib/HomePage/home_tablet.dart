@@ -339,9 +339,10 @@ class _HomeTabState extends State<HomeTab> {
                         child: Text(
                           'Award Winning Taxation-as-a-Service Company in Sri Lanka',
                           style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              fontSize: 30,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black),
                         ),
                       ),
                       Row(
@@ -397,8 +398,9 @@ class _HomeTabState extends State<HomeTab> {
                   Text(
                     'Serve you with Digital Tax Solutions',
                     style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
                         color: AppColor.headingDarkGreen),
                   ),
                 ],
@@ -407,9 +409,12 @@ class _HomeTabState extends State<HomeTab> {
             Padding(
               padding: const EdgeInsets.only(
                   left: 25.0, top: 5, bottom: 20, right: 25),
-              child: Text(
-                'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
-                style: TextStyle(fontSize: 18, color: Colors.black),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: Text(
+                  'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
               ),
             ),
             Container(
