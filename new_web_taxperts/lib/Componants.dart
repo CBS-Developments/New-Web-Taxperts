@@ -565,7 +565,7 @@ class WFooterMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      padding: EdgeInsets.all(20), // Padding around the footer content
+      padding: EdgeInsets.all(15), // Padding around the footer content
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -804,6 +804,57 @@ class ContactInfoTab extends StatelessWidget {
 }
 
 
+class ContactInfoMobile extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String content;
+
+  const ContactInfoMobile({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.content,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 30, // Adjust the size accordingly
+          backgroundColor: Colors.green, // Your brand color
+          child: Icon(
+            icon,
+            size: 30, // Adjust the size accordingly
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: 15),
+        Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.black,
+          ),
+        ),
+        SizedBox(height: 5),
+        Text(
+          content,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+
 
 class CustomFormField extends StatelessWidget {
   final String label;
@@ -827,6 +878,37 @@ class CustomFormField extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
           ),
           SizedBox(height: 8),
+          child,
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class CustomFormFieldMobile extends StatelessWidget {
+  final String label;
+  final Widget child;
+
+  const CustomFormFieldMobile({
+    Key? key,
+    required this.label,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+          ),
+          SizedBox(height: 5),
           child,
         ],
       ),
