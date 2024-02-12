@@ -158,11 +158,16 @@ class _ContactDesktopState extends State<ContactDesktop> {
                         vertical: 5.0, horizontal: 15),
                     child: Text(
                       'Meet the Consultants',
+                      // style: TextStyle(
+                      //     color: Colors.green,
+                      //     fontSize: 35,
+                      //     fontFamily: 'Almarai',
+                      //     fontWeight: FontWeight.w800),
                       style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 35,
-                          fontFamily: 'Almarai',
-                          fontWeight: FontWeight.w800),
+                          fontSize: 30,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green),
                     ),
                   ),
                   Padding(
@@ -204,7 +209,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                             Text(
                               'Founder/Chief Compliance',
                               style: TextStyle(
-                                fontSize: 26,
+                                fontSize: 20,
                                 color: Colors.grey,
                               ),
                             ),
@@ -349,10 +354,10 @@ class _ContactDesktopState extends State<ContactDesktop> {
                     child: Text(
                       'Contact Info',
                       style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 36,
-                          fontFamily: 'Almarai',
-                          fontWeight: FontWeight.w800),
+                          fontSize: 30,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green),
                     ),
                   ),
                   SizedBox(
@@ -425,11 +430,10 @@ class _ContactDesktopState extends State<ContactDesktop> {
                       child: Text(
                         'Get In Touch',
                         style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 34,
-                            fontFamily: 'Almarai',
-                            fontWeight: FontWeight.w800,
-                        ),
+                            fontSize: 30,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green),
                       ),
                     ),
                     SizedBox(height: 20),
