@@ -477,9 +477,10 @@ class _HomeDesktopState extends State<HomeDesktop> {
                         child: Text(
                           'Award Winning Taxation-as-a-Service Company in Sri Lanka',
                           style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              fontSize: 30,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black),
                         ),
                       ),
                       Row(
@@ -532,7 +533,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     'Serve you with Digital Tax Solutions',
                     style: TextStyle(
                         fontSize: 30,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
                         color: AppColor.headingDarkGreen),
                   ),
                 ],
@@ -543,9 +545,12 @@ class _HomeDesktopState extends State<HomeDesktop> {
               child: Row(
                 children: [
                   // Icon(Icons.line_axis),
-                  Text(
-                    'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Text(
+                      'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    ),
                   ),
                 ],
               ),
