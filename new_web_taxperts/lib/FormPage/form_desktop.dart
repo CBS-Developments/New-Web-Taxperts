@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_web_taxperts/Componants.dart';
 
+import '../colors.dart';
+
 class FormDesktop extends StatefulWidget {
   const FormDesktop({super.key});
 
@@ -32,24 +34,33 @@ class _FormDesktopState extends State<FormDesktop> {
           ),
 
         Container(
+          color: Colors.white,
           margin: EdgeInsets.symmetric(horizontal: 160,vertical: 50),
-          padding: EdgeInsets.all(20.0),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Request a callback',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
+              Container(
+                height: 80,
+                width: double.infinity,
+                color: AppColor.darkTextGreen,
+                child: Center(
+                  child: Text(
+                    'Request a callback',
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 20.0),
-              Container(
-                height: 100,
-                color: Colors.grey.shade700,
-              ),
-              SizedBox(height: 20.0),
+              // Container(
+              //   height: 100,
+              //   color: Colors.grey.shade700,
+              // ),
+              // SizedBox(height: 20.0),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -125,37 +136,49 @@ class _FormDesktopState extends State<FormDesktop> {
                 ],
               ),
               SizedBox(height: 20.0),
-              Text(
-                'Do you have Taxpayer Identification Number (TIN)?',
-                style: TextStyle(
-                  fontSize: 16.0,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:40.0),
+                child: Text(
+                  'Do you have Taxpayer Identification Number (TIN)?',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
-              Row(
-                children: <Widget>[
-                  Radio(
-                    value: 'Yes',
-                    groupValue: null,
-                    onChanged: (value) {},
-                  ),
-                  Text('Yes'),
-                  Radio(
-                    value: 'No',
-                    groupValue: null,
-                    onChanged: (value) {},
-                  ),
-                  Text('No'),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:40.0),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      value: 'Yes',
+                      groupValue: null,
+                      onChanged: (value) {},
+                    ),
+                    Text('Yes',style: TextStyle(
+                      fontSize: 18.0,
+                    ),),
+                    Radio(
+                      value: 'No',
+                      groupValue: null,
+                      onChanged: (value) {},
+                    ),
+                    Text('No',style: TextStyle(
+                      fontSize: 18.0,
+                    ),),
+                  ],
+                ),
               ),
               SizedBox(height: 20.0),
               CustomFormField(
                 label: 'Message: ',
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'Message',
-                    filled: true,
-                    fillColor: Colors.grey[200],
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
                   ),
+                ),
                   keyboardType: TextInputType.multiline,
                   minLines: 3,
                   maxLines: 5,
@@ -167,15 +190,27 @@ class _FormDesktopState extends State<FormDesktop> {
                   onPressed: () {
                     // TODO: Submit callback request
                   },
-                  child: Text('Submit'),
+                  child: Text('Submit',style: TextStyle(
+                    fontSize: 18
+                  ),),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
+                    fixedSize: Size(
+                        120, 40), // Set the width and height
+                    primary: AppColor
+                        .buttonGreen, // Set the background color to green
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          5), // Set the border radius
+                    ),
                   ),
                 ),
               ),
+
+              SizedBox(height: 20.0),
             ],
           ),
         ),
+          WFooter(),
         ],
         ),
       ),

@@ -292,6 +292,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               ),
                             ),
                           ),
+
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
