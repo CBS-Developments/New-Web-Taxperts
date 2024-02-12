@@ -1263,3 +1263,117 @@ class BlogCard extends StatelessWidget {
     );
   }
 }
+
+
+class BlogCardMobile extends StatelessWidget {
+  final String title;
+  final String text;
+  final String assetImagePath;
+  final VoidCallback onTap;
+
+  const BlogCardMobile({
+    Key? key,
+    required this.title,
+    required this.text,
+    required this.assetImagePath,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Card(
+          elevation: 5,
+          clipBehavior: Clip.antiAlias,
+          child: Container(
+            width:350,
+            height: 200,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(
+                  assetImagePath,
+                  fit: BoxFit.cover, // This will cover the entire space of the container
+                  width: double.infinity, // Ensure the image covers the card width
+                  height: double.infinity, // Ensure the image covers the card height
+                ),
+
+                Positioned(
+                  top: 75, // Position the button from the top of the Stack
+                  child: ElevatedButton(
+                    onPressed: onTap,
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(
+                          0), // Removes elevation
+                      overlayColor: MaterialStateProperty.all(
+                          Colors.transparent), // Removes splash color
+                      padding: MaterialStateProperty.all(
+                          EdgeInsets.zero), // Removes default padding
+                      backgroundColor: MaterialStateProperty.all(Colors
+                          .transparent), // Sets button background color to white
+                      // shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      //   RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(40), // Adjust the border radius as needed
+                      //   ),
+                      // ),
+                    ),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(
+                                0.5), // Shadow color with opacity
+                            spreadRadius: 1, // Spread radius
+                            blurRadius: 3, // Blur radius
+                            offset: Offset(
+                                0, 1), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Image.asset(
+                          'images/YTRed.png'), // Make sure this asset exists in your project
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            text,
+            textAlign: TextAlign.start,
+            style: TextStyle(color: Colors.black87,),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
