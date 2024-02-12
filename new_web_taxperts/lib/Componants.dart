@@ -102,6 +102,7 @@ class ServiceCard extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
+                    Navigator.of(context).pushNamed('/services');
                     // Handle Learn More tap
                   },
                   child: Text('Learn More >>',style: TextStyle(color: AppColor.darkTextGreen),),
