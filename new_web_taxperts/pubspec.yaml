@@ -40,6 +40,8 @@ dependencies:
   url_launcher: ^6.1.14
   pattern_formatter: ^3.0.0
   fluttertoast: ^8.2.4
+  http: any
+  awesome_snackbar_content: ^0.1.1
 
 dev_dependencies:
   flutter_test:
