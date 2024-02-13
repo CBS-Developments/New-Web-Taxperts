@@ -127,10 +127,10 @@ class _HomeTabState extends State<HomeTab> {
                             child: Text(
                               'STAY CONNECT WITH TAXPERTS',
                               style: TextStyle(
-                                  fontSize: 32,
+                                  fontSize: 28,
                                   color: Colors.black,
                                   fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400),
+                                  fontWeight: FontWeight.w600),
                             ),
                           ),
                           Padding(
@@ -153,7 +153,7 @@ class _HomeTabState extends State<HomeTab> {
                               'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: Colors.black,
                               ),
                             ),
@@ -165,7 +165,7 @@ class _HomeTabState extends State<HomeTab> {
                               'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: Colors.black,
                               ),
                             ),
@@ -174,13 +174,15 @@ class _HomeTabState extends State<HomeTab> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/services');
+                              },
                               child: Text(
                                 'Discover More >>',
                                 style: TextStyle(
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.w500,
-                                    color: AppColor.buttonGreen, fontSize: 20),
+                                    color: AppColor.buttonGreen, fontSize: 18),
                               ),
                             ),
                           ),
@@ -192,7 +194,7 @@ class _HomeTabState extends State<HomeTab> {
                               children: <Widget>[
                                 ElevatedButton(
                                   onPressed: () {
-                                    // Add your onPressed code here
+                                    Navigator.of(context).pushNamed('/contact');// Add your onPressed code here
                                   },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -222,7 +224,7 @@ class _HomeTabState extends State<HomeTab> {
                                 const SizedBox(width: 16),
                                 OutlinedButton(
                                   onPressed: () {
-                                    // Add your onPressed code here
+                                    Navigator.of(context).pushNamed('/tax-calculator');// Add your onPressed code here
                                   },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,

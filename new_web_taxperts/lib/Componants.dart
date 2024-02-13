@@ -708,40 +708,80 @@ class WFooterMobile extends StatelessWidget {
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
                             ),
-                            child: Image.asset('images/fbIcon.png'),
+                            child: InkWell(
+                              onTap: () async {
+                                const url = 'https://www.facebook.com/taxpertsconnect/'; // Replace with your specific Facebook link
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Image.asset('images/fbIcon.png'),
+                            ),
                           ),
                           Container(
                             width: 35,
                             height: 35,
                             margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10), // Adjusted padding as per your code
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
                             ),
-                            child: Image.asset('images/twIcon.png'),
+                            child: InkWell(
+                              onTap: () async {
+                                const url = 'https://www.twitter.com'; // Replace with your specific Twitter link
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Image.asset('images/twIcon.png'),
+                            ),
                           ),
                           Container(
                             width: 35,
                             height: 35,
                             margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(12),
+                            padding: EdgeInsets.all(12), // Adjusted to match your provided code
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
                             ),
-                            child: Image.asset('images/inIcon.png'),
+                            child: InkWell(
+                              onTap: () async {
+                                const url = 'https://www.linkedin.com/company/taxpertsconnect/'; // Replace with the actual LinkedIn link
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Image.asset('images/inIcon.png'),
+                            ),
                           ),
                           Container(
                             width: 35,
                             height: 35,
                             margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10), // Your specified padding
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
                             ),
-                            child: Image.asset('images/ytIcon.png'),
+                            child: InkWell(
+                              onTap: () async {
+                                const url = 'https://www.youtube.com/channel/UC6Sz6giO9XxD6CapxYs6-CQ'; // Replace with your specific YouTube link
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Image.asset('images/ytIcon.png'),
+                            ),
                           ),
                         ],
                       ),

@@ -134,10 +134,10 @@ class _HomeMobileState extends State<HomeMobile> {
                             child: Text(
                               'STAY CONNECT WITH TAXPERTS',
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400),
+                                  fontWeight: FontWeight.w600),
                             ),
                           ),
                           Padding(
@@ -181,7 +181,9 @@ class _HomeMobileState extends State<HomeMobile> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/services');
+                              },
                               child: Text(
                                 'Discover More >>',
                                 style: TextStyle(

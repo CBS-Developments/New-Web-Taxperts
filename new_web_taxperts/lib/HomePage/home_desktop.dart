@@ -304,9 +304,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'STAY CONNECT WITH TAXPERTS',
                               style: TextStyle(
                                 fontFamily: 'Inter',
-                                fontSize: 40,
+                                fontSize: 35,
                                 color: Colors.black,
-                                fontWeight: FontWeight.w400
+                                fontWeight: FontWeight.w600
                               ),
                             ),
                           ),
@@ -331,7 +331,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 22,
+                                fontSize: 20,
                                 color: Colors.black,
 
                               ),
@@ -344,7 +344,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 22,
+                                fontSize: 20,
                                 color: Colors.black,
                               ),
                             ),
@@ -353,7 +353,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/services');
+                              },
                               child: Text(
                                 'Discover More >>',
                                 style: TextStyle(
@@ -371,7 +373,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                               children: <Widget>[
                                 ElevatedButton(
                                   onPressed: () {
-                                    // Add your onPressed code here
+                                    Navigator.of(context).pushNamed('/contact');// Add your onPressed code here
                                   },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -401,7 +403,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                 const SizedBox(width: 16),
                                 OutlinedButton(
                                   onPressed: () {
-                                    // Add your onPressed code here
+                                    Navigator.of(context).pushNamed('/tax-calculator');// Add your onPressed code here
                                   },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
