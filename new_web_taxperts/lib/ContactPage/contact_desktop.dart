@@ -395,7 +395,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                             icon: Icons.location_on,
                             title: 'Address',
                             content:
-                                'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo',
+                                'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo 11',
                           ),
                         ],
                       ),

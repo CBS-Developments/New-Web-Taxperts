@@ -306,7 +306,7 @@ class _HomeMobileState extends State<HomeMobile> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.white,
                     ),
-                    child: Image.asset('images/indTax.png'),
+                    child: Image.asset('images/Indtax1.png'),
                   ),
                   Container(
                     width: 220,
@@ -316,7 +316,7 @@ class _HomeMobileState extends State<HomeMobile> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.white,
                     ),
-                    child: Image.asset('images/bTax.png'),
+                    child: Image.asset('images/bTax1.png'),
                   ),
                   Container(
                     width: 220,
@@ -326,7 +326,7 @@ class _HomeMobileState extends State<HomeMobile> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.white,
                     ),
-                    child: Image.asset('images/otherTax.png'),
+                    child: Image.asset('images/Otax1.png'),
                   ),
                   // Add more widgets here if needed
                 ],
@@ -503,7 +503,7 @@ class _HomeMobileState extends State<HomeMobile> {
             Container(
               width: double.infinity,
               child: Image.asset(
-                'images/whtTab.png',
+                'images/WhyCh.png',
                 fit: BoxFit.fitHeight,
               ),
             ),
