@@ -15,12 +15,10 @@ class TextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(TextContMargin(context)),
+      padding: EdgeInsets.all(9.3),
       color: Colors.white,
-      width: TextContWidth(context),
-      height: TextContHeight(context),
       child: Text(childText,
-        style: TextStyle(fontSize: fontSize ,fontWeight: FontWeight.bold,color: textColor),
+        style: TextStyle(fontSize: fontSize ,color: textColor),
       ),
     );
   }
@@ -40,17 +38,16 @@ class TexfeildContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(TextFContMargin(context)),
-      color: Colors.white,
-      width: textFContWidth(context),
-      height: TextContHeight(context),
+      padding: EdgeInsets.all(5),
+
+      width: 200,
+      height: 40,
       child: TextField(
         controller: controller,
-        textAlignVertical: TextAlignVertical.bottom,
-        textAlign: TextAlign.right,
         maxLines: 1,
+        textAlign: TextAlign.right,
         style: TextStyle(
-          fontSize: getFontMe(context),
+          fontSize: 16,
         ),
         keyboardType:
         const TextInputType.numberWithOptions(decimal: true, signed: false),
@@ -58,6 +55,7 @@ class TexfeildContainer extends StatelessWidget {
           ThousandsFormatter(allowFraction: true),
         ],
         decoration: InputDecoration(
+
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),
             ),
@@ -66,11 +64,8 @@ class TexfeildContainer extends StatelessWidget {
             ),
             fillColor: Colors.white,
             filled: true,
-            hintText: hintText,
-            hintStyle: TextStyle(
-              color: Colors.grey[500],
-              fontSize: getFontMe(context),
-            )),
+          contentPadding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10),
+            ),
       ),
     );
   }
@@ -104,15 +99,10 @@ class SecTextFeildContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(TextContMargin(context)),
+      padding: EdgeInsets.all(5),
       color: Colors.white,
-      width: secTextWidth(context),
-      height: secTextHeight(context),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(childText,
-          style: TextStyle(fontSize: fontSize ,fontWeight: FontWeight.bold,color: textColor),
-        ),
+      child: Text(childText,
+        style: TextStyle(fontSize: fontSize ,fontWeight: FontWeight.bold,color: textColor),
       ),
     );
   }
@@ -122,6 +112,7 @@ class SecTextFeildContainer extends StatelessWidget {
 class RedioContainer extends StatelessWidget {
   final int groupValue;
   final int value;
+  final String timeText;
   final ValueChanged<int?> onChanged; // Correctly accepts null values for onChanged callback.
 
   const RedioContainer({
@@ -129,22 +120,26 @@ class RedioContainer extends StatelessWidget {
     required this.groupValue,
     required this.value,
     required this.onChanged,
+    required this.timeText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      width: secTextWidth(context), // Ensure secTextWidth is defined or provided.
-      height: secTextHeight(context), // Ensure secTextHeight is defined or provided.
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Radio<int>(
-          activeColor: Colors.green,
-          value: value,
-          groupValue: groupValue,
-          onChanged: onChanged, // Directly pass the onChanged callback.
-        ),
+      width: 100, // Ensure secTextWidth is defined or provided.
+      height: 40, // Ensure secTextHeight is defined or provided.
+      child: Row(
+        children: [
+          Radio<int>(
+            activeColor: Colors.green,
+            value: value,
+            groupValue: groupValue,
+            onChanged: onChanged, // Directly pass the onChanged callback.
+          ),
+          
+          Text(timeText)
+        ],
       ),
     );
   }

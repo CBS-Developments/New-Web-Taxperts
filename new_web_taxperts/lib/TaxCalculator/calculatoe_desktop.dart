@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:new_web_taxperts/colors.dart';
 
 import '../CalculatorComponants.dart';
 import '../Sizes.dart';
@@ -207,774 +208,1119 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Desktop View'),
-      // ),
-      body:
-      // Left Menu Start
-      Row(
-        children: [
-          Container(
-            color: Colors.white,
-            width: TextContWidth(context),
-            child: Column(
-              children: [
-                TextContainer(
-                    childText: 'Gains & Profits',
-                    fontSize: getFontLarge(context),
-                    textColor: Colors.green),
-                TextContainer(
-                    childText: 'Gross Salary',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Profits from Business',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Interest Income',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Dividend Income',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Rent Income',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Professional Services/Service Fees',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Royalty',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Other Income',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
+      backgroundColor: AppColor.backGreen,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+              child: Text(
+                'Tax Calculator 2023/2024',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: AppColor.textDark,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Inter',
                 ),
-                TextContainer(
-                    childText: 'Qualifying Payments',
-                    fontSize: getFontLarge(context),
-                    textColor: Colors.green),
-                TextContainer(
-                    childText: 'Donation to approved charity',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                TextContainer(
-                    childText: 'Donation to Government',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SizedBox(
-                  height: LaSizeBoxHeight(context),
-                ),
-                TextContainer(
-                    childText: 'Tax Credits',
-                    fontSize: getFontLarge(context),
-                    textColor: Colors.green),
-                TextContainer(
-                    childText: 'Installment Payment',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    visibility = true;
-                    generatePayableTheQuarter(
-                      grossSalary,
-                      grossSalaryId,
-                      grossSalaryRadioButtonItem,
-                      profitsFromBusiness,
-                      profitsFromBusinessId,
-                      profitsFromBusinessRadioButtonItem,
-                      interestIncome,
-                      interestIncomeId,
-                      interestIncomeRadioButtonItem,
-                      dividendIncome,
-                      dividendIncomeId,
-                      dividendIncomeRadioButtonItem,
-                      rentIncome,
-                      rentIncomeId,
-                      rentIncomeRadioButtonItem,
-                      otherIncome,
-                      otherIncomeId,
-                      otherIncomeRadioButtonItem,
-                      professionalServices,
-                      professionalServiceId,
-                      professionalServiceRadioButtonItem,
-                      royalty,
-                      royaltyId,
-                      royaltyRadioButtonItem,
-                      aitWht,
-                      aitWhtId,
-                      aitWhtRadioButtonItem,
-                      donationToApprovedCharity,
-                      donationToApprovedCharityId,
-                      donationToApprovedCharityRadioButtonItem,
-                      donationToGovernment,
-                      donationToGovernmentId,
-                      donationToGovernmentRadioButtonItem,
-                      installmentPayment,
-                      installmentPaymentId,
-                      installmentPaymentRadioButtonItem,
-                      quarterId,
-                    );
-                  },
-                  child: TextContainer(
-                      childText: 'Click here to get computation',
-                      fontSize: getFontLarge(context),
-                      textColor: Colors.blue),
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                if (visibility == true) ...[
-                  TextContainer(
-                      childText: 'Tax Summary:',
-                      fontSize: getFontLarge(context),
-                      textColor: Colors.green),
-                  TextContainer(
-                      childText: 'Total Gains and Profits',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: 'Tax Payable',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: 'Tax Deducted at Source (TDS)',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: 'Self Assessment Payment',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: 'Balance Tax Payable/(Refunds',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                ] else ...[
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontLarge(context),
-                      textColor: Colors.green),
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                ]
-              ],
+              ),
             ),
-          ),
-          //2nd Row End
+            Container(
+              color: Colors.white,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    height: 180,
+                    color: AppColor.conGreen,
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Text(
+                            'Estimate Individual Tax Payable',
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 45.0, vertical: 2),
+                          child: Text(
+                            '- Calculate your quarterly income tax payable at free with Taxperts',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 45.0, vertical: 2),
+                          child: Row(
+                            children: [
+                              Text(
+                                '- The tax year is starts on ',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontFamily: 'Inter',
+                                ),
+                              ),
+                              Text(
+                                '01st April and ends at 31st March',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 45.0, vertical: 2),
+                          child: Text(
+                            '- Find out how Tax changes affect you',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 45.0, vertical: 2),
+                    child: Text(
+                      'Gains & Profits',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextContainer(
+                                  childText: 'Gross Salary',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Profits from Business',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Interest Income',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Dividend Income',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Rent Income',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText:
+                                      'Professional Services/Service Fees',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Royalty',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Other Income',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TexfeildContainer(
+                                controller: grossSalary,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: profitsFromBusiness,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: interestIncome,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: dividendIncome,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: rentIncome,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: professionalServices,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: royalty,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: otherIncome,
+                                hintText: 'amount',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: grossSalaryId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    grossSalaryRadioButtonItem = 12;
+                                    grossSalaryId = 1;
+                                  });
+                                },
+                                value: 1,
+                                timeText: 'Monthly',
+                              ),
+                              RedioContainer(
+                                groupValue: profitsFromBusinessId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    profitsFromBusinessRadioButtonItem = 12;
+                                    profitsFromBusinessId = 4;
+                                  });
+                                },
+                                value: 4,
+                                timeText: 'Monthly',
+                              ),
+                              RedioContainer(
+                                  groupValue: interestIncomeId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      interestIncomeRadioButtonItem = 12;
+                                      interestIncomeId = 7;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 7),
+                              RedioContainer(
+                                  groupValue: dividendIncomeId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      dividendIncomeRadioButtonItem = 12;
+                                      dividendIncomeId = 10;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 10),
+                              RedioContainer(
+                                  groupValue: rentIncomeId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      rentIncomeRadioButtonItem = 12;
+                                      rentIncomeId = 13;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 13),
+                              RedioContainer(
+                                  groupValue: professionalServiceId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      professionalServiceRadioButtonItem = 12;
+                                      professionalServiceId = 16;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 16),
+                              RedioContainer(
+                                  groupValue: royaltyId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      royaltyRadioButtonItem = 12;
+                                      royaltyId = 19;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 19),
+                              RedioContainer(
+                                  groupValue: otherIncomeId,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      otherIncomeRadioButtonItem = 12;
+                                      otherIncomeId = 22;
+                                    });
+                                  },
+                                  timeText: 'Monthly',
+                                  value: 22),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: grossSalaryId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      grossSalaryRadioButtonItem = 4;
+                                      grossSalaryId = 2;
+                                    });
+                                  }
+                                },
+                                value: 2,
+                                timeText: 'Quarterly',
+                              ),
+                              RedioContainer(
+                                groupValue: profitsFromBusinessId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      profitsFromBusinessRadioButtonItem = 4;
+                                      profitsFromBusinessId = 5;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 5,
+                              ),
+                              RedioContainer(
+                                groupValue: interestIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      interestIncomeRadioButtonItem = 12;
+                                      interestIncomeId = 8;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 8,
+                              ),
+                              RedioContainer(
+                                groupValue: dividendIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      dividendIncomeRadioButtonItem = 12;
+                                      dividendIncomeId = 11;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 11,
+                              ),
+                              RedioContainer(
+                                groupValue: rentIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      rentIncomeRadioButtonItem = 12;
+                                      rentIncomeId = 14;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 14,
+                              ),
+                              RedioContainer(
+                                groupValue: professionalServiceId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      professionalServiceRadioButtonItem = 12;
+                                      professionalServiceId = 17;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 17,
+                              ),
+                              RedioContainer(
+                                groupValue: royaltyId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      royaltyRadioButtonItem = 12;
+                                      royaltyId = 20;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 20,
+                              ),
+                              RedioContainer(
+                                groupValue: otherIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      otherIncomeRadioButtonItem = 12;
+                                      otherIncomeId = 23;
+                                    });
+                                  }
+                                },
+                                timeText: 'Quarterly',
+                                value: 23,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: grossSalaryId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      grossSalaryRadioButtonItem = 1;
+                                      grossSalaryId = 3;
+                                    });
+                                  }
+                                },
+                                value: 3,
+                                timeText: 'Annually',
+                              ),
+                              RedioContainer(
+                                groupValue: profitsFromBusinessId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      profitsFromBusinessRadioButtonItem = 1;
+                                      profitsFromBusinessId = 6;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 6,
+                              ),
+                              RedioContainer(
+                                groupValue: interestIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      interestIncomeRadioButtonItem = 1;
+                                      interestIncomeId = 9;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 9,
+                              ),
+                              RedioContainer(
+                                groupValue: dividendIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      dividendIncomeRadioButtonItem = 1;
+                                      dividendIncomeId = 12;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 12,
+                              ),
+                              RedioContainer(
+                                groupValue: rentIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      rentIncomeRadioButtonItem = 1;
+                                      rentIncomeId = 15;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 15,
+                              ),
+                              RedioContainer(
+                                groupValue: professionalServiceId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      professionalServiceRadioButtonItem = 1;
+                                      professionalServiceId = 18;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 18,
+                              ),
+                              RedioContainer(
+                                groupValue: royaltyId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      royaltyRadioButtonItem = 1;
+                                      royaltyId = 21;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 21,
+                              ),
+                              RedioContainer(
+                                groupValue: otherIncomeId,
+                                onChanged: (int? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      otherIncomeRadioButtonItem = 1;
+                                      otherIncomeId = 24;
+                                    });
+                                  }
+                                },
+                                timeText: 'Annually',
+                                value: 24,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 45.0, vertical: 2),
+                    child: Text(
+                      'Qualifying Payments',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextContainer(
+                                  childText: 'Donation to approved charity',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Donation to Government',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TexfeildContainer(
+                                controller: donationToApprovedCharity,
+                                hintText: 'amount',
+                              ),
+                              TexfeildContainer(
+                                controller: donationToGovernment,
+                                hintText: 'amount',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: donationToApprovedCharityId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToApprovedCharityRadioButtonItem =
+                                        12;
+                                    donationToApprovedCharityId = 25;
+                                  });
+                                },
+                                value: 25,
+                                timeText: 'Monthly',
+                              ),
+                              RedioContainer(
+                                groupValue: donationToGovernmentId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToApprovedCharityRadioButtonItem =
+                                        12;
+                                    donationToGovernmentId = 28;
+                                  });
+                                },
+                                value: 28,
+                                timeText: 'Monthly',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: donationToApprovedCharityId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToApprovedCharityRadioButtonItem =
+                                        12;
+                                    donationToApprovedCharityId = 26;
+                                  });
+                                },
+                                value: 26,
+                                timeText: 'Quarterly',
+                              ),
+                              RedioContainer(
+                                groupValue: donationToGovernmentId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToGovernmentRadioButtonItem = 12;
+                                    donationToGovernmentId = 29;
+                                  });
+                                },
+                                value: 29,
+                                timeText: 'Quarterly',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: donationToApprovedCharityId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToApprovedCharityRadioButtonItem =
+                                        1;
+                                    donationToApprovedCharityId = 27;
+                                  });
+                                },
+                                value: 27,
+                                timeText: 'Annually',
+                              ),
+                              RedioContainer(
+                                groupValue: donationToGovernmentId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    donationToGovernmentRadioButtonItem = 1;
+                                    donationToGovernmentId = 30;
+                                  });
+                                },
+                                value: 30,
+                                timeText: 'Annually',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 45.0, vertical: 2),
+                    child: Text(
+                      'Tax Credits',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextContainer(
+                                  childText: 'Installment Payment',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TexfeildContainer(
+                                controller: installmentPayment,
+                                hintText: 'amount',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                color: Colors.white,
+                                width: 100,
+                                height: 40,
+                              )
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: installmentPaymentId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    installmentPaymentRadioButtonItem = 12;
+                                    installmentPaymentId = 32;
+                                  });
+                                },
+                                value: 32,
+                                timeText: 'Quarterly',
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RedioContainer(
+                                groupValue: installmentPaymentId,
+                                onChanged: (val) {
+                                  setState(() {
+                                    installmentPaymentRadioButtonItem = 1;
+                                    installmentPaymentId = 33;
+                                  });
+                                },
+                                value: 33,
+                                timeText: 'Annually',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            visibility = true;
+                            generatePayableTheQuarter(
+                              grossSalary,
+                              grossSalaryId,
+                              grossSalaryRadioButtonItem,
+                              profitsFromBusiness,
+                              profitsFromBusinessId,
+                              profitsFromBusinessRadioButtonItem,
+                              interestIncome,
+                              interestIncomeId,
+                              interestIncomeRadioButtonItem,
+                              dividendIncome,
+                              dividendIncomeId,
+                              dividendIncomeRadioButtonItem,
+                              rentIncome,
+                              rentIncomeId,
+                              rentIncomeRadioButtonItem,
+                              otherIncome,
+                              otherIncomeId,
+                              otherIncomeRadioButtonItem,
+                              professionalServices,
+                              professionalServiceId,
+                              professionalServiceRadioButtonItem,
+                              royalty,
+                              royaltyId,
+                              royaltyRadioButtonItem,
+                              aitWht,
+                              aitWhtId,
+                              aitWhtRadioButtonItem,
+                              donationToApprovedCharity,
+                              donationToApprovedCharityId,
+                              donationToApprovedCharityRadioButtonItem,
+                              donationToGovernment,
+                              donationToGovernmentId,
+                              donationToGovernmentRadioButtonItem,
+                              installmentPayment,
+                              installmentPaymentId,
+                              installmentPaymentRadioButtonItem,
+                              quarterId,
+                            );
+                          },
+                          child: Text(
+                            'Get Computation ',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            fixedSize:
+                                Size(220, 50), // Set the width and height
+                            primary: AppColor
+                                .conGreen, // Set the background color to green
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  10), // Set the border radius
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/contact');
+                            // Add your onPressed code here
+                          },
+                          child: Text(
+                            'Clear ',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            fixedSize:
+                                Size(160, 50), // Set the width and height
+                            primary: Colors
+                                .redAccent, // Set the background color to green
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  10), // Set the border radius
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
 
-          Container(
-            color: Colors.white,
-            width: textFContWidth(context),
-            child: Column(
-              children: [
-                const BlankContainer(),
-                TexfeildContainer(
-                  controller: grossSalary,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: profitsFromBusiness,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: interestIncome,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: dividendIncome,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: rentIncome,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: professionalServices,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: royalty,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: otherIncome,
-                  hintText: 'amount',
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                const BlankContainer(),
-                TexfeildContainer(
-                  controller: donationToApprovedCharity,
-                  hintText: 'amount',
-                ),
-                TexfeildContainer(
-                  controller: donationToGovernment,
-                  hintText: 'amount',
-                ),
-                SizedBox(
-                  height: LaSizeBoxHeight(context),
-                ),
-                const BlankContainer(),
-                TexfeildContainer(
-                  controller: installmentPayment,
-                  hintText: 'amount',
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                const BlankContainer(),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                if (visibility == true) ...[
-                  TextContainer(
-                      childText: 'Quarter',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                ] else ...[
-                  TextContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
+                  Divider(),
+
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Expanded(child:
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (visibility == true) ...[
+                              Text(
+                                'Tax Credits',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: AppColor.conGreen,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              TextContainer(
+                                  childText: 'Total Gains and Profits',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Tax Payable',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Tax Deducted at Source (TDS)',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Self Assessment Payment',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: 'Balance Tax Payable/(Refunds',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ] else ...[
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontLarge(context),
+                                  textColor: Colors.green),
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                            ]
+                          ],
+                        ),
+                        ),
+
+                        Expanded(child:
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (visibility == true) ...[
+                              Text(
+                                'Annual',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.bold),
+                              ),
+
+                              TextContainer(
+                                  childText: '$totalGanisAndProfitAnnuallyVar',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varTotalTaxpayableforTheYear',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varTdsAnnualy',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$annuallyInstalmentPayment',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varBalanceTaxPayableForTheYear',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ] else ...[
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                            ],
+
+
+                          ],
+                        ),
+                        ),
+
+                        Expanded(child:
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (visibility == true) ...[
+                              Text(
+                                'Quarter',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.bold),
+                              ),
+
+                              TextContainer(
+                                  childText: '$totalGanisAndProfitQuartlyVar',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varTotalTaxpayableforTheQuarter',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varTdsQuartly',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$quartlyInstalmentPayment',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                              TextContainer(
+                                  childText: '$varBalanceTaxPayableForTheQuarter',
+                                  fontSize: 18,
+                                  textColor: Colors.black),
+                            ] else ...[
+                              TextContainer(
+                                  childText: '',
+                                  fontSize: getFontMe(context),
+                                  textColor: Colors.black),
+                            ],
+
+                          ],
+                        ),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
-                SecTextFeildContainer(
-                    childText: '$totalGanisAndProfitQuartlyVar',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varTotalTaxpayableforTheQuarter',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varTdsQuartly',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$quartlyInstalmentPayment',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varBalanceTaxPayableForTheQuarter',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-              ],
+              ),
             ),
-          ),
 
-          //Monthly Row Start
-          Container(
-            width: buttonContWidth(context),
-            color: Colors.white,
-            child: Column(
-              children: [
-                SecTextFeildContainer(
-                    childText: 'Monthly',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                RedioContainer(
-                  groupValue: grossSalaryId,
-                  onChanged: (val) {
-                    setState(() {
-                      grossSalaryRadioButtonItem = 12;
-                      grossSalaryId = 1;
-                    });
-                  },
-                  value: 1,
-                ),
-                RedioContainer(
-                    groupValue: profitsFromBusinessId,
-                    onChanged: (val) {
-                      setState(() {
-                        profitsFromBusinessRadioButtonItem = 12;
-                        profitsFromBusinessId = 4;
-                      });
-                    },
-                    value: 4),
-                RedioContainer(
-                    groupValue: interestIncomeId,
-                    onChanged: (val) {
-                      setState(() {
-                        interestIncomeRadioButtonItem = 12;
-                        interestIncomeId = 7;
-                      });
-                    },
-                    value: 7),
-                RedioContainer(
-                    groupValue: dividendIncomeId,
-                    onChanged: (val) {
-                      setState(() {
-                        dividendIncomeRadioButtonItem = 12;
-                        dividendIncomeId = 10;
-                      });
-                    },
-                    value: 10),
-                RedioContainer(
-                    groupValue: rentIncomeId,
-                    onChanged: (val) {
-                      setState(() {
-                        rentIncomeRadioButtonItem = 12;
-                        rentIncomeId = 13;
-                      });
-                    },
-                    value: 13),
-                RedioContainer(
-                    groupValue: professionalServiceId,
-                    onChanged: (val) {
-                      setState(() {
-                        professionalServiceRadioButtonItem = 12;
-                        professionalServiceId = 16;
-                      });
-                    },
-                    value: 16),
-                RedioContainer(
-                    groupValue: royaltyId,
-                    onChanged: (val) {
-                      setState(() {
-                        royaltyRadioButtonItem = 12;
-                        royaltyId = 19;
-                      });
-                    },
-                    value: 19),
-                RedioContainer(
-                    groupValue: otherIncomeId,
-                    onChanged: (val) {
-                      setState(() {
-                        otherIncomeRadioButtonItem = 12;
-                        otherIncomeId = 22;
-                      });
-                    },
-                    value: 22),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                SecTextFeildContainer(
-                    childText: '',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                RedioContainer(
-                    groupValue: donationToApprovedCharityId,
-                    onChanged: (val) {
-                      setState(() {
-                        donationToApprovedCharityRadioButtonItem = 12;
-                        donationToApprovedCharityId = 25;
-                      });
-                    },
-                    value: 25),
-                RedioContainer(
-                    groupValue: donationToGovernmentId,
-                    onChanged: (val) {
-                      setState(() {
-                        donationToApprovedCharityRadioButtonItem = 12;
-                        donationToGovernmentId = 28;
-                      });
-                    },
-                    value: 28),
-                SizedBox(
-                  height: LaSizeBoxHeight(context),
-                ),
-                SecTextFeildContainer(
-                    childText: '',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                SecTextFeildContainer(
-                    childText: '',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                if (visibility == true) ...[
-                  SecTextFeildContainer(
-                      childText: 'Annual',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                ] else ...[
-                  SecTextFeildContainer(
-                      childText: '',
-                      fontSize: getFontMe(context),
-                      textColor: Colors.black),
-                ],
-                SecTextFeildContainer(
-                    childText: '$totalGanisAndProfitAnnuallyVar',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varTotalTaxpayableforTheYear',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varTdsAnnualy',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$annuallyInstalmentPayment',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-                SecTextFeildContainer(
-                    childText: '$varBalanceTaxPayableForTheYear',
-                    fontSize: getFontMe(context),
-                    textColor: Colors.black),
-              ],
-            ),
-          ),
+            SizedBox(height: 25,)
 
-          // Quarterly Row Start
-          Container(
-            width: buttonContWidth(context),
-            color: Colors.white,
-            child: Column(
-              children: [
-                SecTextFeildContainer(
-                  childText: 'Quarterly',
-                  fontSize: getFontMe(context),
-                  textColor: Colors.black,
-                ),
-                RedioContainer(
-                  groupValue: grossSalaryId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        grossSalaryRadioButtonItem = 4;
-                        grossSalaryId = 2;
-                      });
-                    }
-                  },
-                  value: 2,
-                ),
-                RedioContainer(
-                  groupValue: profitsFromBusinessId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        profitsFromBusinessRadioButtonItem = 4;
-                        profitsFromBusinessId = 5;
-                      });
-                    }
-                  },
-                  value: 5,
-                ),
-                RedioContainer(
-                  groupValue: interestIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        interestIncomeRadioButtonItem = 12;
-                        interestIncomeId = 8;
-                      });
-                    }
-                  },
-                  value: 8,
-                ),
-                RedioContainer(
-                  groupValue: dividendIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        dividendIncomeRadioButtonItem = 12;
-                        dividendIncomeId = 11;
-                      });
-                    }
-                  },
-                  value: 11,
-                ),
-                RedioContainer(
-                  groupValue: rentIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        rentIncomeRadioButtonItem = 12;
-                        rentIncomeId = 14;
-                      });
-                    }
-                  },
-                  value: 14,
-                ),
-                RedioContainer(
-                  groupValue: professionalServiceId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        professionalServiceRadioButtonItem = 12;
-                        professionalServiceId = 17;
-                      });
-                    }
-                  },
-                  value: 17,
-                ),
-                RedioContainer(
-                  groupValue: royaltyId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        royaltyRadioButtonItem = 12;
-                        royaltyId = 20;
-                      });
-                    }
-                  },
-                  value: 20,
-                ),
-                RedioContainer(
-                  groupValue: otherIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        otherIncomeRadioButtonItem = 12;
-                        otherIncomeId = 23;
-                      });
-                    }
-                  },
-                  value: 23,
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                // The rest of your RadioContainers follows here with similar onChanged pattern
-                // ...
-              ],
-            ),
-          ),
-// Annual Row Start
-          Container(
-            width: buttonContWidth(context),
-            color: Colors.white,
-            child: Column(
-              children: [
-                SecTextFeildContainer(
-                  childText: 'Annual',
-                  fontSize: getFontMe(context),
-                  textColor: Colors.black,
-                ),
-                RedioContainer(
-                  groupValue: grossSalaryId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        grossSalaryRadioButtonItem = 1;
-                        grossSalaryId = 3;
-                      });
-                    }
-                  },
-                  value: 3,
-                ),
-                RedioContainer(
-                  groupValue: profitsFromBusinessId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        profitsFromBusinessRadioButtonItem = 1;
-                        profitsFromBusinessId = 6;
-                      });
-                    }
-                  },
-                  value: 6,
-                ),
-                RedioContainer(
-                  groupValue: interestIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        interestIncomeRadioButtonItem = 1;
-                        interestIncomeId = 9;
-                      });
-                    }
-                  },
-                  value: 9,
-                ),
-                RedioContainer(
-                  groupValue: dividendIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        dividendIncomeRadioButtonItem = 1;
-                        dividendIncomeId = 12;
-                      });
-                    }
-                  },
-                  value: 12,
-                ),
-                RedioContainer(
-                  groupValue: rentIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        rentIncomeRadioButtonItem = 1;
-                        rentIncomeId = 15;
-                      });
-                    }
-                  },
-                  value: 15,
-                ),
-                RedioContainer(
-                  groupValue: professionalServiceId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        professionalServiceRadioButtonItem = 1;
-                        professionalServiceId = 18;
-                      });
-                    }
-                  },
-                  value: 18,
-                ),
-                RedioContainer(
-                  groupValue: royaltyId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        royaltyRadioButtonItem = 1;
-                        royaltyId = 21;
-                      });
-                    }
-                  },
-                  value: 21,
-                ),
-                RedioContainer(
-                  groupValue: otherIncomeId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        otherIncomeRadioButtonItem = 1;
-                        otherIncomeId = 24;
-                      });
-                    }
-                  },
-                  value: 24,
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                // The rest of your RadioContainers follows here with similar onChanged pattern
-                RedioContainer(
-                  groupValue: donationToApprovedCharityId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        donationToApprovedCharityRadioButtonItem = 1;
-                        donationToApprovedCharityId = 27;
-                      });
-                    }
-                  },
-                  value: 27,
-                ),
-                RedioContainer(
-                  groupValue: donationToGovernmentId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        donationToGovernmentRadioButtonItem = 1;
-                        donationToGovernmentId = 30;
-                      });
-                    }
-                  },
-                  value: 30,
-                ),
-                SizedBox(
-                  height: LaSizeBoxHeight(context),
-                ),
-                // Additional containers if needed
-                RedioContainer(
-                  groupValue: installmentPaymentId,
-                  onChanged: (int? newValue) {
-                    if (newValue != null) {
-                      setState(() {
-                        installmentPaymentRadioButtonItem = 1;
-                        installmentPaymentId = 33;
-                      });
-                    }
-                  },
-                  value: 33,
-                ),
-                SizedBox(
-                  height: MeSizeBoxHeight(context),
-                ),
-                // Additional spacing or elements as needed
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
-
-
     );
   }
 
   Future<bool> generatePayableTheQuarter(
-      TextEditingController grossSalary, //
-      int grossSalaryId, //
-      int grossSalaryValue, //
-      TextEditingController profitsFromBusiness, //
-      int profitsFromBusinessId, //
-      int profitsFromBusinessValue, //
-      TextEditingController interestIncome, //
-      int interestIncomeId, //
-      int interestIncomeValue, //
-      TextEditingController dividendIncome, //
-      int dividendIncomeId, //
-      int dividendIncomeValue, //
-      TextEditingController rentIncome, //
-      int rentIncomeId, //
-      int rentIncomeValue, //
-      TextEditingController otherIncome, //
-      int otherIncomeId, //
-      int otherIncomeValue, //
-      TextEditingController professiionalServices, //
-      int professiionalServiceId, //
-      int professiionalServiceValue,
-      TextEditingController royalty, //
-      int royaltyId, //
-      int royaltyValue,
-      TextEditingController aitWht, //
-      int aitWhtId, //
-      int aitWhtValue,
-      TextEditingController donationToApprovedCharity, //
-      int donationToApprovedCharityId, //
-      int donationToApprovedCharityValue, //
-      TextEditingController donationToGovernment, //
-      int donationToGovernmentId, //
-      int donationToGovernmentValue, //
-      TextEditingController instament,
-      int instamentId,
-      int instamentValue,
-      int quarter, //
-      ) async
-  {
+    TextEditingController grossSalary, //
+    int grossSalaryId, //
+    int grossSalaryValue, //
+    TextEditingController profitsFromBusiness, //
+    int profitsFromBusinessId, //
+    int profitsFromBusinessValue, //
+    TextEditingController interestIncome, //
+    int interestIncomeId, //
+    int interestIncomeValue, //
+    TextEditingController dividendIncome, //
+    int dividendIncomeId, //
+    int dividendIncomeValue, //
+    TextEditingController rentIncome, //
+    int rentIncomeId, //
+    int rentIncomeValue, //
+    TextEditingController otherIncome, //
+    int otherIncomeId, //
+    int otherIncomeValue, //
+    TextEditingController professiionalServices, //
+    int professiionalServiceId, //
+    int professiionalServiceValue,
+    TextEditingController royalty, //
+    int royaltyId, //
+    int royaltyValue,
+    TextEditingController aitWht, //
+    int aitWhtId, //
+    int aitWhtValue,
+    TextEditingController donationToApprovedCharity, //
+    int donationToApprovedCharityId, //
+    int donationToApprovedCharityValue, //
+    TextEditingController donationToGovernment, //
+    int donationToGovernmentId, //
+    int donationToGovernmentValue, //
+    TextEditingController instament,
+    int instamentId,
+    int instamentValue,
+    int quarter, //
+  ) async {
     annualGrossSalary = 0;
     monthlyGrossSalary = 0;
     annualProfitsFromBusiness = 0;
@@ -1645,7 +1991,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
       // } else {
       //   totalDifferent = aa;
       double totalForDonationApplicableAmount3 =
-      (donationApplicableAmount / 3).roundToDouble();
+          (donationApplicableAmount / 3).roundToDouble();
 
       //   if (log) {
       print("***** Donation applicable amount ****** " +

@@ -8,6 +8,8 @@ class AppColor {
   static Color background = const Color(0xFFEEFEF0);
   static Color circleGreen = const Color(0xFFC2E3C1);
   static Color lightGreen = const Color(0xFFEEFEF0);
-
+  static Color textDark = const Color(0xFF045135);
+  static Color backGreen = const Color(0xFFB3D1CC);
+  static Color conGreen = const Color(0xFF008263);
 }
 
