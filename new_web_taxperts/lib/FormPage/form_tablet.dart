@@ -161,7 +161,7 @@ class _FormTabletState extends State<FormTablet> {
                       Text(
                         'Do you have Taxpayer Identification Number (TIN)?',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -178,7 +178,7 @@ class _FormTabletState extends State<FormTablet> {
                         onChanged: (value) {},
                       ),
                       Text('Yes',style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                       ),),
                       Radio(
                         value: 'No',
@@ -186,7 +186,7 @@ class _FormTabletState extends State<FormTablet> {
                         onChanged: (value) {},
                       ),
                       Text('No',style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                       ),),
                     ],
                   ),
@@ -220,7 +220,7 @@ class _FormTabletState extends State<FormTablet> {
                       fixedSize: Size(
                           120, 40), // Set the width and height
                       primary: AppColor
-                          .buttonGreen, // Set the background color to green
+                          .darkTextGreen, // Set the background color to green
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                             5), // Set the border radius

@@ -1061,16 +1061,19 @@ class CustomFormFieldTab2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
-        ),
-        SizedBox(height: 8),
-        child,
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+          ),
+          SizedBox(height: 8),
+          child,
+        ],
+      ),
     );
   }
 }
@@ -1093,6 +1096,35 @@ class CustomFormFieldMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+          ),
+          SizedBox(height: 5),
+          child,
+        ],
+      ),
+    );
+  }
+}
+
+class CustomFormFieldMobile2 extends StatelessWidget {
+  final String label;
+  final Widget child;
+
+  const CustomFormFieldMobile2({
+    Key? key,
+    required this.label,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
