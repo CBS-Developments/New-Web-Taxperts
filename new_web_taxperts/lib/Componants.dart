@@ -974,7 +974,37 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+          ),
+          SizedBox(height: 8),
+          child,
+        ],
+      ),
+    );
+  }
+}
+
+
+class CustomFormField2 extends StatelessWidget {
+  final String label;
+  final Widget child;
+
+  const CustomFormField2({
+    Key? key,
+    required this.label,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -997,6 +1027,33 @@ class CustomFormFieldTab extends StatelessWidget {
   final Widget child;
 
   const CustomFormFieldTab({
+    Key? key,
+    required this.label,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+        ),
+        SizedBox(height: 8),
+        child,
+      ],
+    );
+  }
+}
+
+
+class CustomFormFieldTab2 extends StatelessWidget {
+  final String label;
+  final Widget child;
+
+  const CustomFormFieldTab2({
     Key? key,
     required this.label,
     required this.child,

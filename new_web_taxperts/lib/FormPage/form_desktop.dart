@@ -41,14 +41,15 @@ class _FormDesktopState extends State<FormDesktop> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                height: 80,
+                height: 70,
                 width: double.infinity,
                 color: AppColor.darkTextGreen,
                 child: Center(
                   child: Text(
                     'Request a callback',
                     style: TextStyle(
-                      fontSize: 30.0,
+                        fontFamily: 'Inter',
+                      fontSize: 25.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white
                     ),
@@ -64,10 +65,26 @@ class _FormDesktopState extends State<FormDesktop> {
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: CustomFormField(
+                    child: CustomFormField2(
                       label: 'Type of taxes:  ',
                       child: DropdownButtonFormField(
-                        items: ['Individual Income Tax (IIT)', 'Other'].map((String value) {
+                        items: ['Individual Income Tax (IIT)',
+                          'Corporate Income Tax (CIT)',
+                          'Partnership Income Tax (PIT) ',
+                          'Value Added Tax (VAT)',
+                          'Advance Personal Income Tax (APIT)',
+                          'Advance Income Tax (AIT)',
+                          'Capital Gain Tax (CGT)',
+                          'Simplified Value Added Tax (SVAT)',
+                          'Stamp Duty (SD)',
+                          'Other Taxes ',
+                          'Transfer Pricing',
+                          'International Double Taxation',
+                          'Expat Taxation',
+                          'Tax Advisory Services',
+                          'Return Compliance',
+                          'Social Security Contribution Levy (SSCL)',
+                          'With Holding Tax (WHT)'].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -84,9 +101,9 @@ class _FormDesktopState extends State<FormDesktop> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20.0),
+                  SizedBox(width: 10.0),
                   Expanded(
-                    child: CustomFormField(
+                    child: CustomFormField2(
                       label: 'Name: ',
                       child: TextField(
                         decoration: InputDecoration(
@@ -105,7 +122,7 @@ class _FormDesktopState extends State<FormDesktop> {
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: CustomFormField(
+                    child: CustomFormField2(
                       label: 'Email: ',
                       child: TextField(
                         decoration: InputDecoration(
@@ -120,7 +137,7 @@ class _FormDesktopState extends State<FormDesktop> {
                   ),
                   SizedBox(width: 20.0),
                   Expanded(
-                    child: CustomFormField(
+                    child: CustomFormField2(
                       label: 'Phone Number: ',
                       child: TextField(
                         decoration: InputDecoration(
@@ -136,40 +153,55 @@ class _FormDesktopState extends State<FormDesktop> {
                 ],
               ),
               SizedBox(height: 20.0),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal:40.0),
-                child: Text(
-                  'Do you have Taxpayer Identification Number (TIN)?',
-                  style: TextStyle(
-                    fontSize: 20.0,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Do you have Taxpayer Identification Number (TIN)?',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Radio(
+                        value: 'Yes',
+                        groupValue: null, // Replace _tinOption with your state variable
+                        onChanged: (value) {
+
+                        },
+                      ),
+                      Text(
+                        'Yes',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      Radio(
+                        value: 'No',
+                        groupValue: null, // Replace _tinOption with your state variable
+                        onChanged: (value) {
+
+                        },
+                      ),
+                      Text(
+                        'No',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal:40.0),
-                child: Row(
-                  children: <Widget>[
-                    Radio(
-                      value: 'Yes',
-                      groupValue: null,
-                      onChanged: (value) {},
-                    ),
-                    Text('Yes',style: TextStyle(
-                      fontSize: 18.0,
-                    ),),
-                    Radio(
-                      value: 'No',
-                      groupValue: null,
-                      onChanged: (value) {},
-                    ),
-                    Text('No',style: TextStyle(
-                      fontSize: 18.0,
-                    ),),
-                  ],
                 ),
-              ),
-              SizedBox(height: 20.0),
-              CustomFormField(
+
+            SizedBox(height: 20.0),
+              CustomFormField2(
                 label: 'Message: ',
                 child: TextField(
                   decoration: InputDecoration(

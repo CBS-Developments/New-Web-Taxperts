@@ -65,10 +65,26 @@ class _FormTabletState extends State<FormTablet> {
                 Row(
                   children: <Widget>[
                     Expanded(
-                      child: CustomFormFieldTab(
+                      child: CustomFormFieldTab2(
                         label: 'Type of taxes:  ',
                         child: DropdownButtonFormField(
-                          items: ['Individual Income Tax (IIT)', 'Other'].map((String value) {
+                          items: ['Individual Income Tax (IIT)',
+                            'Corporate Income Tax (CIT)',
+                            'Partnership Income Tax (PIT) ',
+                            'Value Added Tax (VAT)',
+                            'Advance Personal Income Tax (APIT)',
+                            'Advance Income Tax (AIT)',
+                            'Capital Gain Tax (CGT)',
+                            'Simplified Value Added Tax (SVAT)',
+                            'Stamp Duty (SD)',
+                            'Other Taxes ',
+                            'Transfer Pricing',
+                            'International Double Taxation',
+                            'Expat Taxation',
+                            'Tax Advisory Services',
+                            'Return Compliance',
+                            'Social Security Contribution Levy (SSCL)',
+                            'With Holding Tax (WHT)'].map((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
@@ -87,7 +103,7 @@ class _FormTabletState extends State<FormTablet> {
                     ),
                     SizedBox(width: 20.0),
                     Expanded(
-                      child: CustomFormFieldTab(
+                      child: CustomFormFieldTab2(
                         label: 'Name: ',
                         child: TextField(
                           decoration: InputDecoration(
@@ -106,7 +122,7 @@ class _FormTabletState extends State<FormTablet> {
                 Row(
                   children: <Widget>[
                     Expanded(
-                      child: CustomFormFieldTab(
+                      child: CustomFormFieldTab2(
                         label: 'Email: ',
                         child: TextField(
                           decoration: InputDecoration(
@@ -121,7 +137,7 @@ class _FormTabletState extends State<FormTablet> {
                     ),
                     SizedBox(width: 20.0),
                     Expanded(
-                      child: CustomFormFieldTab(
+                      child: CustomFormFieldTab2(
                         label: 'Phone Number: ',
                         child: TextField(
                           decoration: InputDecoration(
@@ -139,11 +155,17 @@ class _FormTabletState extends State<FormTablet> {
                 SizedBox(height: 20.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal:40.0),
-                  child: Text(
-                    'Do you have Taxpayer Identification Number (TIN)?',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Do you have Taxpayer Identification Number (TIN)?',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -170,7 +192,7 @@ class _FormTabletState extends State<FormTablet> {
                   ),
                 ),
                 SizedBox(height: 20.0),
-                CustomFormFieldTab(
+                CustomFormFieldTab2(
                   label: 'Message: ',
                   child: TextField(
                     decoration: InputDecoration(
