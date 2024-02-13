@@ -1076,11 +1076,41 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/contact');
                             // Add your onPressed code here
+                            // Reset all TextEditingControllers to empty string
+                            grossSalary.clear();
+                            profitsFromBusiness.clear();
+                            interestIncome.clear();
+                            dividendIncome.clear();
+                            rentIncome.clear();
+                            otherIncome.clear();
+                            healthMedicalExpenses.clear();
+                            medicalInsurancePremium.clear();
+                            localEducationSelf.clear();
+                            localEducationChildren.clear();
+                            housingLoanInterest.clear();
+                            pensionContribution.clear();
+                            purchaseSharedDebentureTreasury.clear();
+                            bondsTreasuryBills.clear();
+                            solarInstallationCost.clear();
+                            donationToApprovedCharity.clear();
+                            donationToGovernment.clear();
+                            installmentPayment.clear();
+                            professionalServices.clear();
+                            royalty.clear();
+                            aitWht.clear();
+                            name.clear();
+                            phone.clear();
+                            email.clear();
+
+                            // Optionally, reset any other relevant state variables
+                            setState(() {
+                              // Reset any state variables here if needed
+                              visibility = false; // Example of resetting a boolean flag
+                            });
                           },
                           child: Text(
-                            'Clear ',
+                            'Clear',
                             style: TextStyle(
                               fontSize: 20,
                               fontFamily: 'Inter',
@@ -1088,16 +1118,14 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize:
-                                Size(160, 50), // Set the width and height
-                            primary: Colors
-                                .redAccent, // Set the background color to green
+                            fixedSize: Size(160, 50), // Set the width and height
+                            primary: Colors.redAccent, // Set the background color to red
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  10), // Set the border radius
+                              borderRadius: BorderRadius.circular(10), // Set the border radius
                             ),
                           ),
                         ),
+
                       ],
                     ),
                   ),
