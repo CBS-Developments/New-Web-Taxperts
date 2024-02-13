@@ -171,10 +171,10 @@ class _ContactTabletState extends State<ContactTablet> {
                       child: Text(
                         'Meet the Consultants',
                         style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 35,
-                            fontFamily: 'Almarai',
-                            fontWeight: FontWeight.w800),
+                            fontSize: 30,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green),
                       ),
                     ),
                     Padding(
@@ -211,7 +211,7 @@ class _ContactTabletState extends State<ContactTablet> {
                         Text(
                           'Founder/Chief Compliance',
                           style: TextStyle(
-                            fontSize: 26,
+                            fontSize: 18,
                             color: Colors.grey,
                           ),
                         ),
@@ -348,10 +348,10 @@ class _ContactTabletState extends State<ContactTablet> {
                       child: Text(
                         'Contact Info',
                         style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 32,
-                            fontFamily: 'Almarai',
-                            fontWeight: FontWeight.w800),
+                            fontSize: 30,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green),
                       ),
                     ),
                     SizedBox(
@@ -389,7 +389,7 @@ class _ContactTabletState extends State<ContactTablet> {
                               icon: Icons.location_on,
                               title: 'Address',
                               content:
-                              'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo',
+                              'Taxperts Lanka Pvt. Ltd\nNo. 101, Olcott Mawatha\nColombo 11',
                             ),
                           ],
                         ),
@@ -427,11 +427,10 @@ class _ContactTabletState extends State<ContactTablet> {
                         child: Text(
                           'Get In Touch',
                           style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 34,
-                            fontFamily: 'Almarai',
-                            fontWeight: FontWeight.w800,
-                          ),
+                              fontSize: 30,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.green),
                         ),
                       ),
                       SizedBox(height: 20),
@@ -462,9 +461,23 @@ class _ContactTabletState extends State<ContactTablet> {
                                               ),
                                               value: _selectedTaxType,
                                               items: [
-                                                'Tax Type 1',
-                                                'Tax Type 2',
-                                                'Tax Type 3'
+                                                'Individual Income Tax (IIT)',
+                                                'Corporate Income Tax (CIT)',
+                                                'Partnership Income Tax (PIT) ',
+                                                'Value Added Tax (VAT)',
+                                                'Advance Personal Income Tax (APIT)',
+                                                'Advance Income Tax (AIT)',
+                                                'Capital Gain Tax (CGT)',
+                                                'Simplified Value Added Tax (SVAT)',
+                                                'Stamp Duty (SD)',
+                                                'Other Taxes ',
+                                                'Transfer Pricing',
+                                                'International Double Taxation',
+                                                'Expat Taxation',
+                                                'Tax Advisory Services',
+                                                'Return Compliance',
+                                                'Social Security Contribution Levy (SSCL)',
+                                                'With Holding Tax (WHT)'
                                               ].map((String value) {
                                                 return DropdownMenuItem<String>(
                                                   value: value,

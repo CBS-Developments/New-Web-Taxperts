@@ -53,7 +53,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
+                            child: SelectableText(
                               'connect@taxperts.lk',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.white),
@@ -71,7 +71,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
+                            child: SelectableText(
                               '+94 777 148 839',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.white),
@@ -89,7 +89,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
+                            child: SelectableText(
                               'No. 101, Olcott Mawatha, Colombo 11',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.white),
@@ -121,6 +121,15 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         GestureDetector(
+                          onTap: ()async {
+                            const url = 'https://www.facebook.com/taxpertsconnect/';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              // You can show an error message or handle the failure in your preferred way
+                              print('Could not launch $url');
+                            }
+                          },
                           child: Container(
                             width: 35,
                             height: 35,
@@ -132,25 +141,47 @@ class _HomeDesktopState extends State<HomeDesktop> {
                             child: Image.asset('images/fbIcon.png'),
                           ),
                         ),
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: ()async {
+                            const url = 'https://www.twitter.com';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              // You can show an error message or handle the failure in your preferred way
+                              print('Could not launch $url');
+                            }
+                          },
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/twIcon.png'),
                           ),
-                          child: Image.asset('images/twIcon.png'),
                         ),
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: ()async {
+                            const url = 'https://www.linkedin.com/company/taxpertsconnect/';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              // You can show an error message or handle the failure in your preferred way
+                              print('Could not launch $url');
+                            }
+                          },
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('images/inIcon.png'),
                           ),
-                          child: Image.asset('images/inIcon.png'),
                         ),
                         GestureDetector(
                           onTap: ()async {
@@ -432,33 +463,33 @@ class _HomeDesktopState extends State<HomeDesktop> {
               mainAxisAlignment: MainAxisAlignment.center, // Adjust to center if you want them closer but not touching
               children: [
                 Container(
-                  width: 320,
-                  height: 400,
+                  width: 300,
+                  height: 380,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
                   ),
-                  child: Image.asset('images/indTax.png'),
+                  child: Image.asset('images/Indtax1.png'),
                 ),
                 SizedBox(width: 20), // Control the space between the first and second container
                 Container(
-                  width: 320,
-                  height: 400,
+                  width: 300,
+                  height: 380,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
                   ),
-                  child: Image.asset('images/bTax.png'),
+                  child: Image.asset('images/bTax1.png'),
                 ),
                 SizedBox(width: 20), // Control the space between the second and third container
                 Container(
-                  width: 320,
-                  height: 400,
+                  width: 300,
+                  height: 380,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
                   ),
-                  child: Image.asset('images/otherTax.png'),
+                  child: Image.asset('images/Otax1.png'),
                 ),
               ],
             ),
@@ -616,7 +647,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
             Container(
               width: double.infinity,
               child: Image.asset(
-                'images/why02.png',
+                'images/WhyCh.png',
                 fit: BoxFit.fitHeight,
               ),
             ),

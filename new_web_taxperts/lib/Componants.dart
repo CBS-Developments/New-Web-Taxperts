@@ -153,7 +153,7 @@ class WFooter extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('No. 101, Olcott Mawatha Colombo', style: TextStyle(color: Colors.white,fontSize: 16)),
+                            child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
                       ),
@@ -168,7 +168,7 @@ class WFooter extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 16)),
+                            child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
                       ),
@@ -183,7 +183,7 @@ class WFooter extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 16)),
+                            child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
                       ),
@@ -194,50 +194,90 @@ class WFooter extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            width: 35,
-                            height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(9),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('images/fbIcon.png'),
-                          ),
-                          Container(
-                            width: 35,
-                            height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('images/twIcon.png'),
-                          ),
-                          Container(
-                            width: 35,
-                            height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('images/inIcon.png'),
-                          ),
-                          Container(
-                            width: 35,
-                            height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('images/ytIcon.png'),
-                          ),
+                        Container(
+                        width: 35,
+                        height: 35,
+                        margin: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(9),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            const url = 'https://www.facebook.com/taxpertsconnect/'; // Replace with your specific Facebook link
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Image.asset('images/fbIcon.png'),
+                        ),
+                        ),
+                      Container(
+                        width: 35,
+                        height: 35,
+                        margin: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(10), // Adjusted padding as per your code
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            const url = 'https://www.twitter.com'; // Replace with your specific Twitter link
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Image.asset('images/twIcon.png'),
+                        ),
+                      ),
+                      Container(
+                        width: 35,
+                        height: 35,
+                        margin: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(12), // Adjusted to match your provided code
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            const url = 'https://www.linkedin.com/company/taxpertsconnect/'; // Replace with the actual LinkedIn link
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Image.asset('images/inIcon.png'),
+                        ),
+                      ),
+                      Container(
+                        width: 35,
+                        height: 35,
+                        margin: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(10), // Your specified padding
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            const url = 'https://www.youtube.com/channel/UC6Sz6giO9XxD6CapxYs6-CQ'; // Replace with your specific YouTube link
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Image.asset('images/ytIcon.png'),
+                        ),
+                      ),
                         ],
                       ),
                     ),
@@ -255,32 +295,44 @@ class WFooter extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/home');
+                    },
                     child: Text('Home', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/tax-calculator');
+                    },
                     child: Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/services');
+                    },
                         child: Text('Services', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/resources');
+                    },
                         child: Text('Resources', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/blog');
+                    },
                         child: Text('Blog', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/contact');
+                    },
                         child: Text('Contact', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
 
@@ -376,7 +428,7 @@ class WFooterTab extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('No. 101, Olcott Mawatha Colombo', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
@@ -391,7 +443,7 @@ class WFooterTab extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
@@ -406,7 +458,7 @@ class WFooterTab extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
@@ -478,29 +530,41 @@ class WFooterTab extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/home');
+                    },
                         child: Text('Home', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/tax-calculator');
+                    },
                         child: Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/services');
+                    },
                         child: Text('Services', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/resources');
+                    },
                         child: Text('Resources', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
-                  TextButton(onPressed: () {  },
+                  TextButton(onPressed: () {
+                    Navigator.of(context).pushNamed('/blog');
+                  },
                       child: Text('Blog', style: TextStyle(color: Colors.white,fontSize: 14))),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
-                    child: TextButton(onPressed: () {  },
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).pushNamed('/contact');
+                    },
                         child: Text('Contact', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
 
@@ -594,7 +658,7 @@ class WFooterMobile extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('No. 101, Olcott Mawatha Colombo', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
@@ -609,7 +673,7 @@ class WFooterMobile extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
@@ -624,7 +688,7 @@ class WFooterMobile extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
+                            child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
