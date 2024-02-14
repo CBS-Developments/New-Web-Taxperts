@@ -145,6 +145,47 @@ class RedioContainer extends StatelessWidget {
   }
 }
 
+class RedioContainerTab extends StatelessWidget {
+  final int groupValue;
+  final int value;
+  final String timeText;
+  final ValueChanged<int?> onChanged; // Correctly accepts null values for onChanged callback.
+
+  const RedioContainerTab({
+    Key? key,
+    required this.groupValue,
+    required this.value,
+    required this.onChanged,
+    required this.timeText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        color: Colors.white,
+        width: 100, // Ensure secTextWidth is defined or provided.
+        height: 40, // Ensure secTextHeight is defined or provided.
+        child: Row(
+          children: [
+            Radio<int>(
+              activeColor: Colors.green,
+              value: value,
+              groupValue: groupValue,
+              onChanged: onChanged, // Directly pass the onChanged callback.
+            ),
+
+            Text(timeText, style: TextStyle(
+              fontSize: 10
+            ),)
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 Future<void> snackBar(BuildContext context, String message, Color color) async {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Text(
