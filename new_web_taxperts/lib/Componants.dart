@@ -841,7 +841,7 @@ class ContactInfoDesk extends StatelessWidget {
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 26,
+            fontSize: 22,
             color: Colors.black,
           ),
         ),
@@ -850,7 +850,7 @@ class ContactInfoDesk extends StatelessWidget {
           content,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 18,
             color: Colors.black,
           ),
         ),
@@ -890,7 +890,7 @@ class ContactInfoTab extends StatelessWidget {
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: 20,
             color: Colors.black,
           ),
         ),
@@ -899,7 +899,7 @@ class ContactInfoTab extends StatelessWidget {
           content,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             color: Colors.black,
           ),
         ),
@@ -939,7 +939,7 @@ class ContactInfoMobile extends StatelessWidget {
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 18,
             color: Colors.black,
           ),
         ),
@@ -948,7 +948,7 @@ class ContactInfoMobile extends StatelessWidget {
           content,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             color: Colors.black,
           ),
         ),
@@ -1182,7 +1182,7 @@ class ServicePageCard extends StatelessWidget {
               title,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 28,
+                  fontSize: 24,
                   color: Colors.green
               ),
             ),
@@ -1193,7 +1193,7 @@ class ServicePageCard extends StatelessWidget {
                 description,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             ),
@@ -1271,7 +1271,7 @@ class ServicePageCardTab extends StatelessWidget {
                 description,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
             ),

@@ -176,7 +176,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                     child: Text(
                       'The team behind the digital transformation in taxation to ease of adhering to compliance obligation from anywhere any time',
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400),
                     ),
