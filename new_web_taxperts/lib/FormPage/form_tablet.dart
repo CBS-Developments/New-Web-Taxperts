@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import '../CalculatorComponants.dart';
 import '../Componants.dart';
 import '../colors.dart';
 
@@ -11,6 +14,122 @@ class FormTablet extends StatefulWidget {
 }
 
 class _FormTabletState extends State<FormTablet> {
+
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
+  String? _selectedTaxType;
+  String? _hasTIN;
+
+  Future<void> addSubmission(BuildContext context) async {
+    // Validate input fields
+    if (_nameController.text.trim().isEmpty ||
+        _phoneController.text.trim().isEmpty ||
+        _emailController.text.trim().isEmpty ||
+        _messageController.text.isEmpty ) {
+      // Show an error message if any of the required fields are empty
+      showRequiredFieldsSnackBar(context);
+      return;
+    }
+
+    // Other validation logic can be added here
+
+    // If all validations pass, proceed with the registration
+    var url = "http://dev.workspace.cbs.lk/addSubmission.php";
+
+    var data = {
+      "name_": _nameController.text.trim(),
+      "tax_type": _selectedTaxType,
+      "email": _emailController.text.toString().trim(),
+      "phone": _phoneController.text.toString().trim(),
+      "tin": _hasTIN,
+      "message_": _messageController.text.toString().trim(),
+      "from_": 'Callback Form',
+      "device": 'Tablet',
+      "active": '1',
+      "read_status": '0',
+      "actions": 'None',
+    };
+
+    http.Response res = await http.post(
+      Uri.parse(url),
+      body: data,
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      encoding: Encoding.getByName("utf-8"),
+    );
+
+    if (res.statusCode.toString() == "200") {
+      if (jsonDecode(res.body) == "true") {
+        if (!mounted) return;
+        showSuccessSnackBar(context); // Show the success SnackBar
+      } else {
+        if (!mounted) return;
+        snackBar(context, "Error", Colors.yellow);
+      }
+    } else {
+      if (!mounted) return;
+      snackBar(context, "Error", Colors.redAccent);
+    }
+  }
+
+  void showSuccessSnackBar(BuildContext context) {
+    final snackBar = SnackBar(
+      backgroundColor: Colors.green, // Custom background color
+      content: Row(
+        children: [
+          Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
+          SizedBox(width: 8), // Space between icon and text
+          Expanded(
+            child: Text(
+              'Submission successful! We will contact you soon!',
+              style: TextStyle(color: Colors.white, fontSize: 16), // Custom text style
+            ),
+          ),
+        ],
+      ),
+      action: SnackBarAction(
+        label: 'Undo',
+        textColor: Colors.white, // Custom text color for the action
+        onPressed: () {
+          // Handle action (e.g., undo the submission)
+        },
+      ),
+      duration: Duration(seconds: 5), // Custom duration
+      behavior: SnackBarBehavior.floating, // Make it floating
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
+      margin: EdgeInsets.all(10), // Margin from the edges
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void showRequiredFieldsSnackBar(BuildContext context) {
+    final snackBar = SnackBar(
+      backgroundColor: Colors.red, // Custom background color for emphasis
+      content: Row(
+        children: [
+          Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
+          SizedBox(width: 8), // Space between icon and text
+          Text(
+            'Please fill in all required fields', // The message
+            style: TextStyle(color: Colors.white, fontSize: 16), // Custom text style
+          ),
+        ],
+      ),
+      duration: Duration(seconds: 5), // Custom duration
+      behavior: SnackBarBehavior.floating, // Make it floating
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
+      margin: EdgeInsets.all(10), // Margin from the edges
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +187,7 @@ class _FormTabletState extends State<FormTablet> {
                       child: CustomFormFieldTab2(
                         label: 'Type of taxes:  ',
                         child: DropdownButtonFormField(
+                          value: _selectedTaxType,
                           items: ['Individual Income Tax (IIT)',
                             'Corporate Income Tax (CIT)',
                             'Partnership Income Tax (PIT) ',
@@ -90,7 +210,11 @@ class _FormTabletState extends State<FormTablet> {
                               child: Text(value),
                             );
                           }).toList(),
-                          onChanged: (value) {},
+                          onChanged: (value) {
+                            setState(() {
+                              _selectedTaxType = value;
+                            });
+                          },
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -106,6 +230,7 @@ class _FormTabletState extends State<FormTablet> {
                       child: CustomFormFieldTab2(
                         label: 'Name: ',
                         child: TextField(
+                          controller: _nameController,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -125,6 +250,7 @@ class _FormTabletState extends State<FormTablet> {
                       child: CustomFormFieldTab2(
                         label: 'Email: ',
                         child: TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -140,6 +266,7 @@ class _FormTabletState extends State<FormTablet> {
                       child: CustomFormFieldTab2(
                         label: 'Phone Number: ',
                         child: TextField(
+                          controller: _phoneController,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -174,20 +301,24 @@ class _FormTabletState extends State<FormTablet> {
                     children: <Widget>[
                       Radio(
                         value: 'Yes',
-                        groupValue: null,
-                        onChanged: (value) {},
+                        groupValue: _hasTIN,
+                        onChanged: (value) {
+                          setState(() {
+                            _hasTIN = value;
+                          });
+                        },
                       ),
-                      Text('Yes',style: TextStyle(
-                        fontSize: 16.0,
-                      ),),
+                      Text('Yes'),
                       Radio(
                         value: 'No',
-                        groupValue: null,
-                        onChanged: (value) {},
+                        groupValue: _hasTIN,
+                        onChanged: (value) {
+                          setState(() {
+                            _hasTIN = value;
+                          });
+                        },
                       ),
-                      Text('No',style: TextStyle(
-                        fontSize: 16.0,
-                      ),),
+                      Text('No'),
                     ],
                   ),
                 ),
@@ -195,6 +326,7 @@ class _FormTabletState extends State<FormTablet> {
                 CustomFormFieldTab2(
                   label: 'Message: ',
                   child: TextField(
+                    controller: _messageController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -212,6 +344,14 @@ class _FormTabletState extends State<FormTablet> {
                   child: ElevatedButton(
                     onPressed: () {
                       // TODO: Submit callback request
+                      print('Type of taxes: $_selectedTaxType');
+                      print('Name: ${_nameController.text}');
+                      print('Email: ${_emailController.text}');
+                      print('Phone Number: ${_phoneController.text}');
+                      print('TIN: $_hasTIN');
+                      print('Message: ${_messageController.text}');
+
+                      addSubmission(context);
                     },
                     child: Text('Submit',style: TextStyle(
                         fontSize: 18

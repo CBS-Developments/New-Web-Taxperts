@@ -29,7 +29,7 @@ class _FormDesktopState extends State<FormDesktop> {
         _emailController.text.trim().isEmpty ||
         _messageController.text.isEmpty ) {
       // Show an error message if any of the required fields are empty
-      snackBar(context, "Please fill in all required fields", Colors.red);
+      showRequiredFieldsSnackBar(context);
       return;
     }
 
@@ -78,12 +78,58 @@ class _FormDesktopState extends State<FormDesktop> {
 
   void showSuccessSnackBar(BuildContext context) {
     final snackBar = SnackBar(
-      content:
-      Text('Submission successful! We will contact you soon!'),
-      backgroundColor: Colors.green, // You can customize the color
+      backgroundColor: Colors.green, // Custom background color
+      content: Row(
+        children: [
+          Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
+          SizedBox(width: 8), // Space between icon and text
+          Expanded(
+            child: Text(
+              'Submission successful! We will contact you soon!',
+              style: TextStyle(color: Colors.white, fontSize: 16), // Custom text style
+            ),
+          ),
+        ],
+      ),
+      action: SnackBarAction(
+        label: 'Undo',
+        textColor: Colors.white, // Custom text color for the action
+        onPressed: () {
+          // Handle action (e.g., undo the submission)
+        },
+      ),
+      duration: Duration(seconds: 5), // Custom duration
+      behavior: SnackBarBehavior.floating, // Make it floating
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
+      margin: EdgeInsets.all(10), // Margin from the edges
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
+
+  void showRequiredFieldsSnackBar(BuildContext context) {
+    final snackBar = SnackBar(
+      backgroundColor: Colors.red, // Custom background color for emphasis
+      content: Row(
+        children: [
+          Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
+          SizedBox(width: 8), // Space between icon and text
+          Text(
+            'Please fill in all required fields', // The message
+            style: TextStyle(color: Colors.white, fontSize: 16), // Custom text style
+          ),
+        ],
+      ),
+      duration: Duration(seconds: 5), // Custom duration
+      behavior: SnackBarBehavior.floating, // Make it floating
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
+      margin: EdgeInsets.all(10), // Margin from the edges
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +188,23 @@ class _FormDesktopState extends State<FormDesktop> {
                         label: 'Type of taxes:  ',
                         child: DropdownButtonFormField(
                           value: _selectedTaxType,
-                          items: ['Individual Income Tax (IIT)', 'Other'].map((String value) {
+                          items: ['Individual Income Tax (IIT)',
+                            'Corporate Income Tax (CIT)',
+                            'Partnership Income Tax (PIT) ',
+                            'Value Added Tax (VAT)',
+                            'Advance Personal Income Tax (APIT)',
+                            'Advance Income Tax (AIT)',
+                            'Capital Gain Tax (CGT)',
+                            'Simplified Value Added Tax (SVAT)',
+                            'Stamp Duty (SD)',
+                            'Other Taxes ',
+                            'Transfer Pricing',
+                            'International Double Taxation',
+                            'Expat Taxation',
+                            'Tax Advisory Services',
+                            'Return Compliance',
+                            'Social Security Contribution Levy (SSCL)',
+                            'With Holding Tax (WHT)'].map((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
