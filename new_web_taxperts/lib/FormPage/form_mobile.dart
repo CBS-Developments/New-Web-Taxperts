@@ -64,7 +64,8 @@ class _FormMobileState extends State<FormMobile> {
     if (res.statusCode.toString() == "200") {
       if (jsonDecode(res.body) == "true") {
         if (!mounted) return;
-        showSuccessSnackBar(context); // Show the success SnackBar
+        showSuccessSnackBar(context);
+        _clearFormInputs();// Show the success SnackBar
       } else {
         if (!mounted) return;
         snackBar(context, "Error", Colors.yellow);
@@ -104,6 +105,20 @@ class _FormMobileState extends State<FormMobile> {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _clearFormInputs() {
+    // Reset the controllers
+    _nameController.clear();
+    _phoneController.clear();
+    _emailController.clear();
+    _messageController.clear();
+
+    // Reset other stateful values to their initial states
+    setState(() {
+      _selectedTaxType = null;
+      _hasTIN = null;
+    });
   }
 
   void showRequiredFieldsSnackBar(BuildContext context) {
