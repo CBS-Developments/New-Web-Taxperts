@@ -258,7 +258,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           child: Text(
                             '- Calculate your quarterly income tax payable at free with Taxperts',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 18,
                               color: Colors.white,
                               fontFamily: 'Inter',
                             ),
@@ -272,7 +272,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                               Text(
                                 '- The tax year is starts on ',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fontFamily: 'Inter',
                                 ),
@@ -280,7 +280,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                               Text(
                                 '01st April and ends at 31st March',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: Colors.white,
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.bold),
@@ -308,7 +308,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 45.0, vertical: 2),
+                        horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Gains & Profits',
                       style: TextStyle(
@@ -737,7 +737,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 45.0, vertical: 2),
+                        horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Qualifying Payments',
                       style: TextStyle(
@@ -897,7 +897,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 45.0, vertical: 2),
+                        horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Tax Credits',
                       style: TextStyle(
@@ -1055,14 +1055,14 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           child: Text(
                             'Get Computation ',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 15,
                               fontFamily: 'Inter',
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
                             fixedSize:
-                                Size(220, 50), // Set the width and height
+                                Size(200, 40), // Set the width and height
                             primary: AppColor
                                 .conGreen, // Set the background color to green
                             shape: RoundedRectangleBorder(
@@ -1112,13 +1112,13 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           child: Text(
                             'Clear',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 15,
                               fontFamily: 'Inter',
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(160, 50), // Set the width and height
+                            fixedSize: Size(140, 40), // Set the width and height
                             primary: Colors.redAccent, // Set the background color to red
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10), // Set the border radius
