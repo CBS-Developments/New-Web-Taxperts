@@ -179,6 +179,7 @@ class _FormMobileState extends State<FormMobile> {
                       child: Text(
                         'Request a callback',
                         style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),

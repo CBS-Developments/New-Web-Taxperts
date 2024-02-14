@@ -980,7 +980,7 @@ class CustomFormField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
           ),
           SizedBox(height: 8),
           child,
@@ -1010,7 +1010,7 @@ class CustomFormField2 extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),
           ),
           SizedBox(height: 8),
           child,

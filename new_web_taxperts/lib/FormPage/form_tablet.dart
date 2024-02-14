@@ -183,6 +183,7 @@ class _FormTabletState extends State<FormTablet> {
                     child: Text(
                       'Request a callback',
                       style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 22.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.white

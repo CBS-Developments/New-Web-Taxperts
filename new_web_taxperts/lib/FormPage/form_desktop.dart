@@ -176,14 +176,15 @@ class _FormDesktopState extends State<FormDesktop> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: 80,
+                  height: 70,
                   width: double.infinity,
                   color: AppColor.darkTextGreen,
                   child: Center(
                     child: Text(
                       'Request a callback',
                       style: TextStyle(
-                          fontSize: 30.0,
+                        fontFamily: 'Inter',
+                          fontSize: 25.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.white
                       ),
