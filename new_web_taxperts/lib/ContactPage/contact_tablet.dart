@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 import '../CalculatorComponants.dart';
 import '../Componants.dart';
 import '../colors.dart';
@@ -351,94 +352,122 @@ class _ContactTabletState extends State<ContactTablet> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 35,
-                              height: 35,
-                              padding: EdgeInsets.all(9),
-                              margin: EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color:
-                                Colors.white, // Replace with your color
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(
-                                        0.5), // Shadow color with opacity
-                                    spreadRadius: 1, // Spread radius
-                                    blurRadius: 3, // Blur radius
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
-                                  ),
-                                ],
+                            GestureDetector(
+                              onTap: () async {
+                                const url = 'https://www.facebook.com/damith.gangodawilage';
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Container(
+                                width: 35,
+                                height: 35,
+                                padding: EdgeInsets.all(9),
+                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.white, // Replace with your color
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
+                                      spreadRadius: 1, // Spread radius
+                                      blurRadius: 3, // Blur radius
+                                      offset: Offset(0, 1), // Changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset('images/fbIcon.png'), // Replace with your asset path
                               ),
-                              child: Image.asset(
-                                  'images/fbIcon.png'), // Replace with your asset path
                             ),
-                            Container(
-                              width: 35,
-                              height: 35,
-                              padding: EdgeInsets.all(7),
-                              margin: EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color:
-                                Colors.white, // Replace with your color
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(
-                                        0.5), // Shadow color with opacity
-                                    spreadRadius: 1, // Spread radius
-                                    blurRadius: 3, // Blur radius
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
-                                  ),
-                                ],
+                            GestureDetector(
+                              onTap: () async {
+                                const email = 'https://accounts.google.com/servicelogin?hl=en-gb'; // Replace with your email address
+                                if (await canLaunch(email)) {
+                                  await launch(email);
+                                } else {
+                                  throw 'Could not launch $email';
+                                }
+                              },
+                              child: Container(
+                                width: 35,
+                                height: 35,
+                                padding: EdgeInsets.all(7),
+                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.white, // Replace with your color
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
+                                      spreadRadius: 1, // Spread radius
+                                      blurRadius: 3, // Blur radius
+                                      offset: Offset(0, 1), // Changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset('images/emailIcon.png'), // Replace with your asset path
                               ),
-                              child: Image.asset('images/emailIcon.png'),
                             ),
-                            Container(
-                              width: 35,
-                              height: 35,
-                              padding: EdgeInsets.all(9),
-                              margin: EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color:
-                                Colors.white, // Replace with your color
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(
-                                        0.5), // Shadow color with opacity
-                                    spreadRadius: 1, // Spread radius
-                                    blurRadius: 3, // Blur radius
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
-                                  ),
-                                ],
+                            GestureDetector(
+                              onTap: () async {
+                                const url = 'https://twitter.com/yourprofile'; // Replace with your Twitter profile URL
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Container(
+                                width: 35,
+                                height: 35,
+                                padding: EdgeInsets.all(9),
+                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.white, // Replace with your color
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
+                                      spreadRadius: 1, // Spread radius
+                                      blurRadius: 3, // Blur radius
+                                      offset: Offset(0, 1), // Changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset('images/twIcon.png'), // Replace with your asset path
                               ),
-                              child: Image.asset('images/twIcon.png'),
                             ),
-                            Container(
-                              width: 35,
-                              height: 35,
-                              padding: EdgeInsets.all(11),
-                              margin: EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color:
-                                Colors.white, // Replace with your color
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(
-                                        0.5), // Shadow color with opacity
-                                    spreadRadius: 1, // Spread radius
-                                    blurRadius: 3, // Blur radius
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
-                                  ),
-                                ],
+
+                            GestureDetector(
+                              onTap: () async {
+                                const url = 'https://www.linkedin.com/in/asst-prof-dr-damith-gangodawilage-96699625/'; // Replace with your LinkedIn profile URL
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Container(
+                                width: 35,
+                                height: 35,
+                                padding: EdgeInsets.all(11),
+                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.white, // Replace with your color
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
+                                      spreadRadius: 1, // Spread radius
+                                      blurRadius: 3, // Blur radius
+                                      offset: Offset(0, 1), // Changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset('images/inIcon.png'), // Replace with your asset path
                               ),
-                              child: Image.asset('images/inIcon.png'),
                             ),
                           ],
                         ),
