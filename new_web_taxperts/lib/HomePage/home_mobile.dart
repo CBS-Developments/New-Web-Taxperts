@@ -10,7 +10,32 @@ class HomeMobile extends StatefulWidget {
   State<HomeMobile> createState() => _HomeMobileState();
 }
 
-class _HomeMobileState extends State<HomeMobile> {
+class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,10 +140,14 @@ class _HomeMobileState extends State<HomeMobile> {
               child: Stack(
                 children: <Widget>[
                   Positioned.fill(
+              child: AnimatedOpacity(
+                opacity: _opacityAnimation.value,
+                duration: const Duration(seconds: 2),
                     child: Image.asset(
                       'images/bach500.png', // Replace with your background image
                       fit: BoxFit.cover,
                     ),
+                  ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -131,49 +160,61 @@ class _HomeMobileState extends State<HomeMobile> {
                           Padding(
                             padding:
                             const EdgeInsets.symmetric(horizontal: 25.0),
-                            child: Text(
-                              'STAY CONNECT WITH TAXPERTS',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w600),
+                            child: SlideInAnimation(
+                              delay: 100,
+                              child: Text(
+                                'STAY CONNECT WITH TAXPERTS',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
                           Padding(
                             padding:
                             const EdgeInsets.symmetric(horizontal: 25.0),
-                            child: Text(
-                              'DO YOUR TAXES RIGHT',
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: AppColor.headingDarkGreen,
-                                fontWeight: FontWeight.w800,
-                                fontFamily: 'Inter',
+                            child: SlideInAnimation(
+                              delay: 100,
+                              child: Text(
+                                'DO YOUR TAXES RIGHT',
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: AppColor.headingDarkGreen,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'Inter',
+                                ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
-                            child: Text(
-                              'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.black,
+                            child: SlideInAnimation(
+                              delay: 100,
+                              child: Text(
+                                'Experience Sri Lanka\'s First Online Taxation Service. Simplifying',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           ),
                           Padding(
                             padding:
                             const EdgeInsets.symmetric(horizontal: 25.0),
-                            child: Text(
-                              'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.black,
+                            child: SlideInAnimation(
+                              delay: 100,
+                              child: Text(
+                                'Taxes with a Click. Get in Touch for Innovative, Personalized Tax Solutions.',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           ),
@@ -184,12 +225,15 @@ class _HomeMobileState extends State<HomeMobile> {
                               onPressed: () {
                                 Navigator.of(context).pushNamed('/services');
                               },
-                              child: Text(
-                                'Discover More >>',
-                                style: TextStyle(
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColor.buttonGreen, fontSize: 14),
+                              child: SlideInAnimation(
+                                delay: 100,
+                                child: Text(
+                                  'Discover More >>',
+                                  style: TextStyle(
+                                      fontFamily: 'Inter',
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColor.buttonGreen, fontSize: 14),
+                                ),
                               ),
                             ),
                           ),
@@ -199,76 +243,80 @@ class _HomeMobileState extends State<HomeMobile> {
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pushNamed('/contact');
-                                    // Add your onPressed code here
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Meet Tax Expert ',
-                                        style: TextStyle(fontSize: 12,fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,),
+                                SlideInAnimation(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed('/contact');
+                                      // Add your onPressed code here
+                                    },
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Meet Tax Expert ',
+                                          style: TextStyle(fontSize: 12,fontFamily: 'Inter',
+                                            fontWeight: FontWeight.w500,),
+                                        ),
+                                        Icon(
+                                          Icons.double_arrow_rounded,
+                                          color: Colors.white,
+                                          size: 12,
+                                        )
+                                      ],
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      fixedSize: Size(
+                                          149, 30), // Set the width and height
+                                      primary: AppColor
+                                          .buttonGreen, // Set the background color to green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            5), // Set the border radius
                                       ),
-                                      Icon(
-                                        Icons.double_arrow_rounded,
-                                        color: Colors.white,
-                                        size: 12,
-                                      )
-                                    ],
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    fixedSize: Size(
-                                        149, 30), // Set the width and height
-                                    primary: AppColor
-                                        .buttonGreen, // Set the background color to green
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                          5), // Set the border radius
                                     ),
                                   ),
                                 ),
                                 const SizedBox(height: 10),
-                                OutlinedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pushNamed('/tax-calculator');
-                                    // Add your onPressed code here
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Estimate Your Tax ',
-                                        style: TextStyle(
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                          color: AppColor
-                                              .buttonGreen, // Text color green
+                                SlideInAnimation(
+                                  child: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed('/tax-calculator');
+                                      // Add your onPressed code here
+                                    },
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Estimate Your Tax ',
+                                          style: TextStyle(
+                                            fontFamily: 'Inter',
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: AppColor
+                                                .buttonGreen, // Text color green
+                                          ),
                                         ),
+                                        Icon(
+                                          Icons.double_arrow_rounded,
+                                          color: Colors.green, // Icon color green
+                                          size: 12,
+                                        ),
+                                      ],
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      fixedSize: Size(
+                                          149, 30), // Set the width and height
+                                      backgroundColor: Colors
+                                          .white, // Set the background color to white
+                                      primary: Colors
+                                          .green, // Primary color used for the text and icon
+                                      side: BorderSide(
+                                          color:
+                                          Colors.green), // Border color green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            5), // Set the border radius
                                       ),
-                                      Icon(
-                                        Icons.double_arrow_rounded,
-                                        color: Colors.green, // Icon color green
-                                        size: 12,
-                                      ),
-                                    ],
-                                  ),
-                                  style: OutlinedButton.styleFrom(
-                                    fixedSize: Size(
-                                        149, 30), // Set the width and height
-                                    backgroundColor: Colors
-                                        .white, // Set the background color to white
-                                    primary: Colors
-                                        .green, // Primary color used for the text and icon
-                                    side: BorderSide(
-                                        color:
-                                        Colors.green), // Border color green
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                          5), // Set the border radius
                                     ),
                                   ),
                                 )
