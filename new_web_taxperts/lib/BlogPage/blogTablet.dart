@@ -10,7 +10,33 @@ class BlogTablet extends StatefulWidget {
   State<BlogTablet> createState() => _BlogTabletState();
 }
 
-class _BlogTabletState extends State<BlogTablet> {
+class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateMixin {
+  final ScrollController _scrollController = ScrollController();
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,13 +135,17 @@ class _BlogTabletState extends State<BlogTablet> {
               alignment: Alignment.center,
               children: <Widget>[
                 // Background image
-                Container(
-                  height: 400, // Set the height of the header
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'images/blohBack.png'), // Replace with your image path
-                      fit: BoxFit.cover,
+                AnimatedOpacity(
+                  opacity: _opacityAnimation.value,
+                  duration: const Duration(seconds: 2),
+                  child: Container(
+                    height: 400, // Set the height of the header
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            'images/blohBack.png'), // Replace with your image path
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -131,24 +161,30 @@ class _BlogTabletState extends State<BlogTablet> {
                     SizedBox(
                       height: 30,
                     ),
-                    Text(
-                      'BLOG',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 45,
-                          fontFamily: 'Candal'),
+                    SlideInAnimation(
+                      delay: 100,
+                      child: FadeInText(
+                        text: 'BLOG',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 45,
+                            fontFamily: 'Candal'),
+                      ),
                     ),
 
                     SizedBox(
                       height: 15,
                     ),
-                    Text(
-                      '    Connect with Taxperts Blog to get the\nlatest development in the taxation domain.',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400),
+                    SlideInAnimation(
+                      delay: 100,
+                      child: FadeInText(
+                        text: 'Connect with Taxperts Blog to get the\nlatest development in the taxation domain.',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400),
+                      ),
                     ),
                     // Add more widgets for additional information or buttons
 

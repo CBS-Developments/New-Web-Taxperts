@@ -10,7 +10,33 @@ class BlogMobile extends StatefulWidget {
   State<BlogMobile> createState() => _BlogMobile();
 }
 
-class _BlogMobile extends State<BlogMobile> {
+class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin {
+  final ScrollController _scrollController = ScrollController();
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,13 +140,17 @@ class _BlogMobile extends State<BlogMobile> {
               alignment: Alignment.center,
               children: <Widget>[
                 // Background image
-                Container(
-                  height: 300, // Set the height of the header
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'images/blohBack.png'), // Replace with your image path
-                      fit: BoxFit.cover,
+                AnimatedOpacity(
+                  opacity: _opacityAnimation.value,
+                  duration: const Duration(seconds: 2),
+                  child: Container(
+                    height: 300, // Set the height of the header
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            'images/blohBack.png'), // Replace with your image path
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -136,12 +166,15 @@ class _BlogMobile extends State<BlogMobile> {
                     SizedBox(
                       height: 30,
                     ),
-                    Text(
-                      'BLOG',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
-                          fontFamily: 'Candal'),
+                    SlideInAnimation(
+                      delay: 100,
+                      child: FadeInText(
+                        text: 'BLOG',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontFamily: 'Candal'),
+                      ),
                     ),
 
                     SizedBox(
@@ -149,14 +182,16 @@ class _BlogMobile extends State<BlogMobile> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Text(
-                        'Connect with Taxperts Blog to get the latest development in the taxation domain.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400),
+                      child: SlideInAnimation(
+                        delay: 100,
+                        child: FadeInText(
+                          text: 'Connect with Taxperts Blog to get the\nlatest development in the taxation domain.',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w400),
+                        ),
                       ),
                     ),
                     // Add more widgets for additional information or buttons
