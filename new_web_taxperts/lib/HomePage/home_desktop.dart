@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_web_taxperts/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 import '../Componants.dart';
 
@@ -11,14 +12,29 @@ class HomeDesktop extends StatefulWidget {
   State<HomeDesktop> createState() => _HomeDesktopState();
 }
 
-class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStateMixin {
+class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   late AnimationController _controller;
   late Animation<double> _opacityAnimation;
+  late AnimationController _slideController;
+  late Animation<Offset> _slideAnimation;
+  late AnimationController _slideFromLeftController;
+  late Animation<Offset> _slideFromLeftAnimation;
+
 
   @override
   void initState() {
     super.initState();
+    _slideFromLeftController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+
+    _slideFromLeftAnimation = Tween<Offset>(
+      begin: const Offset(-1, 0), // Start from the left
+      end: Offset.zero, // End at original position
+    ).animate(CurvedAnimation(parent: _slideFromLeftController, curve: Curves.easeOut));
+
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
@@ -30,7 +46,16 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
       });
 
     _controller.forward();
+    _slideController = AnimationController(
+        duration: const Duration(milliseconds: 1000),
+    vsync: this,);
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 1), // Start below
+      end: Offset.zero, // End at original position
+    ).animate(CurvedAnimation(parent: _slideController, curve: Curves.easeOut));
   }
+
+
 
   @override
   void dispose() {
@@ -555,13 +580,16 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                     children: [
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 20.0),
-                        child: Text(
-                          'Award Winning Taxation-as-a-Service Company in Sri Lanka',
-                          style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black),
+                        child: SlideInAnimation(
+                          delay: 200,
+                          child: Text(
+                            'Award Winning Taxation-as-a-Service Company in Sri Lanka',
+                            style: TextStyle(
+                                fontSize: 30,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ),
                       ),
                       Row(
@@ -690,14 +718,24 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
               ),
             ),
 
-            Container(
-              width: double.infinity,
-              child: Image.asset(
-                'images/WhyCh.png',
-                fit: BoxFit.fitHeight,
+            VisibilityDetector(
+              key: Key('whyCh-image'), // Ensure a unique key
+              onVisibilityChanged: (VisibilityInfo info) {
+                if (info.visibleFraction > 0) {
+                  _slideController.forward(); // Trigger the animation when visible
+                }
+              },
+              child: SlideTransition(
+                position: _slideAnimation,
+                child: Container(
+                  width: double.infinity,
+                  child: Image.asset(
+                    'images/WhyCh.png',
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
               ),
             ),
-
         const WFooter(),
 
 

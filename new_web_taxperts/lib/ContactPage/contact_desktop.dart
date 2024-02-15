@@ -22,7 +22,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
   final TextEditingController _messageController = TextEditingController();
   String? _selectedTaxType;
   late AnimationController _controller;
-  late Animation<double> _fadeAnimation;
+  late Animation<double> _fadeAnimation;         
   late Animation<Offset> _slideAnimation;
 
   @override
