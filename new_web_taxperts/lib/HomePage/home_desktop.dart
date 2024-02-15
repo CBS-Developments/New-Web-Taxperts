@@ -50,7 +50,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
             duration: const Duration(milliseconds: 400),
           );
         },
-        child: Icon(Icons.keyboard_arrow_up_rounded,size: 35,),
+        child: const Icon(Icons.keyboard_arrow_up_rounded,size: 35,),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -60,22 +60,22 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
             Container(
               width: double.infinity,
               height: 60,
-              decoration: BoxDecoration(color: Colors.black),
+              decoration: const BoxDecoration(color: Colors.black),
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 4,
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
+                            padding: EdgeInsets.only(left: 20.0),
                             child: Icon(
                               Icons.email_rounded,
                               color: Colors.white,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: SelectableText(
                               'connect@taxperts.lk',
                               style:
@@ -84,7 +84,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           )
                         ],
                       )),
-                  Expanded(
+                  const Expanded(
                       flex: 3,
                       child: Row(
                         children: [
@@ -93,7 +93,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: SelectableText(
                               '+94 777 148 839',
                               style:
@@ -102,7 +102,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           )
                         ],
                       )),
-                  Expanded(
+                  const Expanded(
                       flex: 6,
                       child: Row(
                         children: [
@@ -111,7 +111,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: SelectableText(
                               'No. 101, Olcott Mawatha, Colombo 11',
                               style:
@@ -120,7 +120,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           )
                         ],
                       )),
-                  Expanded(
+                  const Expanded(
                       flex: 5,
                       child: Row(
                         children: [
@@ -129,7 +129,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: Text(
                               'Monday - Friday: 8.30 - 17.30',
                               style:
@@ -156,7 +156,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           child: Container(
                             width: 35,
                             height: 35,
-                            padding: EdgeInsets.all(9),
+                            padding: const EdgeInsets.all(9),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -177,7 +177,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           child: Container(
                             width: 35,
                             height: 35,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -198,7 +198,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           child: Container(
                             width: 35,
                             height: 35,
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -219,7 +219,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           child: Container(
                             width: 35,
                             height: 35,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -237,7 +237,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
               width: double.infinity,
               height: 100,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                   horizontal: 20.0), // Adjust padding as needed
               child: Row(
                 mainAxisAlignment:
@@ -284,12 +284,12 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                         Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
-                      child: Text(
+                      child: const Text(
                         'Start Now',
                         style: TextStyle(fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(130, 40), // Set the width and height
+                        fixedSize: const Size(130, 40), // Set the width and height
                         primary: AppColor
                             .buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
@@ -302,7 +302,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               height: 700,
               child: Stack(
                 children: <Widget>[
@@ -324,8 +324,8 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 25.0,),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 25.0,),
                             child: SlideInAnimation(
                               delay: 100,
                               child: FadeInText(
@@ -355,8 +355,8 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                             ),
                           ),
 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: SlideInAnimation(
                               delay: 100,
@@ -371,9 +371,9 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                               ),
                             ),
                           ),
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 25.0),
+                                EdgeInsets.symmetric(horizontal: 25.0),
                             child: SlideInAnimation(
                               delay: 100,
                               child: Text(
@@ -416,7 +416,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                                     onPressed: () {
                                       Navigator.of(context).pushNamed('/contact');// Add your onPressed code here
                                     },
-                                    child: Row(
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
@@ -431,7 +431,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(
+                                      fixedSize: const Size(
                                           240, 60), // Set the width and height
                                       primary: AppColor
                                           .buttonGreen, // Set the background color to green
@@ -461,20 +461,20 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                                                 .buttonGreen, // Text color green
                                           ),
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.double_arrow_rounded,
                                           color: Colors.green, // Icon color green
                                         ),
                                       ],
                                     ),
                                     style: OutlinedButton.styleFrom(
-                                      fixedSize: Size(
+                                      fixedSize: const Size(
                                           240, 60), // Set the width and height
                                       backgroundColor: Colors
                                           .white, // Set the background color to white
                                       primary: Colors
                                           .green, // Primary color used for the text and icon
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           color:
                                               Colors.green), // Border color green
                                       shape: RoundedRectangleBorder(
@@ -494,8 +494,8 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 30.0),
               child: Text(
                 'Taxpert always behind you to meet your compliance obligations',
                 style: TextStyle(
@@ -517,7 +517,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                   ),
                   child: Image.asset('images/Indtax1.png'),
                 ),
-                SizedBox(width: 20), // Control the space between the first and second container
+                const SizedBox(width: 20), // Control the space between the first and second container
                 Container(
                   width: 300,
                   height: 380,
@@ -527,7 +527,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                   ),
                   child: Image.asset('images/bTax1.png'),
                 ),
-                SizedBox(width: 20), // Control the space between the second and third container
+                const SizedBox(width: 20), // Control the space between the second and third container
                 Container(
                   width: 300,
                   height: 380,
@@ -553,8 +553,8 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20.0),
                         child: Text(
                           'Award Winning Taxation-as-a-Service Company in Sri Lanka',
                           style: TextStyle(
@@ -569,7 +569,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           Expanded(flex: 2, child:  Image.asset(
                             'images/swarnawahini.png', // Replace with your asset path
                             height: 300, ),),
-                          Expanded(
+                          const Expanded(
                             flex: 3,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -598,7 +598,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                     ],
@@ -621,13 +621,13 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 25.0, top: 5, bottom: 20),
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0, top: 5, bottom: 20),
               child: Row(
                 children: [
                   // Icon(Icons.line_axis),
                   Padding(
-                    padding: const EdgeInsets.only(left: 50),
+                    padding: EdgeInsets.only(left: 50),
                     child: Text(
                       'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
                       style: TextStyle(fontSize: 20, color: Colors.black),
@@ -647,7 +647,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
                     ),
                   ),
                   // Cards scrollable horizontally
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
@@ -698,7 +698,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
               ),
             ),
 
-        WFooter(),
+        const WFooter(),
 
 
 
@@ -710,7 +710,7 @@ class _HomeDesktopState extends State<HomeDesktop> with SingleTickerProviderStat
 
   Widget _buildMenuItem(String text, bool isSelected, VoidCallback onPressedAction) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
+      padding: const EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
         onPressed: onPressedAction,
         style: TextButton.styleFrom(

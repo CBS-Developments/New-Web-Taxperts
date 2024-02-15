@@ -10,7 +10,41 @@ class ServiceDesktop extends StatefulWidget {
   State<ServiceDesktop> createState() => _ServiceDesktopState();
 }
 
-class _ServiceDesktopState extends State<ServiceDesktop> {
+class _ServiceDesktopState extends State<ServiceDesktop> with TickerProviderStateMixin {
+  late AnimationController _imageFadeController;
+  late Animation<double> _imageFadeAnimation;
+  late AnimationController _textSlideController;
+  late Animation<Offset> _textSlideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _imageFadeController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _imageFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_imageFadeController);
+
+    _textSlideController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _textSlideAnimation = Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
+      CurvedAnimation(parent: _textSlideController, curve: Curves.elasticOut),
+    );
+
+    _imageFadeController.forward();
+    _textSlideController.forward();
+  }
+
+  @override
+  void dispose() {
+    _imageFadeController.dispose();
+    _textSlideController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +55,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               width: double.infinity,
               height: 100,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                   horizontal: 20.0), // Adjust padding as needed
               child: Row(
                 mainAxisAlignment:
@@ -68,12 +102,12 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                         Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
-                      child: Text(
+                      child: const Text(
                         'Start Now',
                         style: TextStyle(fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(130, 40), // Set the width and height
+                        fixedSize: const Size(130, 40), // Set the width and height
                         primary: AppColor
                             .buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
@@ -91,13 +125,15 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               alignment: Alignment.center,
               children: <Widget>[
                 // Background image
-                Container(
-                  height: 500, // Set the height of the header
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'images/ServiceBack.png'), // Replace with your image path
-                      fit: BoxFit.cover,
+                FadeTransition(
+                  opacity: _imageFadeAnimation,
+                  child: Container(
+                    height: 500,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/ServiceBack.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -111,39 +147,39 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 30,),
-                    Text(
-                      'Services',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 60,
-                          fontFamily: 'Candal'),
-                    ),
-
-                    SizedBox(height: 10,),
-                    Text(
-                      'Serve you with Digital Tax Solutions',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax \ncompliance decision.',
-                        textAlign: TextAlign.center, // This aligns the text to the center
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                        ),
+                    SlideTransition(
+                      position: _textSlideAnimation,
+                      child: const Column(
+                        children: [
+                          SizedBox(height: 30),
+                          Text(
+                            'Services',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 60, fontFamily: 'Candal'),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Serve you with Digital Tax Solutions',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 24, fontFamily: 'Inter', fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-
                   ],
                 ),
               ],
@@ -154,8 +190,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                SizedBox(height: 50,),
-                Row(
+                const SizedBox(height: 50,),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     // Example of a card, repeat as needed
@@ -175,8 +211,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                     // Add more cards...
                   ],
                 ),
-                SizedBox(height: 50,),
-                Row(
+                const SizedBox(height: 50,),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     ServicePageCard(
@@ -199,7 +235,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                   ],
                 ),
 
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -211,7 +247,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           Navigator.of(context).pushNamed('/contact');
                           // Add your onPressed code here
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
@@ -226,7 +262,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           ],
                         ),
                         style: ElevatedButton.styleFrom(
-                          fixedSize: Size(
+                          fixedSize: const Size(
                               200, 60), // Set the width and height
                           primary: AppColor
                               .buttonGreen, // Set the background color to green
@@ -240,9 +276,9 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                   ],
                 ),
 
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
 
-                WFooter(),
+                const WFooter(),
 
 
               ],
@@ -254,7 +290,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
   }
   Widget _buildMenuItem(String text, bool isSelected, VoidCallback onPressedAction) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
+      padding: const EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
         onPressed: onPressedAction,
         style: TextButton.styleFrom(
