@@ -10,7 +10,41 @@ class ServiceTablet extends StatefulWidget {
   State<ServiceTablet> createState() => _ServiceTabletState();
 }
 
-class _ServiceTabletState extends State<ServiceTablet> {
+class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateMixin {
+  late AnimationController _imageFadeController;
+  late Animation<double> _imageFadeAnimation;
+  late AnimationController _textSlideController;
+  late Animation<Offset> _textSlideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _imageFadeController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _imageFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_imageFadeController);
+
+    _textSlideController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _textSlideAnimation = Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
+      CurvedAnimation(parent: _textSlideController, curve: Curves.elasticOut),
+    );
+
+    _imageFadeController.forward();
+    _textSlideController.forward();
+  }
+
+  @override
+  void dispose() {
+    _imageFadeController.dispose();
+    _textSlideController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,13 +142,15 @@ class _ServiceTabletState extends State<ServiceTablet> {
               alignment: Alignment.center,
               children: <Widget>[
                 // Background image
-                Container(
-                  height: 400, // Set the height of the header
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'images/ServiceBack.png'), // Replace with your image path
-                      fit: BoxFit.cover,
+                FadeTransition(
+                  opacity: _imageFadeAnimation,
+                  child: Container(
+                    height: 500,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/ServiceBack.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -128,36 +164,37 @@ class _ServiceTabletState extends State<ServiceTablet> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 30,),
-                    Text(
-                      'Services',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 55,
-                          fontFamily: 'Candal'),
-                    ),
-
-                    SizedBox(height: 10,),
-                    Text(
-                      'Serve you with Digital Tax Solutions',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax \ncompliance decision.',
-                        textAlign: TextAlign.center, // This aligns the text to the center
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                        ),
+                    SlideTransition(
+                      position: _textSlideAnimation,
+                      child: const Column(
+                        children: [
+                          SizedBox(height: 30),
+                          Text(
+                            'Services',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 50, fontFamily: 'Candal'),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Serve you with Digital Tax Solutions',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 22, fontFamily: 'Inter', fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
 
@@ -242,7 +279,7 @@ class _ServiceTabletState extends State<ServiceTablet> {
                       children: [
                         Text(
                           'Contact Us ',
-                          style: TextStyle(fontSize: 20,fontFamily: 'Inter',
+                          style: TextStyle(fontSize: 16,fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,),
                         ),
                         Icon(
@@ -253,7 +290,7 @@ class _ServiceTabletState extends State<ServiceTablet> {
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(
-                          200, 60), // Set the width and height
+                          150, 60), // Set the width and height
                       primary: AppColor
                           .buttonGreen, // Set the background color to green
                       shape: RoundedRectangleBorder(

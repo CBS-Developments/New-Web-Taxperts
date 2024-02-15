@@ -10,7 +10,41 @@ class ServiceMobile extends StatefulWidget {
   State<ServiceMobile> createState() => _ServiceMobileState();
 }
 
-class _ServiceMobileState extends State<ServiceMobile> {
+class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateMixin {
+  late AnimationController _imageFadeController;
+  late Animation<double> _imageFadeAnimation;
+  late AnimationController _textSlideController;
+  late Animation<Offset> _textSlideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _imageFadeController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _imageFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_imageFadeController);
+
+    _textSlideController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _textSlideAnimation = Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
+      CurvedAnimation(parent: _textSlideController, curve: Curves.elasticOut),
+    );
+
+    _imageFadeController.forward();
+    _textSlideController.forward();
+  }
+
+  @override
+  void dispose() {
+    _imageFadeController.dispose();
+    _textSlideController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,36 +168,37 @@ class _ServiceMobileState extends State<ServiceMobile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 30,),
-                    Text(
-                      'Services',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
-                          fontFamily: 'Candal'),
-                    ),
-
-                    SizedBox(height: 10,),
-                    Text(
-                      'Serve you with Digital Tax Solutions',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision.',
-                        textAlign: TextAlign.center, // This aligns the text to the center
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                        ),
+                    SlideTransition(
+                      position: _textSlideAnimation,
+                      child: const Column(
+                        children: [
+                          SizedBox(height: 30),
+                          Text(
+                            'Services',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 40, fontFamily: 'Candal'),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Serve you with Digital Tax Solutions',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 18, fontFamily: 'Inter', fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
 
