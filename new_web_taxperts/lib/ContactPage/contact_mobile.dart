@@ -14,13 +14,32 @@ class ContactMobile extends StatefulWidget {
   State<ContactMobile> createState() => _ContactMobileState();
 }
 
-class _ContactMobileState extends State<ContactMobile> {
+class _ContactMobileState extends State<ContactMobile> with TickerProviderStateMixin {
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
   String? _selectedTaxType;
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+  late Animation<Offset> _slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _slideAnimation = Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
+    );
+
+    _controller.forward();
+  }
 
   @override
   void dispose() {
@@ -28,6 +47,7 @@ class _ContactMobileState extends State<ContactMobile> {
     _phoneController.dispose();
     _emailController.dispose();
     _messageController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -254,12 +274,15 @@ class _ContactMobileState extends State<ContactMobile> {
               alignment: Alignment.center,
               children: <Widget>[
                 // Background image
-                Container(
-                  height: 300, // Set the height of the header
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('images/contactBackTab.png'), // Replace with your image path
-                      fit: BoxFit.cover,
+                FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: Container(
+                    height: 300, // Set the height of the header
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/contactBackTab.png'), // Replace with your image path
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -272,24 +295,20 @@ class _ContactMobileState extends State<ContactMobile> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'CONTACT',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30,
-                          fontFamily: 'Candal'
+                    SlideTransition(
+                      position: _slideAnimation,
+                      child: Text(
+                        'CONTACT',
+                        style: TextStyle(color: Colors.white, fontSize: 30, fontFamily: 'Candal'),
                       ),
                     ),
-                    Text(
-                      'Contact us for more details',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400
+                    SlideTransition(
+                      position: _slideAnimation,
+                      child: Text(
+                        'Contact us for more details',
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'Inter', fontWeight: FontWeight.w400),
                       ),
                     ),
-                    // Add more widgets for additional information or buttons
                   ],
                 ),
               ],

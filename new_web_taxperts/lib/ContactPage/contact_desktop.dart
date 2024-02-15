@@ -15,12 +15,31 @@ class ContactDesktop extends StatefulWidget {
   State<ContactDesktop> createState() => _ContactDesktopState();
 }
 
-class _ContactDesktopState extends State<ContactDesktop> {
+class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStateMixin  {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
   String? _selectedTaxType;
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+  late Animation<Offset> _slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _slideAnimation = Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
+    );
+
+    _controller.forward();
+  }
 
   @override
   void dispose() {
@@ -28,6 +47,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
     _phoneController.dispose();
     _emailController.dispose();
     _messageController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -229,46 +249,40 @@ class _ContactDesktopState extends State<ContactDesktop> {
           Stack(
             alignment: Alignment.center,
             children: <Widget>[
-              // Background image
-              Container(
-                height: 500, // Set the height of the header
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'images/contactBack.png'), // Replace with your image path
-                    fit: BoxFit.cover,
+              FadeTransition(
+                opacity: _fadeAnimation,
+                child: Container(
+                  height: 500,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/contactBack.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-              // Overlay (darken the image)
-              // Container(
-              //   height: 300,
-              //   color: Colors.black.withOpacity(0.3), // Adjust the opacity as needed
-              // ),
-              // Text and button
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'CONTACT',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 60,
-                        fontFamily: 'Candal'),
+                  SlideTransition(
+                    position: _slideAnimation,
+                    child: Text(
+                      'CONTACT',
+                      style: TextStyle(color: Colors.white, fontSize: 60, fontFamily: 'Candal'),
+                    ),
                   ),
-                  Text(
-                    'Contact us for more details',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400),
+                  SlideTransition(
+                    position: _slideAnimation,
+                    child: Text(
+                      'Contact us for more details',
+                      style: TextStyle(color: Colors.white, fontSize: 22, fontFamily: 'Inter', fontWeight: FontWeight.w400),
+                    ),
                   ),
-                  // Add more widgets for additional information or buttons
                 ],
               ),
             ],
           ),
+
           Container(
             height: 720,
             color: AppColor.lightGreen,
