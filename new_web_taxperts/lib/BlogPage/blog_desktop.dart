@@ -48,7 +48,7 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
               width: double.infinity,
               height: 100,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                   horizontal: 20.0), // Adjust padding as needed
               child: Row(
                 mainAxisAlignment:
@@ -95,18 +95,18 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                         Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
-                      child: Text(
-                        'Start Now',
-                        style: TextStyle(fontSize: 18),
-                      ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(130, 40), // Set the width and height
+                        fixedSize: const Size(130, 40), // Set the width and height
                         primary: AppColor
                             .buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(5), // Set the border radius
                         ),
+                      ),
+                      child: const Text(
+                        'Start Now',
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
@@ -122,7 +122,7 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                   duration: const Duration(seconds: 2),
                   child: Container(
                     height: 500, // Set the height of the header
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                             'images/blohBack.png'), // Replace with your image path
@@ -140,10 +140,10 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    SlideInAnimation(
+                    const SlideInAnimation(
                       delay: 100,
                       child: FadeInText(
                         text: 'BLOG',
@@ -155,10 +155,10 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                       ),
 
 
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    SlideInAnimation(
+                    const SlideInAnimation(
                       delay: 100,
                       child: FadeInText(
                         text: 'Connect with Taxperts Blog to get the\nlatest development in the taxation domain.',
@@ -205,7 +205,7 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                             child: Container(
                               width: 40,
                               height: 40,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white,
@@ -228,7 +228,7 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
                                     print('Could not launch $url');
                                   }
                                 },
-                                child: Text(
+                                child: const Text(
                               "Watch Now",
                               style:
                                   TextStyle(fontSize: 18, color: Colors.white),
@@ -279,7 +279,7 @@ class _BlogDesktopState extends State<BlogDesktop> with SingleTickerProviderStat
       String text, bool isSelected, VoidCallback onPressedAction) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
+          const EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
         onPressed: onPressedAction,
         style: TextButton.styleFrom(

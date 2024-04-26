@@ -48,7 +48,7 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
               width: double.infinity,
               height: 70,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -89,43 +89,43 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                           }
                         },
                         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Home',
                             child: Text('Home'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Tax Calculator',
                             child: Text('Tax Calculator'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Services',
                             child: Text('Services'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Resources',
                             child: Text('Resources'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Blog',
                             child: Text('Blog'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Contact',
                             child: Text('Contact'),
                           ),
-                          PopupMenuDivider(),
+                          const PopupMenuDivider(),
                           PopupMenuItem<String>(
                             value: 'Start Now',
                             child: ListTile(
-                              leading: Icon(Icons.star, color: Colors.green), // Optional icon
-                              title: Text('Start Now'),
+                              leading: const Icon(Icons.star, color: Colors.green), // Optional icon
+                              title: const Text('Start Now'),
                               onTap: () {
                                 Navigator.of(context).pop('Start Now'); // Close the menu and navigate
                               },
                             ),
                           ),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -145,7 +145,7 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                   duration: const Duration(seconds: 2),
                   child: Container(
                     height: 300, // Set the height of the header
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                             'images/blohBack.png'), // Replace with your image path
@@ -163,10 +163,10 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    SlideInAnimation(
+                    const SlideInAnimation(
                       delay: 100,
                       child: FadeInText(
                         text: 'BLOG',
@@ -177,11 +177,11 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: SlideInAnimation(
                         delay: 100,
                         child: FadeInText(
@@ -229,7 +229,7 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                             child: Container(
                               width: 35,
                               height: 35,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white,
@@ -252,7 +252,7 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
                                     print('Could not launch $url');
                                   }
                                 },
-                                child: Text(
+                                child: const Text(
                                   "Watch Now",
                                   style:
                                   TextStyle(fontSize: 16, color: Colors.white),
@@ -266,7 +266,7 @@ class _BlogMobile extends State<BlogMobile> with SingleTickerProviderStateMixin 
               ],
             ),
 
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
 
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,

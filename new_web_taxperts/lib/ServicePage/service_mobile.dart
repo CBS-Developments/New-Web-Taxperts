@@ -55,7 +55,7 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
               width: double.infinity,
               height: 70,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -96,43 +96,43 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
                           }
                         },
                         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Home',
                             child: Text('Home'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Tax Calculator',
                             child: Text('Tax Calculator'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Services',
                             child: Text('Services'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Resources',
                             child: Text('Resources'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Blog',
                             child: Text('Blog'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Contact',
                             child: Text('Contact'),
                           ),
-                          PopupMenuDivider(),
+                          const PopupMenuDivider(),
                           PopupMenuItem<String>(
                             value: 'Start Now',
                             child: ListTile(
-                              leading: Icon(Icons.star, color: Colors.green), // Optional icon
-                              title: Text('Start Now'),
+                              leading: const Icon(Icons.star, color: Colors.green), // Optional icon
+                              title: const Text('Start Now'),
                               onTap: () {
                                 Navigator.of(context).pop('Start Now'); // Close the menu and navigate
                               },
                             ),
                           ),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -150,7 +150,7 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
                 // Background image
                 Container(
                   height: 300, // Set the height of the header
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
                           'images/ServiceBack.png'), // Replace with your image path
@@ -207,11 +207,11 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
               ],
             ),
 
-            SizedBox(height: 30,),
-            SingleChildScrollView(
+            const SizedBox(height: 30,),
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -235,11 +235,11 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
                 ),
               ),
             ),
-            SizedBox(height: 30,),
-            SingleChildScrollView(
+            const SizedBox(height: 30,),
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -266,7 +266,7 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
               ),
             ),
 
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -278,7 +278,7 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
                       Navigator.of(context).pushNamed('/contact');
                       // Add your onPressed code here
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -294,7 +294,7 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(
+                      fixedSize: const Size(
                           150, 45), // Set the width and height
                       primary: AppColor
                           .buttonGreen, // Set the background color to green
@@ -308,9 +308,9 @@ class _ServiceMobileState extends State<ServiceMobile> with TickerProviderStateM
               ],
             ),
 
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
 
-            WFooterMobile(),
+            const WFooterMobile(),
           ],
         ),
       )

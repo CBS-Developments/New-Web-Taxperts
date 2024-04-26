@@ -15,7 +15,7 @@ class TextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(9.3),
+      padding: const EdgeInsets.all(9.3),
       color: Colors.white,
       child: Text(childText,
         style: TextStyle(fontSize: fontSize ,color: textColor),
@@ -38,7 +38,7 @@ class TexfeildContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
 
       width: 200,
       height: 40,
@@ -46,7 +46,7 @@ class TexfeildContainer extends StatelessWidget {
         controller: controller,
         maxLines: 1,
         textAlign: TextAlign.right,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16,
         ),
         keyboardType:
@@ -54,12 +54,12 @@ class TexfeildContainer extends StatelessWidget {
         inputFormatters: [
           ThousandsFormatter(allowFraction: true),
         ],
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
 
-            enabledBorder: const OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),
             ),
-            focusedBorder: const OutlineInputBorder(
+            focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.green),
             ),
             fillColor: Colors.white,
@@ -99,7 +99,7 @@ class SecTextFeildContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       color: Colors.white,
       child: Text(childText,
         style: TextStyle(fontSize: fontSize ,fontWeight: FontWeight.bold,color: textColor),
@@ -176,7 +176,7 @@ class RedioContainerTab extends StatelessWidget {
               onChanged: onChanged, // Directly pass the onChanged callback.
             ),
 
-            Text(timeText, style: TextStyle(
+            Text(timeText, style: const TextStyle(
               fontSize: 10
             ),)
           ],

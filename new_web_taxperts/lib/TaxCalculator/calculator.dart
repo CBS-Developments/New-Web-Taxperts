@@ -14,6 +14,6 @@ class CalculatorPage extends StatefulWidget {
 class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
-    return Responsive(mobile: CalculatorMobile(), tablet: CalculatorTablet(), desktop: CalculatorDesktop());
+    return const Responsive(mobile: CalculatorMobile(), tablet: CalculatorTablet(), desktop: CalculatorDesktop());
   }
 }

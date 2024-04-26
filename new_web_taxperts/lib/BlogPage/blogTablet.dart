@@ -48,7 +48,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
               width: double.infinity,
               height: 80,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -100,7 +100,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                           _buildPopupMenuItem('Blog', true),
                           _buildPopupMenuItem('Contact', false),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -112,12 +112,12 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                             Navigator.of(context).pushNamed('/start');
                             // Action when button is pressed
                           },
-                          child: Text(
+                          child: const Text(
                             'Start Now',
                             style: TextStyle(fontSize: 18),
                           ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(130, 40),
+                            fixedSize: const Size(130, 40),
                             primary: Colors.green,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
@@ -140,7 +140,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                   duration: const Duration(seconds: 2),
                   child: Container(
                     height: 400, // Set the height of the header
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                             'images/blohBack.png'), // Replace with your image path
@@ -158,10 +158,10 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    SlideInAnimation(
+                    const SlideInAnimation(
                       delay: 100,
                       child: FadeInText(
                         text: 'BLOG',
@@ -172,10 +172,10 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    SlideInAnimation(
+                    const SlideInAnimation(
                       delay: 100,
                       child: FadeInText(
                         text: 'Connect with Taxperts Blog to get the\nlatest development in the taxation domain.',
@@ -221,7 +221,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                             child: Container(
                               width: 40,
                               height: 40,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white,
@@ -244,7 +244,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                                     print('Could not launch $url');
                                   }
                                 },
-                                child: Text(
+                                child: const Text(
                                   "Watch Now",
                                   style:
                                   TextStyle(fontSize: 18, color: Colors.white),
@@ -258,7 +258,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
               ],
             ),
 
-            SizedBox(height: 75,),
+            const SizedBox(height: 75,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -273,7 +273,7 @@ class _BlogTabletState extends State<BlogTablet> with SingleTickerProviderStateM
                 ),
               ],
             ),
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

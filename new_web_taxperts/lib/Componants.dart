@@ -21,7 +21,7 @@ class _AwardDescriptionState extends State<AwardDescription> {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      trailing: SizedBox(),
+      trailing: const SizedBox(),
       title: Text(
         widget.title,
         style: TextStyle(
@@ -30,12 +30,6 @@ class _AwardDescriptionState extends State<AwardDescription> {
           color: isExpanded ? AppColor.headingDarkGreen : Colors.black, // Title color changes to green when expanded
         ),
       ),
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 70.0,vertical: 5),
-          child: Text(widget.description,style: TextStyle(fontSize: 18),),
-        ),
-      ],
       leading: Icon(
         isExpanded ? Icons.remove : Icons.add,
         color: isExpanded ? AppColor.headingDarkGreen : Colors.black,// Changes icon based on whether the tile is expanded or not
@@ -45,6 +39,12 @@ class _AwardDescriptionState extends State<AwardDescription> {
           isExpanded = expanded; // Update the isExpanded state to keep track of the ExpansionTile's state
         });
       },
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 70.0,vertical: 5),
+          child: Text(widget.description,style: const TextStyle(fontSize: 18),),
+        ),
+      ],
     );
   }
 }
@@ -70,7 +70,7 @@ class ServiceCard extends StatelessWidget {
       child: Container(
         width: 250,
         height: 300,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -80,23 +80,23 @@ class ServiceCard extends StatelessWidget {
               height: 70.0, // and height
               fit: BoxFit.cover, // This is to maintain the aspect ratio of the image
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
                 color: Colors.green
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               description,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -125,7 +125,7 @@ class WFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       color: Colors.black,
-      padding: EdgeInsets.all(20), // Padding around the footer content
+      padding: const EdgeInsets.all(20), // Padding around the footer content
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -143,8 +143,8 @@ class WFooter extends StatelessWidget {
                       'images/LogoWh.png', // Replace with your asset path
                       height: 80, // Adjust the size as necessary
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -152,14 +152,14 @@ class WFooter extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -167,14 +167,14 @@ class WFooter extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -182,7 +182,7 @@ class WFooter extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 16)),
                           ),
                         ],
@@ -197,8 +197,8 @@ class WFooter extends StatelessWidget {
                         Container(
                         width: 35,
                         height: 35,
-                        margin: EdgeInsets.all(8),
-                        padding: EdgeInsets.all(9),
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(9),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.white,
@@ -218,8 +218,8 @@ class WFooter extends StatelessWidget {
                       Container(
                         width: 35,
                         height: 35,
-                        margin: EdgeInsets.all(8),
-                        padding: EdgeInsets.all(10), // Adjusted padding as per your code
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(10), // Adjusted padding as per your code
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.white,
@@ -239,8 +239,8 @@ class WFooter extends StatelessWidget {
                       Container(
                         width: 35,
                         height: 35,
-                        margin: EdgeInsets.all(8),
-                        padding: EdgeInsets.all(12), // Adjusted to match your provided code
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(12), // Adjusted to match your provided code
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.white,
@@ -260,8 +260,8 @@ class WFooter extends StatelessWidget {
                       Container(
                         width: 35,
                         height: 35,
-                        margin: EdgeInsets.all(8),
-                        padding: EdgeInsets.all(10), // Your specified padding
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(10), // Your specified padding
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.white,
@@ -289,8 +289,8 @@ class WFooter extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text('Company', style: TextStyle(color: Colors.white,fontSize: 24, fontWeight: FontWeight.bold)),
                   ),
                   Padding(
@@ -298,42 +298,42 @@ class WFooter extends StatelessWidget {
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/home');
                     },
-                    child: Text('Home', style: TextStyle(color: Colors.white,fontSize: 18))),
+                    child: const Text('Home', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/tax-calculator');
                     },
-                    child: Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 18))),
+                    child: const Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/services');
                     },
-                        child: Text('Services', style: TextStyle(color: Colors.white,fontSize: 18))),
+                        child: const Text('Services', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/resources');
                     },
-                        child: Text('Resources', style: TextStyle(color: Colors.white,fontSize: 18))),
+                        child: const Text('Resources', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/blog');
                     },
-                        child: Text('Blog', style: TextStyle(color: Colors.white,fontSize: 18))),
+                        child: const Text('Blog', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/contact');
                     },
-                        child: Text('Contact', style: TextStyle(color: Colors.white,fontSize: 18))),
+                        child: const Text('Contact', style: TextStyle(color: Colors.white,fontSize: 18))),
                   ),
 
 
@@ -341,33 +341,33 @@ class WFooter extends StatelessWidget {
                 ],
               ),
               // Opening Hours Column
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Opening Hours', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 24)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Mon - Tue: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Wed – Thur: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Fri – Sat: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 18)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Saturday: 9.00 - 01.00', style: TextStyle(color: Colors.white,fontSize: 18)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Text('Sunday: Closed', style: TextStyle(color: Colors.white,fontSize: 18)),
                     ),
 
@@ -377,12 +377,12 @@ class WFooter extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
 
 
-          Divider(color: Colors.green),
-          SizedBox(height: 10),// The green line
-          Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
+          const Divider(color: Colors.green),
+          const SizedBox(height: 10),// The green line
+          const Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
 
         ],
       ),
@@ -400,7 +400,7 @@ class WFooterTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      padding: EdgeInsets.all(20), // Padding around the footer content
+      padding: const EdgeInsets.all(20), // Padding around the footer content
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -418,8 +418,8 @@ class WFooterTab extends StatelessWidget {
                       'images/LogoWh.png', // Replace with your asset path
                       height: 70, // Adjust the size as necessary
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -427,14 +427,14 @@ class WFooterTab extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -442,14 +442,14 @@ class WFooterTab extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -457,7 +457,7 @@ class WFooterTab extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
@@ -472,8 +472,8 @@ class WFooterTab extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(9),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(9),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -483,8 +483,8 @@ class WFooterTab extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -494,8 +494,8 @@ class WFooterTab extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(12),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -505,8 +505,8 @@ class WFooterTab extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -524,8 +524,8 @@ class WFooterTab extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text('Company', style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold)),
                   ),
                   Padding(
@@ -533,39 +533,39 @@ class WFooterTab extends StatelessWidget {
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/home');
                     },
-                        child: Text('Home', style: TextStyle(color: Colors.white,fontSize: 14))),
+                        child: const Text('Home', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/tax-calculator');
                     },
-                        child: Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 14))),
+                        child: const Text('Tax Calculator', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/services');
                     },
-                        child: Text('Services', style: TextStyle(color: Colors.white,fontSize: 14))),
+                        child: const Text('Services', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/resources');
                     },
-                        child: Text('Resources', style: TextStyle(color: Colors.white,fontSize: 14))),
+                        child: const Text('Resources', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
                   TextButton(onPressed: () {
                     Navigator.of(context).pushNamed('/blog');
                   },
-                      child: Text('Blog', style: TextStyle(color: Colors.white,fontSize: 14))),
+                      child: const Text('Blog', style: TextStyle(color: Colors.white,fontSize: 14))),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: TextButton(onPressed: () {
                       Navigator.of(context).pushNamed('/contact');
                     },
-                        child: Text('Contact', style: TextStyle(color: Colors.white,fontSize: 14))),
+                        child: const Text('Contact', style: TextStyle(color: Colors.white,fontSize: 14))),
                   ),
 
 
@@ -573,33 +573,33 @@ class WFooterTab extends StatelessWidget {
                 ],
               ),
               // Opening Hours Column
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Opening Hours', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 20)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Mon - Tue: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 14)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Wed – Thur: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 14)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Fri – Sat: 8.30 - 17.30', style: TextStyle(color: Colors.white,fontSize: 14)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Saturday: 9.00 - 01.00', style: TextStyle(color: Colors.white,fontSize: 14)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Sunday: Closed', style: TextStyle(color: Colors.white,fontSize: 14)),
                     ),
 
@@ -609,12 +609,12 @@ class WFooterTab extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
 
 
-          Divider(color: Colors.green),
-          SizedBox(height: 10),// The green line
-          Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
+          const Divider(color: Colors.green),
+          const SizedBox(height: 10),// The green line
+          const Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
 
         ],
       ),
@@ -630,7 +630,7 @@ class WFooterMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      padding: EdgeInsets.all(15), // Padding around the footer content
+      padding: const EdgeInsets.all(15), // Padding around the footer content
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -648,8 +648,8 @@ class WFooterMobile extends StatelessWidget {
                       'images/LogoWh.png', // Replace with your asset path
                       height: 70, // Adjust the size as necessary
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -657,14 +657,14 @@ class WFooterMobile extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('No. 101, Olcott Mawatha Colombo 11', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -672,14 +672,14 @@ class WFooterMobile extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('connect@taxperts.lk', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           Icon(
@@ -687,7 +687,7 @@ class WFooterMobile extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: SelectableText('+94 777 148 839', style: TextStyle(color: Colors.white,fontSize: 12)),
                           ),
                         ],
@@ -702,8 +702,8 @@ class WFooterMobile extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(9),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(9),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -723,8 +723,8 @@ class WFooterMobile extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10), // Adjusted padding as per your code
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(10), // Adjusted padding as per your code
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -744,8 +744,8 @@ class WFooterMobile extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(12), // Adjusted to match your provided code
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(12), // Adjusted to match your provided code
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -765,8 +765,8 @@ class WFooterMobile extends StatelessWidget {
                           Container(
                             width: 35,
                             height: 35,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.all(10), // Your specified padding
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(10), // Your specified padding
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white,
@@ -796,12 +796,12 @@ class WFooterMobile extends StatelessWidget {
 
             ],
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
 
 
-          Divider(color: Colors.green),
-          SizedBox(height: 10),// The green line
-          Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
+          const Divider(color: Colors.green),
+          const SizedBox(height: 10),// The green line
+          const Text('© Copyright Taxperts 2024. All Rights Reserved', style: TextStyle(color: Colors.white)),
 
         ],
       ),
@@ -836,20 +836,20 @@ class ContactInfoDesk extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 25),
+        const SizedBox(height: 25),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22,
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           content,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             color: Colors.black,
           ),
@@ -885,20 +885,20 @@ class ContactInfoTab extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           content,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             color: Colors.black,
           ),
@@ -934,20 +934,20 @@ class ContactInfoMobile extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 18,
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           content,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15,
             color: Colors.black,
           ),
@@ -980,9 +980,9 @@ class CustomFormField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           child,
         ],
       ),
@@ -1010,9 +1010,9 @@ class CustomFormField2 extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),
+            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 14),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           child,
         ],
       ),
@@ -1039,9 +1039,9 @@ class CustomFormFieldTab extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         child,
       ],
     );
@@ -1068,9 +1068,9 @@ class CustomFormFieldTab2 extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           child,
         ],
       ),
@@ -1101,9 +1101,9 @@ class CustomFormFieldMobile extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           child,
         ],
       ),
@@ -1130,9 +1130,9 @@ class CustomFormFieldMobile2 extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           child,
         ],
       ),
@@ -1160,7 +1160,7 @@ class ServicePageCard extends StatelessWidget {
       child: Container(
         width: 380,
         height: 450,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -1177,22 +1177,22 @@ class ServicePageCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Colors.green
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
                 description,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -1238,7 +1238,7 @@ class ServicePageCardTab extends StatelessWidget {
       child: Container(
         width: 350,
         height: 400,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -1255,22 +1255,22 @@ class ServicePageCardTab extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: Colors.green
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
                 description,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -1316,7 +1316,7 @@ class ServicePageCardMobile extends StatelessWidget {
       child: Container(
         width: 280,
         height: 320,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -1333,22 +1333,22 @@ class ServicePageCardMobile extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Colors.green
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
                 description,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                 ),
               ),
@@ -1434,7 +1434,7 @@ class BlogCard extends StatelessWidget {
                     child: Container(
                       width: 50,
                       height: 50,
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
@@ -1444,7 +1444,7 @@ class BlogCard extends StatelessWidget {
                                 0.5), // Shadow color with opacity
                             spreadRadius: 1, // Spread radius
                             blurRadius: 3, // Blur radius
-                            offset: Offset(
+                            offset: const Offset(
                                 0, 1), // changes position of shadow
                           ),
                         ],
@@ -1466,7 +1466,7 @@ class BlogCard extends StatelessWidget {
               child: Text(
                 title,
                 textAlign: TextAlign.start,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Colors.green,
@@ -1480,7 +1480,7 @@ class BlogCard extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.start,
-            style: TextStyle(color: Colors.black87,),
+            style: const TextStyle(color: Colors.black87,),
           ),
         ),
       ],
@@ -1547,7 +1547,7 @@ class BlogCardMobile extends StatelessWidget {
                     child: Container(
                       width: 50,
                       height: 50,
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
@@ -1557,7 +1557,7 @@ class BlogCardMobile extends StatelessWidget {
                                 0.5), // Shadow color with opacity
                             spreadRadius: 1, // Spread radius
                             blurRadius: 3, // Blur radius
-                            offset: Offset(
+                            offset: const Offset(
                                 0, 1), // changes position of shadow
                           ),
                         ],
@@ -1579,7 +1579,7 @@ class BlogCardMobile extends StatelessWidget {
               child: Text(
                 title,
                 textAlign: TextAlign.start,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                   color: Colors.green,
@@ -1593,7 +1593,7 @@ class BlogCardMobile extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.start,
-            style: TextStyle(color: Colors.black87,),
+            style: const TextStyle(color: Colors.black87,),
           ),
         ),
       ],
@@ -1618,7 +1618,7 @@ class _FadeInTextState extends State<FadeInText> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 1));
     _animation = Tween(begin: 0.0, end: 1.0).animate(_controller!)
       ..addListener(() {
         setState(() {});
@@ -1662,7 +1662,7 @@ class _FadeInButtonState extends State<FadeInButton> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 2));
     _opacity = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller!, curve: Curves.easeInOut))
       ..addListener(() => setState(() {}));
 
@@ -1683,7 +1683,7 @@ class _FadeInButtonState extends State<FadeInButton> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return AnimatedOpacity(
       opacity: _opacity!.value,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       child: widget.button,
     );
   }

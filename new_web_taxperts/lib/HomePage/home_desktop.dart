@@ -309,18 +309,17 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                         Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
-                      child: const Text(
-                        'Start Now',
-                        style: TextStyle(fontSize: 18),
-                      ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(130, 40), // Set the width and height
-                        primary: AppColor
+                        fixedSize: const Size(130, 40), backgroundColor: AppColor
                             .buttonGreen, // Set the background color to green
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(5), // Set the border radius
                         ),
+                      ),
+                      child: const Text(
+                        'Start Now',
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
@@ -441,6 +440,15 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                                     onPressed: () {
                                       Navigator.of(context).pushNamed('/contact');// Add your onPressed code here
                                     },
+                                    style: ElevatedButton.styleFrom(
+                                      fixedSize: const Size(
+                                          240, 60), backgroundColor: AppColor
+                                          .buttonGreen, // Set the background color to green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            10), // Set the border radius
+                                      ),
+                                    ),
                                     child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -455,16 +463,6 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                                         )
                                       ],
                                     ),
-                                    style: ElevatedButton.styleFrom(
-                                      fixedSize: const Size(
-                                          240, 60), // Set the width and height
-                                      primary: AppColor
-                                          .buttonGreen, // Set the background color to green
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            10), // Set the border radius
-                                      ),
-                                    ),
                                   ),
                                 ),
                                 const SizedBox(width: 16),
@@ -473,6 +471,20 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                                     onPressed: () {
                                       Navigator.of(context).pushNamed('/tax-calculator');// Add your onPressed code here
                                     },
+                                    style: OutlinedButton.styleFrom(
+                                      foregroundColor: Colors
+                                          .green, fixedSize: const Size(
+                                          240, 60), // Set the width and height
+                                      backgroundColor: Colors
+                                          .white, // Primary color used for the text and icon
+                                      side: const BorderSide(
+                                          color:
+                                              Colors.green), // Border color green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            10), // Set the border radius
+                                      ),
+                                    ),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -491,21 +503,6 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                                           color: Colors.green, // Icon color green
                                         ),
                                       ],
-                                    ),
-                                    style: OutlinedButton.styleFrom(
-                                      fixedSize: const Size(
-                                          240, 60), // Set the width and height
-                                      backgroundColor: Colors
-                                          .white, // Set the background color to white
-                                      primary: Colors
-                                          .green, // Primary color used for the text and icon
-                                      side: const BorderSide(
-                                          color:
-                                              Colors.green), // Border color green
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            10), // Set the border radius
-                                      ),
                                     ),
                                   ),
                                 )
@@ -664,7 +661,7 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               height: 400,
               child: Stack(
                 children: <Widget>[
@@ -719,7 +716,7 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
             ),
 
             VisibilityDetector(
-              key: Key('whyCh-image'), // Ensure a unique key
+              key: const Key('whyCh-image'), // Ensure a unique key
               onVisibilityChanged: (VisibilityInfo info) {
                 if (info.visibleFraction > 0) {
                   _slideController.forward(); // Trigger the animation when visible
@@ -727,7 +724,7 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
               },
               child: SlideTransition(
                 position: _slideAnimation,
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   child: Image.asset(
                     'images/WhyCh.png',
@@ -752,8 +749,7 @@ class _HomeDesktopState extends State<HomeDesktop> with TickerProviderStateMixin
       child: TextButton(
         onPressed: onPressedAction,
         style: TextButton.styleFrom(
-          primary: isSelected ? AppColor.headingDarkGreen : Colors.black, // Text color based on selection
-          textStyle: TextStyle(
+          foregroundColor: isSelected ? AppColor.headingDarkGreen : Colors.black, textStyle: TextStyle(
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             fontSize: 18,
           ),

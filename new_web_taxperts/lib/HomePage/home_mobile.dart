@@ -46,7 +46,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
               width: double.infinity,
               height: 70,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -87,43 +87,43 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                           }
                         },
                         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Home',
                             child: Text('Home'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Tax Calculator',
                             child: Text('Tax Calculator'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Services',
                             child: Text('Services'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Resources',
                             child: Text('Resources'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Blog',
                             child: Text('Blog'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Contact',
                             child: Text('Contact'),
                           ),
-                          PopupMenuDivider(),
+                          const PopupMenuDivider(),
                           PopupMenuItem<String>(
                             value: 'Start Now',
                             child: ListTile(
-                              leading: Icon(Icons.star, color: Colors.green), // Optional icon
-                              title: Text('Start Now'),
+                              leading: const Icon(Icons.star, color: Colors.green), // Optional icon
+                              title: const Text('Start Now'),
                               onTap: () {
                                 Navigator.of(context).pop('Start Now'); // Close the menu and navigate
                               },
                             ),
                           ),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -157,9 +157,9 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
+                          const Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 25.0),
+                            EdgeInsets.symmetric(horizontal: 25.0),
                             child: SlideInAnimation(
                               delay: 100,
                               child: Text(
@@ -188,8 +188,8 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: SlideInAnimation(
                               delay: 100,
@@ -203,9 +203,9 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                               ),
                             ),
                           ),
-                          Padding(
+                          const Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 25.0),
+                            EdgeInsets.symmetric(horizontal: 25.0),
                             child: SlideInAnimation(
                               delay: 100,
                               child: Text(
@@ -249,7 +249,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                                       Navigator.of(context).pushNamed('/contact');
                                       // Add your onPressed code here
                                     },
-                                    child: Row(
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
@@ -265,7 +265,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(
+                                      fixedSize: const Size(
                                           149, 30), // Set the width and height
                                       primary: AppColor
                                           .buttonGreen, // Set the background color to green
@@ -296,7 +296,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                                                 .buttonGreen, // Text color green
                                           ),
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.double_arrow_rounded,
                                           color: Colors.green, // Icon color green
                                           size: 12,
@@ -304,13 +304,13 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                                       ],
                                     ),
                                     style: OutlinedButton.styleFrom(
-                                      fixedSize: Size(
+                                      fixedSize: const Size(
                                           149, 30), // Set the width and height
                                       backgroundColor: Colors
                                           .white, // Set the background color to white
                                       primary: Colors
                                           .green, // Primary color used for the text and icon
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           color:
                                           Colors.green), // Border color green
                                       shape: RoundedRectangleBorder(
@@ -331,9 +331,9 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
               ),
             ),
 
-            Padding(
+            const Padding(
               padding:
-              const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
+              EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
               child: Text(
                 'Taxpert always behind you to meet your compliance obligations',
                 style: TextStyle(
@@ -393,12 +393,12 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                     fit: BoxFit.cover,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 20),
                         child: Text(
                           'Award Winning Taxation-as-a-Service Company in Sri Lanka',
@@ -468,8 +468,8 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                     color: AppColor.headingDarkGreen),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                   left: 15.0, top: 10, bottom: 15, right: 15),
               child: Text(
                 'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
@@ -488,7 +488,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                     ),
                   ),
                   // Cards scrollable horizontally
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SingleChildScrollView(
@@ -557,7 +557,7 @@ class _HomeMobileState extends State<HomeMobile> with SingleTickerProviderStateM
                 fit: BoxFit.fitHeight,
               ),
             ),
-            WFooterMobile(),
+            const WFooterMobile(),
 
 
           ],

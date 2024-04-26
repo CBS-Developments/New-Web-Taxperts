@@ -79,7 +79,7 @@ class _FormMobileState extends State<FormMobile> {
   void showSuccessSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.green, // Custom background color
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
           SizedBox(width: 8), // Space between icon and text
@@ -98,11 +98,11 @@ class _FormMobileState extends State<FormMobile> {
           // Handle action (e.g., undo the submission)
         },
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -124,7 +124,7 @@ class _FormMobileState extends State<FormMobile> {
   void showRequiredFieldsSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.red, // Custom background color for emphasis
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
           SizedBox(width: 8), // Space between icon and text
@@ -134,11 +134,11 @@ class _FormMobileState extends State<FormMobile> {
           ),
         ],
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -154,7 +154,7 @@ class _FormMobileState extends State<FormMobile> {
               width: double.infinity,
               height: 80,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Adjust padding as needed
+              padding: const EdgeInsets.symmetric(horizontal: 20.0), // Adjust padding as needed
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -167,15 +167,15 @@ class _FormMobileState extends State<FormMobile> {
             ),
             Container(
               color: Colors.white,
-              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
                   Container(
                     height: 50,
                     width: double.infinity,
                     color: AppColor.darkTextGreen,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Request a callback',
                         style: TextStyle(
@@ -186,7 +186,7 @@ class _FormMobileState extends State<FormMobile> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Wrap(
                     alignment: WrapAlignment.center,
                     runSpacing: 10,
@@ -222,7 +222,7 @@ class _FormMobileState extends State<FormMobile> {
                               _selectedTaxType = value;
                             });
                           },
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -236,7 +236,7 @@ class _FormMobileState extends State<FormMobile> {
                         label: 'Name:',
                         child: TextField(
                           controller: _nameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -250,7 +250,7 @@ class _FormMobileState extends State<FormMobile> {
                         label: 'Email: ',
                         child: TextField(
                           controller: _emailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -264,7 +264,7 @@ class _FormMobileState extends State<FormMobile> {
                         label: 'Phone Number: ',
                         child: TextField(
                           controller: _phoneController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -275,7 +275,7 @@ class _FormMobileState extends State<FormMobile> {
                       ),
 
                       //SizedBox(height: 20.0),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -300,7 +300,7 @@ class _FormMobileState extends State<FormMobile> {
                                 });
                               },
                             ),
-                            Text('Yes'),
+                            const Text('Yes'),
                             Radio(
                               value: 'No',
                               groupValue: _hasTIN,
@@ -310,7 +310,7 @@ class _FormMobileState extends State<FormMobile> {
                                 });
                               },
                             ),
-                            Text('No'),
+                            const Text('No'),
                           ],
                         ),
                       ),
@@ -319,7 +319,7 @@ class _FormMobileState extends State<FormMobile> {
                         label: 'Message: ',
                         child: TextField(
                           controller: _messageController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -345,11 +345,11 @@ class _FormMobileState extends State<FormMobile> {
 
                             addSubmission(context);
                           },
-                          child: Text('Submit',style: TextStyle(
+                          child: const Text('Submit',style: TextStyle(
                               fontSize: 18
                           ),),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(
+                            fixedSize: const Size(
                                 120, 40), // Set the width and height
                             primary: AppColor
                                 .darkTextGreen, // Set the background color to green

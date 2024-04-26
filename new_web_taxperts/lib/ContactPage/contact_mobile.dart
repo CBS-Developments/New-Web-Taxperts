@@ -109,7 +109,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
   void showSuccessSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.green, // Custom background color
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
           SizedBox(width: 8), // Space between icon and text
@@ -128,11 +128,11 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
           // Handle action (e.g., undo the submission)
         },
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -153,7 +153,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
   void showRequiredFieldsSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.red, // Custom background color for emphasis
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
           SizedBox(width: 8), // Space between icon and text
@@ -163,11 +163,11 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
           ),
         ],
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -182,7 +182,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
               width: double.infinity,
               height: 70,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -223,43 +223,43 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                           }
                         },
                         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Home',
                             child: Text('Home'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Tax Calculator',
                             child: Text('Tax Calculator'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Services',
                             child: Text('Services'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Resources',
                             child: Text('Resources'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Blog',
                             child: Text('Blog'),
                           ),
-                          PopupMenuItem<String>(
+                          const PopupMenuItem<String>(
                             value: 'Contact',
                             child: Text('Contact'),
                           ),
-                          PopupMenuDivider(),
+                          const PopupMenuDivider(),
                           PopupMenuItem<String>(
                             value: 'Start Now',
                             child: ListTile(
-                              leading: Icon(Icons.star, color: Colors.green), // Optional icon
-                              title: Text('Start Now'),
+                              leading: const Icon(Icons.star, color: Colors.green), // Optional icon
+                              title: const Text('Start Now'),
                               onTap: () {
                                 Navigator.of(context).pop('Start Now'); // Close the menu and navigate
                               },
                             ),
                           ),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -278,7 +278,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                   opacity: _fadeAnimation,
                   child: Container(
                     height: 300, // Set the height of the header
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('images/contactBackTab.png'), // Replace with your image path
                         fit: BoxFit.cover,
@@ -297,14 +297,14 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                   children: <Widget>[
                     SlideTransition(
                       position: _slideAnimation,
-                      child: Text(
+                      child: const Text(
                         'CONTACT',
                         style: TextStyle(color: Colors.white, fontSize: 30, fontFamily: 'Candal'),
                       ),
                     ),
                     SlideTransition(
                       position: _slideAnimation,
-                      child: Text(
+                      child: const Text(
                         'Contact us for more details',
                         style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'Inter', fontWeight: FontWeight.w400),
                       ),
@@ -322,8 +322,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 15),
                       child: Text(
                         'Meet the Consultants',
@@ -334,8 +334,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                             color: Colors.green),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 25),
                       child: Text(
                         'The team behind the digital transformation in taxation to ease of adhering to compliance obligation from anywhere any time',
@@ -345,7 +345,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                             fontWeight: FontWeight.w400),
                       ),
                     ),
-                    SizedBox(height: 05),
+                    const SizedBox(height: 05),
                     Column(
                       children: <Widget>[
                         Container(
@@ -358,7 +358,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                           ),
                         ),
 
-                        Text(
+                        const Text(
                           'Damith Gangodawilage',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -366,7 +366,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Founder/Chief Compliance',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -374,7 +374,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                             color: Colors.grey,
                           ),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -390,8 +390,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                               child: Container(
                                 width: 35,
                                 height: 35,
-                                padding: EdgeInsets.all(9),
-                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                padding: const EdgeInsets.all(9),
+                                margin: const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   color: Colors.white, // Replace with your color
                                   borderRadius: BorderRadius.circular(30),
@@ -400,7 +400,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                       spreadRadius: 1, // Spread radius
                                       blurRadius: 3, // Blur radius
-                                      offset: Offset(0, 1), // Changes position of shadow
+                                      offset: const Offset(0, 1), // Changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -419,8 +419,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                               child: Container(
                                 width: 35,
                                 height: 35,
-                                padding: EdgeInsets.all(7),
-                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                padding: const EdgeInsets.all(7),
+                                margin: const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   color: Colors.white, // Replace with your color
                                   borderRadius: BorderRadius.circular(30),
@@ -429,7 +429,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                       spreadRadius: 1, // Spread radius
                                       blurRadius: 3, // Blur radius
-                                      offset: Offset(0, 1), // Changes position of shadow
+                                      offset: const Offset(0, 1), // Changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -448,8 +448,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                               child: Container(
                                 width: 35,
                                 height: 35,
-                                padding: EdgeInsets.all(9),
-                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                padding: const EdgeInsets.all(9),
+                                margin: const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   color: Colors.white, // Replace with your color
                                   borderRadius: BorderRadius.circular(30),
@@ -458,7 +458,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                       spreadRadius: 1, // Spread radius
                                       blurRadius: 3, // Blur radius
-                                      offset: Offset(0, 1), // Changes position of shadow
+                                      offset: const Offset(0, 1), // Changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -478,8 +478,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                               child: Container(
                                 width: 35,
                                 height: 35,
-                                padding: EdgeInsets.all(11),
-                                margin: EdgeInsets.symmetric(horizontal: 12),
+                                padding: const EdgeInsets.all(11),
+                                margin: const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   color: Colors.white, // Replace with your color
                                   borderRadius: BorderRadius.circular(30),
@@ -488,7 +488,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                       spreadRadius: 1, // Spread radius
                                       blurRadius: 3, // Blur radius
-                                      offset: Offset(0, 1), // Changes position of shadow
+                                      offset: const Offset(0, 1), // Changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -498,12 +498,12 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                           ],
                         ),
 
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         Container(
-                          padding: EdgeInsets.all(16.0), // Add some padding
-                          margin: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(16.0), // Add some padding
+                          margin: const EdgeInsets.all(10),
                           color: Colors.white, // Background color for the container
-                          child: Text(
+                          child: const Text(
                             "Damith Gangodawilage, a prominent figure in Sri Lanka's fintech sphere and the visionary founder of Taxperts, also shines in the academic realm. As the Founder and Chief Compliance Officer of the country's pioneering company in digital tax compliance, he has steered Taxperts to revolutionize the way tax compliance for individuals, making significant strides in financial literacy and empowerment. \n\n"
                                 "Beyond his professional accomplishments and recognition through prestigious awards like the eSwabhimani, NBQSA, and the National Ingenuity Award from SLASSCOM, Damith has extended his expertise into academia. His role as an educator underscores a deep commitment to nurturing future generations, blending practical industry insights with theoretical knowledge to shape well-rounded professionals. \n\n"
                                 "Moreover, his leadership extends beyond his entrepreneurial ventures, having served as Vice President of the Chartered Institute of Taxation of Sri Lanka, Governing Council Member of AAT Sri Lanka, and Director and Treasurer of the Colombo Chamber of Commerce, highlights his dedication to both the financial and educational sectors, promoting economic and digital advancement in Sri Lanka.",
@@ -522,13 +522,13 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 35.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 35.0),
               child: Center(
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         vertical: 15.0,
                       ),
                       child: Text(
@@ -604,8 +604,8 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
+                      const Padding(
+                        padding: EdgeInsets.all(20.0),
                         child: Text(
                           'Get In Touch',
                           style: TextStyle(
@@ -615,7 +615,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                               color: Colors.green),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
                           Expanded(
@@ -631,7 +631,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       child: CustomFormFieldMobile(
                                         label: 'Type of Taxes:',
                                         child: DropdownButtonFormField<String>(
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                             filled: true,
                                             fillColor: Colors.white,
                                             border: OutlineInputBorder(
@@ -677,7 +677,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                         label: 'Name:',
                                         child: TextFormField(
                                           controller: _nameController,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                             filled: true,
                                             fillColor: Colors.white,
                                             border: OutlineInputBorder(
@@ -693,7 +693,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                         label: 'Phone Number:',
                                         child: TextFormField(
                                           controller: _phoneController,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                             filled: true,
                                             fillColor: Colors.white,
                                             border: OutlineInputBorder(
@@ -709,7 +709,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                         label: 'Email Address:',
                                         child: TextFormField(
                                           controller: _emailController,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                             filled: true,
                                             fillColor: Colors.white,
                                             border: OutlineInputBorder(
@@ -724,7 +724,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                       label: 'Message:',
                                       child: TextFormField(
                                         controller: _messageController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           filled: true,
                                           fillColor: Colors.white,
                                           border: OutlineInputBorder(
@@ -748,9 +748,9 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
                                             addSubmission(context);// Submit button action
                                             // Use the controllers to get the input values
                                           },
-                                          child: Text('Submit',style: TextStyle(fontSize: 18),),
+                                          child: const Text('Submit',style: TextStyle(fontSize: 18),),
                                           style: ElevatedButton.styleFrom(
-                                            fixedSize: Size(120, 40), // Set the width and height
+                                            fixedSize: const Size(120, 40), // Set the width and height
                                             primary: AppColor
                                                 .buttonGreen, // Set the background color to green
                                             shape: RoundedRectangleBorder(
@@ -767,7 +767,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
 
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
@@ -776,7 +776,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
 
             Container(
               height: 200,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                       'images/map300.png'), // Replace with your image path
@@ -785,7 +785,7 @@ class _ContactMobileState extends State<ContactMobile> with TickerProviderStateM
               ),
             ),
 
-            WFooterMobile(),
+            const WFooterMobile(),
           ],
         ),
       )

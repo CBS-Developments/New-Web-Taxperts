@@ -46,7 +46,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
               width: double.infinity,
               height: 80,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -98,7 +98,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                           _buildPopupMenuItem('Blog', false),
                           _buildPopupMenuItem('Contact', false),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -110,16 +110,15 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                             Navigator.of(context).pushNamed('/start');
                             // Action when button is pressed
                           },
-                          child: Text(
-                            'Start Now',
-                            style: TextStyle(fontSize: 18),
-                          ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(130, 40),
-                            primary: Colors.green,
+                            fixedSize: const Size(130, 40), backgroundColor: Colors.green,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
+                          ),
+                          child: const Text(
+                            'Start Now',
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                       ),
@@ -128,7 +127,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               height: 500,
               child: Stack(
                 children: <Widget>[
@@ -150,9 +149,9 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 25.0),
+                                EdgeInsets.symmetric(horizontal: 25.0),
                             child: SlideInAnimation(
                               delay: 100,
                               child: Text(
@@ -181,8 +180,8 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 25.0, vertical: 10),
                             child: SlideInAnimation(
                               delay: 100,
@@ -196,9 +195,9 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                               ),
                             ),
                           ),
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 25.0),
+                                EdgeInsets.symmetric(horizontal: 25.0),
                             child: SlideInAnimation(
                               delay: 100,
                               child: Text(
@@ -241,7 +240,16 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                                     onPressed: () {
                                       Navigator.of(context).pushNamed('/contact');// Add your onPressed code here
                                     },
-                                    child: Row(
+                                    style: ElevatedButton.styleFrom(
+                                      fixedSize: const Size(
+                                          210, 50), backgroundColor: AppColor
+                                          .buttonGreen, // Set the background color to green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            10), // Set the border radius
+                                      ),
+                                    ),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
@@ -255,16 +263,6 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                                         )
                                       ],
                                     ),
-                                    style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(
-                                          210, 50), // Set the width and height
-                                      primary: AppColor
-                                          .buttonGreen, // Set the background color to green
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            10), // Set the border radius
-                                      ),
-                                    ),
                                   ),
                                 ),
                                 const SizedBox(width: 16),
@@ -273,6 +271,20 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                                     onPressed: () {
                                       Navigator.of(context).pushNamed('/tax-calculator');// Add your onPressed code here
                                     },
+                                    style: OutlinedButton.styleFrom(
+                                      foregroundColor: Colors
+                                          .green, fixedSize: const Size(
+                                          215, 50), // Set the width and height
+                                      backgroundColor: Colors
+                                          .white, // Primary color used for the text and icon
+                                      side: const BorderSide(
+                                          color:
+                                              Colors.green), // Border color green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            10), // Set the border radius
+                                      ),
+                                    ),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -286,26 +298,11 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                                                 .buttonGreen, // Text color green
                                           ),
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.double_arrow_rounded,
                                           color: Colors.green, // Icon color green
                                         ),
                                       ],
-                                    ),
-                                    style: OutlinedButton.styleFrom(
-                                      fixedSize: Size(
-                                          215, 50), // Set the width and height
-                                      backgroundColor: Colors
-                                          .white, // Set the background color to white
-                                      primary: Colors
-                                          .green, // Primary color used for the text and icon
-                                      side: BorderSide(
-                                          color:
-                                              Colors.green), // Border color green
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            10), // Set the border radius
-                                      ),
                                     ),
                                   ),
                                 )
@@ -319,9 +316,9 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20),
+                  EdgeInsets.symmetric(vertical: 30.0, horizontal: 20),
               child: Text(
                 'Taxpert always behind you to meet your compliance obligations',
                 style: TextStyle(
@@ -383,8 +380,8 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 20),
                         child: Text(
                           'Award Winning Taxation-as-a-Service Company in Sri Lanka',
@@ -404,7 +401,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                               height: 200,
                             ),
                           ),
-                          Expanded(
+                          const Expanded(
                             flex: 3,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -433,7 +430,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                     ],
@@ -456,18 +453,18 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                   left: 25.0, top: 5, bottom: 20, right: 25),
               child: Padding(
-                padding: const EdgeInsets.only(left: 30),
+                padding: EdgeInsets.only(left: 30),
                 child: Text(
                   'We believe in doing your taxes right. We’re committed to serving you assuring your comfort in tax compliance decision',
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 400,
               child: Stack(
                 children: <Widget>[
@@ -478,7 +475,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                     ),
                   ),
                   // Cards scrollable horizontally
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SingleChildScrollView(
@@ -538,14 +535,14 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Image.asset(
                 'images/WhyCh.png',
                 fit: BoxFit.fitHeight,
               ),
             ),
-            WFooterTab(),
+            const WFooterTab(),
           ],
         ),
       ),
@@ -568,13 +565,13 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
 
   Widget _buildMenuItem(String text, bool isSelected) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: TextButton(
         onPressed: () {
           // Menu item action
         },
         style: TextButton.styleFrom(
-          primary: isSelected ? Colors.green : Colors.black,
+          foregroundColor: isSelected ? Colors.green : Colors.black,
         ),
         child: Text(
           text,

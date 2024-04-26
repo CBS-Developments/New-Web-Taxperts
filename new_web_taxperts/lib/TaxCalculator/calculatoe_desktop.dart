@@ -228,7 +228,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
             Container(
               color: Colors.white,
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 100),
+              margin: const EdgeInsets.symmetric(horizontal: 100),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
@@ -237,11 +237,11 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                     height: 180,
                     color: AppColor.conGreen,
                     width: double.infinity,
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(25.0),
+                          padding: EdgeInsets.all(25.0),
                           child: Text(
                             'Estimate Individual Tax Payable',
                             style: TextStyle(
@@ -253,7 +253,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                               horizontal: 45.0, vertical: 2),
                           child: Text(
                             '- Calculate your quarterly income tax payable at free with Taxperts',
@@ -265,7 +265,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                               horizontal: 45.0, vertical: 2),
                           child: Row(
                             children: [
@@ -289,7 +289,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                               horizontal: 45.0, vertical: 2),
                           child: Text(
                             '- Find out how Tax changes affect you',
@@ -303,11 +303,11 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                         horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Gains & Profits',
@@ -319,8 +319,8 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(5),
@@ -329,7 +329,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 4,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -732,11 +732,11 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                         horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Qualifying Payments',
@@ -748,8 +748,8 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(5),
@@ -758,7 +758,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 4,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -892,11 +892,11 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                         horizontal: 45.0, vertical: 15),
                     child: Text(
                       'Tax Credits',
@@ -908,8 +908,8 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(5),
@@ -918,7 +918,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 4,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -1001,7 +1001,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Padding(
@@ -1052,7 +1052,16 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                               quarterId,
                             );
                           },
-                          child: Text(
+                          style: ElevatedButton.styleFrom(
+                            fixedSize:
+                                const Size(200, 40), backgroundColor: AppColor
+                                .conGreen, // Set the background color to green
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  10), // Set the border radius
+                            ),
+                          ),
+                          child: const Text(
                             'Get Computation ',
                             style: TextStyle(
                               fontSize: 15,
@@ -1060,18 +1069,8 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          style: ElevatedButton.styleFrom(
-                            fixedSize:
-                                Size(200, 40), // Set the width and height
-                            primary: AppColor
-                                .conGreen, // Set the background color to green
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  10), // Set the border radius
-                            ),
-                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         ElevatedButton(
@@ -1103,13 +1102,11 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                             phone.clear();
                             email.clear();
 
-                            // Optionally, reset any other relevant state variables
                             setState(() {
-                              // Reset any state variables here if needed
-                              visibility = false; // Example of resetting a boolean flag
+                              visibility = false;
                             });
                           },
-                          child: Text(
+                          child: const Text(
                             'Clear',
                             style: TextStyle(
                               fontSize: 15,
@@ -1118,10 +1115,9 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(140, 40), // Set the width and height
-                            primary: Colors.redAccent, // Set the background color to red
+                            fixedSize: const Size(140, 40), backgroundColor: Colors.redAccent,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10), // Set the border radius
+                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                         ),
@@ -1129,16 +1125,16 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
 
-                  Divider(),
+                  const Divider(),
 
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -1155,23 +1151,23 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.bold),
                               ),
-                              TextContainer(
+                              const TextContainer(
                                   childText: 'Total Gains and Profits',
                                   fontSize: 18,
                                   textColor: Colors.black),
-                              TextContainer(
+                              const TextContainer(
                                   childText: 'Tax Payable',
                                   fontSize: 18,
                                   textColor: Colors.black),
-                              TextContainer(
+                              const TextContainer(
                                   childText: 'Tax Deducted at Source (TDS)',
                                   fontSize: 18,
                                   textColor: Colors.black),
-                              TextContainer(
+                              const TextContainer(
                                   childText: 'Self Assessment Payment',
                                   fontSize: 18,
                                   textColor: Colors.black),
-                              TextContainer(
+                              const TextContainer(
                                   childText: 'Balance Tax Payable/(Refunds',
                                   fontSize: 18,
                                   textColor: Colors.black),
@@ -1210,7 +1206,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             if (visibility == true) ...[
-                              Text(
+                              const Text(
                                 'Annual',
                                 style: TextStyle(
                                     fontSize: 18,
@@ -1256,7 +1252,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             if (visibility == true) ...[
-                              Text(
+                              const Text(
                                 'Quarter',
                                 style: TextStyle(
                                     fontSize: 18,
@@ -1302,7 +1298,7 @@ class _CalculatorDesktopState extends State<CalculatorDesktop> {
               ),
             ),
 
-            SizedBox(height: 25,)
+            const SizedBox(height: 25,)
 
           ],
         ),

@@ -55,7 +55,7 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
               width: double.infinity,
               height: 80,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -107,7 +107,7 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
                           _buildPopupMenuItem('Blog', false),
                           _buildPopupMenuItem('Contact', false),
                         ],
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.green, // Set icon color here
                         ),
@@ -119,16 +119,16 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
                             Navigator.of(context).pushNamed('/start');
                             // Action when button is pressed
                           },
-                          child: Text(
-                            'Start Now',
-                            style: TextStyle(fontSize: 18),
-                          ),
                           style: ElevatedButton.styleFrom(
-                            fixedSize: Size(130, 40),
+                            fixedSize: const Size(130, 40),
                             primary: Colors.green,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
+                          ),
+                          child: const Text(
+                            'Start Now',
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                       ),
@@ -203,11 +203,11 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
               ],
             ),
 
-            SizedBox(height: 50,),
-            SingleChildScrollView(
+            const SizedBox(height: 50,),
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -231,11 +231,11 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
                 ),
               ),
             ),
-            SizedBox(height: 50,),
-            SingleChildScrollView(
+            const SizedBox(height: 50,),
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -262,7 +262,7 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
               ),
             ),
 
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -274,7 +274,17 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
                       Navigator.of(context).pushNamed('/contact');
                       // Add your onPressed code here
                     },
-                    child: Row(
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(
+                          150, 60), // Set the width and height
+                      primary: AppColor
+                          .buttonGreen, // Set the background color to green
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            10), // Set the border radius
+                      ),
+                    ),
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -288,24 +298,14 @@ class _ServiceTabletState extends State<ServiceTablet> with TickerProviderStateM
                         )
                       ],
                     ),
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(
-                          150, 60), // Set the width and height
-                      primary: AppColor
-                          .buttonGreen, // Set the background color to green
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            10), // Set the border radius
-                      ),
-                    ),
                   ),
                 ),
               ],
             ),
 
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
 
-            WFooterTab(),
+            const WFooterTab(),
 
 
 

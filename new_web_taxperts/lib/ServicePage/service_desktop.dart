@@ -102,10 +102,6 @@ class _ServiceDesktopState extends State<ServiceDesktop> with TickerProviderStat
                         Navigator.of(context).pushNamed('/start');
                         // Action when button is pressed
                       },
-                      child: const Text(
-                        'Start Now',
-                        style: TextStyle(fontSize: 18),
-                      ),
                       style: ElevatedButton.styleFrom(
                         fixedSize: const Size(130, 40), // Set the width and height
                         primary: AppColor
@@ -114,6 +110,10 @@ class _ServiceDesktopState extends State<ServiceDesktop> with TickerProviderStat
                           borderRadius:
                           BorderRadius.circular(5), // Set the border radius
                         ),
+                      ),
+                      child: const Text(
+                        'Start Now',
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
@@ -247,6 +247,16 @@ class _ServiceDesktopState extends State<ServiceDesktop> with TickerProviderStat
                           Navigator.of(context).pushNamed('/contact');
                           // Add your onPressed code here
                         },
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: const Size(
+                              200, 60), // Set the width and height
+                          primary: AppColor
+                              .buttonGreen, // Set the background color to green
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                10), // Set the border radius
+                          ),
+                        ),
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -260,16 +270,6 @@ class _ServiceDesktopState extends State<ServiceDesktop> with TickerProviderStat
                               color: Colors.white,
                             )
                           ],
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: const Size(
-                              200, 60), // Set the width and height
-                          primary: AppColor
-                              .buttonGreen, // Set the background color to green
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                10), // Set the border radius
-                          ),
                         ),
                       ),
                     ),

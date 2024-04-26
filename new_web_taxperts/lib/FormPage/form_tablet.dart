@@ -80,7 +80,7 @@ class _FormTabletState extends State<FormTablet> {
   void showSuccessSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.green, // Custom background color
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
           SizedBox(width: 8), // Space between icon and text
@@ -99,11 +99,11 @@ class _FormTabletState extends State<FormTablet> {
           // Handle action (e.g., undo the submission)
         },
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -125,7 +125,7 @@ class _FormTabletState extends State<FormTablet> {
   void showRequiredFieldsSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.red, // Custom background color for emphasis
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
           SizedBox(width: 8), // Space between icon and text
@@ -135,11 +135,11 @@ class _FormTabletState extends State<FormTablet> {
           ),
         ],
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -154,7 +154,7 @@ class _FormTabletState extends State<FormTablet> {
             width: double.infinity,
             height: 80,
             color: Colors.white,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
                 horizontal: 20.0), // Adjust padding as needed
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -169,8 +169,8 @@ class _FormTabletState extends State<FormTablet> {
 
           Container(
             color: Colors.white,
-            margin: EdgeInsets.symmetric(horizontal: 80,vertical: 30),
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 80,vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,7 +179,7 @@ class _FormTabletState extends State<FormTablet> {
                   height: 60,
                   width: double.infinity,
                   color: AppColor.darkTextGreen,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Request a callback',
                       style: TextStyle(
@@ -191,7 +191,7 @@ class _FormTabletState extends State<FormTablet> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 // Container(
                 //   height: 100,
                 //   color: Colors.grey.shade700,
@@ -231,7 +231,7 @@ class _FormTabletState extends State<FormTablet> {
                               _selectedTaxType = value;
                             });
                           },
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -241,13 +241,13 @@ class _FormTabletState extends State<FormTablet> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 20.0),
+                    const SizedBox(width: 20.0),
                     Expanded(
                       child: CustomFormFieldTab2(
                         label: 'Name: ',
                         child: TextField(
                           controller: _nameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -259,7 +259,7 @@ class _FormTabletState extends State<FormTablet> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Row(
                   children: <Widget>[
                     Expanded(
@@ -267,7 +267,7 @@ class _FormTabletState extends State<FormTablet> {
                         label: 'Email: ',
                         child: TextField(
                           controller: _emailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -277,13 +277,13 @@ class _FormTabletState extends State<FormTablet> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 20.0),
+                    const SizedBox(width: 20.0),
                     Expanded(
                       child: CustomFormFieldTab2(
                         label: 'Phone Number: ',
                         child: TextField(
                           controller: _phoneController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -295,9 +295,9 @@ class _FormTabletState extends State<FormTablet> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:40.0),
+                const SizedBox(height: 20.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal:40.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -324,7 +324,7 @@ class _FormTabletState extends State<FormTablet> {
                           });
                         },
                       ),
-                      Text('Yes'),
+                      const Text('Yes'),
                       Radio(
                         value: 'No',
                         groupValue: _hasTIN,
@@ -334,16 +334,16 @@ class _FormTabletState extends State<FormTablet> {
                           });
                         },
                       ),
-                      Text('No'),
+                      const Text('No'),
                     ],
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 CustomFormFieldTab2(
                   label: 'Message: ',
                   child: TextField(
                     controller: _messageController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -355,7 +355,7 @@ class _FormTabletState extends State<FormTablet> {
                     maxLines: 5,
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
@@ -369,11 +369,11 @@ class _FormTabletState extends State<FormTablet> {
 
                       addSubmission(context);
                     },
-                    child: Text('Submit',style: TextStyle(
+                    child: const Text('Submit',style: TextStyle(
                         fontSize: 18
                     ),),
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(
+                      fixedSize: const Size(
                           120, 40), // Set the width and height
                       primary: AppColor
                           .darkTextGreen, // Set the background color to green
@@ -385,13 +385,13 @@ class _FormTabletState extends State<FormTablet> {
                   ),
                 ),
 
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
               ],
             ),
 
           ),
 
-          WFooterTab(),
+          const WFooterTab(),
         ],
         ),
       ),

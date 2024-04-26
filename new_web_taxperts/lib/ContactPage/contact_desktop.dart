@@ -109,7 +109,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
   void showSuccessSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.green, // Custom background color
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.check_circle_outline, color: Colors.white), // Custom icon
           SizedBox(width: 8), // Space between icon and text
@@ -128,11 +128,11 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
           // Handle action (e.g., undo the submission)
         },
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -153,7 +153,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
   void showRequiredFieldsSnackBar(BuildContext context) {
     final snackBar = SnackBar(
       backgroundColor: Colors.red, // Custom background color for emphasis
-      content: Row(
+      content: const Row(
         children: [
           Icon(Icons.warning_amber_outlined, color: Colors.white), // Custom icon for warning
           SizedBox(width: 8), // Space between icon and text
@@ -163,11 +163,11 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
           ),
         ],
       ),
-      duration: Duration(seconds: 5), // Custom duration
+      duration: const Duration(seconds: 5), // Custom duration
       behavior: SnackBarBehavior.floating, // Make it floating
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), // Custom shape
-      margin: EdgeInsets.all(10), // Margin from the edges
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
+      margin: const EdgeInsets.all(10), // Margin from the edges
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Custom padding
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -181,7 +181,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
             width: double.infinity,
             height: 100,
             color: Colors.white,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
                 horizontal: 20.0), // Adjust padding as needed
             child: Row(
               mainAxisAlignment:
@@ -228,12 +228,12 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                       Navigator.of(context).pushNamed('/start');
                       // Action when button is pressed
                     },
-                    child: Text(
+                    child: const Text(
                       'Start Now',
                       style: TextStyle(fontSize: 18),
                     ),
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(130, 40), // Set the width and height
+                      fixedSize: const Size(130, 40), // Set the width and height
                       primary: AppColor
                           .buttonGreen, // Set the background color to green
                       shape: RoundedRectangleBorder(
@@ -253,7 +253,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                 opacity: _fadeAnimation,
                 child: Container(
                   height: 500,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('images/contactBack.png'),
                       fit: BoxFit.cover,
@@ -266,14 +266,14 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                 children: <Widget>[
                   SlideTransition(
                     position: _slideAnimation,
-                    child: Text(
+                    child: const Text(
                       'CONTACT',
                       style: TextStyle(color: Colors.white, fontSize: 60, fontFamily: 'Candal'),
                     ),
                   ),
                   SlideTransition(
                     position: _slideAnimation,
-                    child: Text(
+                    child: const Text(
                       'Contact us for more details',
                       style: TextStyle(color: Colors.white, fontSize: 22, fontFamily: 'Inter', fontWeight: FontWeight.w400),
                     ),
@@ -291,8 +291,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                         vertical: 5.0, horizontal: 15),
                     child: Text(
                       'Meet the Consultants',
@@ -308,8 +308,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                           color: Colors.green),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                         vertical: 5.0, horizontal: 25),
                     child: Text(
                       'The team behind the digital transformation in taxation to ease of adhering to compliance obligation from anywhere any time',
@@ -319,7 +319,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                           fontWeight: FontWeight.w400),
                     ),
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -336,22 +336,22 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                     'images/damith.png'), // Replace with your image path
                               ),
                             ),
-                            SizedBox(height: 8),
-                            Text(
+                            const SizedBox(height: 8),
+                            const Text(
                               'Damith Gangodawilage',
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
+                            const Text(
                               'Founder/Chief Compliance',
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(height: 15),
+                            const SizedBox(height: 15),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -367,8 +367,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                   child: Container(
                                     width: 35,
                                     height: 35,
-                                    padding: EdgeInsets.all(9),
-                                    margin: EdgeInsets.symmetric(horizontal: 12),
+                                    padding: const EdgeInsets.all(9),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12),
                                     decoration: BoxDecoration(
                                       color: Colors.white, // Replace with your color
                                       borderRadius: BorderRadius.circular(30),
@@ -377,7 +377,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                           color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                           spreadRadius: 1, // Spread radius
                                           blurRadius: 3, // Blur radius
-                                          offset: Offset(0, 1), // Changes position of shadow
+                                          offset: const Offset(0, 1), // Changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -397,8 +397,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                   child: Container(
                                     width: 35,
                                     height: 35,
-                                    padding: EdgeInsets.all(7),
-                                    margin: EdgeInsets.symmetric(horizontal: 12),
+                                    padding: const EdgeInsets.all(7),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12),
                                     decoration: BoxDecoration(
                                       color: Colors.white, // Replace with your color
                                       borderRadius: BorderRadius.circular(30),
@@ -407,7 +407,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                           color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                           spreadRadius: 1, // Spread radius
                                           blurRadius: 3, // Blur radius
-                                          offset: Offset(0, 1), // Changes position of shadow
+                                          offset: const Offset(0, 1), // Changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -427,8 +427,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                   child: Container(
                                     width: 35,
                                     height: 35,
-                                    padding: EdgeInsets.all(9),
-                                    margin: EdgeInsets.symmetric(horizontal: 12),
+                                    padding: const EdgeInsets.all(9),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12),
                                     decoration: BoxDecoration(
                                       color: Colors.white, // Replace with your color
                                       borderRadius: BorderRadius.circular(30),
@@ -437,7 +437,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                           color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                           spreadRadius: 1, // Spread radius
                                           blurRadius: 3, // Blur radius
-                                          offset: Offset(0, 1), // Changes position of shadow
+                                          offset: const Offset(0, 1), // Changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -457,8 +457,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                   child: Container(
                                     width: 35,
                                     height: 35,
-                                    padding: EdgeInsets.all(11),
-                                    margin: EdgeInsets.symmetric(horizontal: 12),
+                                    padding: const EdgeInsets.all(11),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12),
                                     decoration: BoxDecoration(
                                       color: Colors.white, // Replace with your color
                                       borderRadius: BorderRadius.circular(30),
@@ -467,7 +467,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                                           color: Colors.grey.withOpacity(0.5), // Shadow color with opacity
                                           spreadRadius: 1, // Spread radius
                                           blurRadius: 3, // Blur radius
-                                          offset: Offset(0, 1), // Changes position of shadow
+                                          offset: const Offset(0, 1), // Changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -485,12 +485,12 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 10,),
+                            const SizedBox(height: 10,),
                             Container(
-                              padding: EdgeInsets.all(16.0), // Add some padding
-                              margin: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(16.0), // Add some padding
+                              margin: const EdgeInsets.all(10),
                               color: Colors.white, // Background color for the container
-                              child: Text(
+                              child: const Text(
                                 "Damith Gangodawilage, a prominent figure in Sri Lanka's fintech sphere and the visionary founder of Taxperts, also shines in the academic realm. As the Founder and Chief Compliance Officer of the country's pioneering company in digital tax compliance, he has steered Taxperts to revolutionize the way tax compliance for individuals, making significant strides in financial literacy and empowerment. \n\n"
                                     "Beyond his professional accomplishments and recognition through prestigious awards like the eSwabhimani, NBQSA, and the National Ingenuity Award from SLASSCOM, Damith has extended his expertise into academia. His role as an educator underscores a deep commitment to nurturing future generations, blending practical industry insights with theoretical knowledge to shape well-rounded professionals. \n\n"
                                     "Moreover, his leadership extends beyond his entrepreneurial ventures, having served as Vice President of the Chartered Institute of Taxation of Sri Lanka, Governing Council Member of AAT Sri Lanka, and Director and Treasurer of the Colombo Chamber of Commerce, highlights his dedication to both the financial and educational sectors, promoting economic and digital advancement in Sri Lanka.",
@@ -510,13 +510,13 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 35.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 35.0),
             child: Center(
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       vertical: 15.0,
                       horizontal: 10
                     ),
@@ -594,8 +594,8 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
+                    const Padding(
+                      padding: EdgeInsets.all(20.0),
                       child: Text(
                         'Get In Touch',
                         style: TextStyle(
@@ -605,166 +605,163 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
                             color: Colors.green),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
-                        Expanded(flex: 1, child: Column()),
+                        const Expanded(flex: 1, child: Column()),
                         Expanded(
                           flex: 4,
-                          child: Container(
-
-                            child: Form(
-                              child: Wrap(
-                                alignment: WrapAlignment.center,
-                                runSpacing: 20,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: CustomFormField(
-                                          label: 'Type of Taxes:',
-                                          child: DropdownButtonFormField<String>(
-                                            decoration: InputDecoration(
-                                              filled: true,
-                                              fillColor: Colors.white,
-                                              border: OutlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.black),
-                                              ),
-                                            ),
-                                            value: _selectedTaxType,
-                                            items: ['Individual Income Tax (IIT)',
-                                              'Corporate Income Tax (CIT)',
-                                              'Partnership Income Tax (PIT) ',
-                                              'Value Added Tax (VAT)',
-                                              'Advance Personal Income Tax (APIT)',
-                                              'Advance Income Tax (AIT)',
-                                              'Capital Gain Tax (CGT)',
-                                              'Simplified Value Added Tax (SVAT)',
-                                              'Stamp Duty (SD)',
-                                              'Other Taxes ',
-                                              'Transfer Pricing',
-                                              'International Double Taxation',
-                                              'Expat Taxation',
-                                              'Tax Advisory Services',
-                                              'Return Compliance',
-                                              'Social Security Contribution Levy (SSCL)',
-                                              'With Holding Tax (WHT)'].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Text(value),
-                                              );
-                                            }).toList(),
-                                            onChanged: (value) {
-                                              setState(() {
-                                                _selectedTaxType = value;
-                                              });
-                                            },
-                                          ),
-                                        ),
-                                      ),
-
-                                      Expanded(
-                                        child: CustomFormField(
-                                          label: 'Name:',
-                                          child: TextFormField(
-                                            controller: _nameController,
-                                            decoration: InputDecoration(
-                                              filled: true,
-                                              fillColor: Colors.white,
-                                              border: OutlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.black),
-                                              ),
+                          child: Form(
+                            child: Wrap(
+                              alignment: WrapAlignment.center,
+                              runSpacing: 20,
+                              children: [
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: CustomFormField(
+                                        label: 'Type of Taxes:',
+                                        child: DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
                                             ),
                                           ),
+                                          value: _selectedTaxType,
+                                          items: ['Individual Income Tax (IIT)',
+                                            'Corporate Income Tax (CIT)',
+                                            'Partnership Income Tax (PIT) ',
+                                            'Value Added Tax (VAT)',
+                                            'Advance Personal Income Tax (APIT)',
+                                            'Advance Income Tax (AIT)',
+                                            'Capital Gain Tax (CGT)',
+                                            'Simplified Value Added Tax (SVAT)',
+                                            'Stamp Duty (SD)',
+                                            'Other Taxes ',
+                                            'Transfer Pricing',
+                                            'International Double Taxation',
+                                            'Expat Taxation',
+                                            'Tax Advisory Services',
+                                            'Return Compliance',
+                                            'Social Security Contribution Levy (SSCL)',
+                                            'With Holding Tax (WHT)'].map((String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              _selectedTaxType = value;
+                                            });
+                                          },
                                         ),
                                       ),
-                                    ],
-                                  ),
-
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: CustomFormField(
-                                          label: 'Phone Number:',
-                                          child: TextFormField(
-                                            controller: _phoneController,
-                                            decoration: InputDecoration(
-                                              filled: true,
-                                              fillColor: Colors.white,
-                                              border: OutlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.black),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-
-                                      Expanded(
-                                        child: CustomFormField(
-                                          label: 'Email Address:',
-                                          child: TextFormField(
-                                            controller: _emailController,
-                                            decoration: InputDecoration(
-                                              filled: true,
-                                              fillColor: Colors.white,
-                                              border: OutlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.black),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  CustomFormField(
-                                    label: 'Message:',
-                                    child: TextFormField(
-                                      controller: _messageController,
-                                      decoration: InputDecoration(
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.black),
-                                        ),
-                                      ),
-                                      maxLines: 3,
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 20.0),
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        print('Type of taxes: $_selectedTaxType');
-                                        print('Name: ${_nameController.text}');
-                                        print('Email: ${_emailController.text}');
-                                        print('Phone Number: ${_phoneController.text}');
-                                        print('Message: ${_messageController.text}');
 
-                                        addSubmission(context);// Submit button action
-                                        // Use the controllers to get the input values
-                                      },
-                                      child: Text('Submit',style: TextStyle(fontSize: 18),),
-                                      style: ElevatedButton.styleFrom(
-                                        fixedSize: Size(130, 40), // Set the width and height
-                                        primary: AppColor
-                                            .buttonGreen, // Set the background color to green
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(5), // Set the border radius
+                                    Expanded(
+                                      child: CustomFormField(
+                                        label: 'Name:',
+                                        child: TextFormField(
+                                          controller: _nameController,
+                                          decoration: const InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                          ),
                                         ),
-                                    ),)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: CustomFormField(
+                                        label: 'Phone Number:',
+                                        child: TextFormField(
+                                          controller: _phoneController,
+                                          decoration: const InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+
+                                    Expanded(
+                                      child: CustomFormField(
+                                        label: 'Email Address:',
+                                        child: TextFormField(
+                                          controller: _emailController,
+                                          decoration: const InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                CustomFormField(
+                                  label: 'Message:',
+                                  child: TextFormField(
+                                    controller: _messageController,
+                                    decoration: const InputDecoration(
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      border: OutlineInputBorder(
+                                        borderSide: BorderSide(color: Colors.black),
+                                      ),
+                                    ),
+                                    maxLines: 3,
                                   ),
-                                ],
-                              ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print('Type of taxes: $_selectedTaxType');
+                                      print('Name: ${_nameController.text}');
+                                      print('Email: ${_emailController.text}');
+                                      print('Phone Number: ${_phoneController.text}');
+                                      print('Message: ${_messageController.text}');
+
+                                      addSubmission(context);// Submit button action
+                                      // Use the controllers to get the input values
+                                    },
+                                    child: const Text('Submit',style: TextStyle(fontSize: 18),),
+                                    style: ElevatedButton.styleFrom(
+                                      fixedSize: const Size(130, 40), // Set the width and height
+                                      primary: AppColor
+                                          .buttonGreen, // Set the background color to green
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                        BorderRadius.circular(5), // Set the border radius
+                                      ),
+                                  ),)
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        Expanded(flex: 1, child: Column()),
+                        const Expanded(flex: 1, child: Column()),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -772,7 +769,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
           ),
           Container(
             height: 400,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'images/mapDesk.png'), // Replace with your image path
@@ -781,7 +778,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
             ),
           ),
 
-          WFooter(),
+          const WFooter(),
         ],
       ),
     ));
@@ -791,7 +788,7 @@ class _ContactDesktopState extends State<ContactDesktop> with TickerProviderStat
       String text, bool isSelected, VoidCallback onPressedAction) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
+          const EdgeInsets.symmetric(horizontal: 12.0), // Adjust spacing as needed
       child: TextButton(
         onPressed: onPressedAction,
         style: TextButton.styleFrom(
